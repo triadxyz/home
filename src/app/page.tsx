@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 export const metadata = {
-  title: "Triad | The first Arbitrage on Solana",
+  title: "Triad | Discover. Analyze. Invest.",
 };
 
 const Home: React.FC = () => {

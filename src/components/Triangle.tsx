@@ -62,7 +62,7 @@ export const Triangle: React.FC<{
   return (
     <img
       id={id}
-      className="triangle w-2 absolute"
+      className="triangle w-4 absolute"
       style={{ animationDuration: `${animationDuration}s`, left }}
       src={triangleSrc}
       alt=""

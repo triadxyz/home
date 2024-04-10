@@ -22,6 +22,42 @@ export const Tickers = ({ markets = [] }: TickersProps) => {
     cssEase: "linear",
     responsive: [
       {
+        breakpoint: 3200,
+        settings: {
+          slidesToShow: 10,
+        },
+      },
+      {
+        breakpoint: 2400,
+        settings: {
+          slidesToShow: 9,
+        },
+      },
+      {
+        breakpoint: 1900,
+        settings: {
+          slidesToShow: 8,
+        },
+      },
+      {
+        breakpoint: 1680,
+        settings: {
+          slidesToShow: 7,
+        },
+      },
+      {
+        breakpoint: 1440,
+        settings: {
+          slidesToShow: 5,
+        },
+      },
+      {
+        breakpoint: 1240,
+        settings: {
+          slidesToShow: 5,
+        },
+      },
+      {
         breakpoint: 768,
         settings: {
           slidesToShow: 1.5,
@@ -61,8 +97,8 @@ export const Tickers = ({ markets = [] }: TickersProps) => {
               <div className="flex justify-between items-center">
                 <h3 className="text-blue-600 text-base">{market.about.name}</h3>
                 <Image
-                  width={24}
-                  height={24}
+                  width={40}
+                  height={40}
                   src={market.about.image}
                   alt={""}
                 />

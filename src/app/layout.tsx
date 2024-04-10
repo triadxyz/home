@@ -1,6 +1,9 @@
+import { Analytics } from '@vercel/analytics/react';
 import "../styles/globals.scss";
 import type { Metadata } from "next";
 import { poppins } from "@/utils/fonts";
+
+
 
 export const metadata: Metadata = {
   title: "Triad",
@@ -47,6 +50,7 @@ export default function RootLayout({
     <html lang="en">
       <body suppressHydrationWarning={true} className={poppins.className}>
         {children}
+        <Analytics />
       </body>
     </html>
   );

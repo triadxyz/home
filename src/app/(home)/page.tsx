@@ -57,12 +57,12 @@ const Home: React.FC = async () => {
           </div>
         </div>
 
-        <div className="h-full pt-28">
-          <div className="relative flex items-center justify-center flex-col m-auto z-10">
-            <h1 className="text-7xl px-2 mb-3 md:px-0 text-center font-bold text-[#DCDBDB]">
+        <div className="h-fit my-auto flex flex-col">
+          <div className="relative flex items-center justify-center flex-col m-auto z-10 px-5 lg:px-0">
+            <h1 className="text-4xl lg:text-7xl px-2 mb-3 md:px-0 text-center font-bold text-[#DCDBDB]">
               Discover. Analyze. Invest.{" "}
             </h1>
-            <span className="text-[#CCCBCB] text-xl leading-8 text-center mt-5 mb-2 md:px-0">
+            <span className="text-[#CCCBCB] text-base lg:text-xl leading-8 text-center mt-5 mb-2 md:px-0">
               The easiest way to invest in the Solana ecosystem!
               <br /> We tokenize Solana startups, a new way of investing in the
               ecosystem!

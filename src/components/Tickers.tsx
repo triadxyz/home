@@ -3,6 +3,7 @@
 import { MarketType } from "@/types/market";
 import { cn } from "@/utils/cn";
 import Image from "next/image";
+import Link from "next/link";
 import Slider from "react-slick";
 
 type TickersProps = {
@@ -19,6 +20,14 @@ export const Tickers = ({ markets = [] }: TickersProps) => {
     speed: 4000,
     autoplaySpeed: 100,
     cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1.5,
+        },
+      },
+    ],
   };
 
   function calculatePercentageChange(
@@ -44,8 +53,11 @@ export const Tickers = ({ markets = [] }: TickersProps) => {
     <div className="slider-container mb-5 mt-20">
       <Slider {...settings}>
         {markets.map((market, index) => (
-          <div key={index}>
-            <div className="bg-black/40 border border-blue-600/20 rounded-xl min-h-[100px] w-[94%] p-4">
+          <Link
+          href={`https://app.triadfi.co/markets/${market.ticker}`}
+          target="_blank"
+          className="max-w-[210px] min-w-[210px]" key={index}>
+            <div className="bg-black/40 border border-blue-600/20 rounded-xl min-h-[100px]  p-4">
               <div className="flex justify-between items-center">
                 <h3 className="text-blue-600 text-base">{market.about.name}</h3>
                 <Image
@@ -79,7 +91,7 @@ export const Tickers = ({ markets = [] }: TickersProps) => {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </Slider>
     </div>

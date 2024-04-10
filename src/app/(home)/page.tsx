@@ -2,12 +2,17 @@
 import { Triangle } from "@/components/Triangle";
 import Link from "next/link";
 import React from "react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { Tickers } from "@/components/Tickers";
+import { fetchMarkets } from "./hooks";
 
 export const metadata = {
   title: "Triad | Discover. Analyze. Invest.",
 };
 
-const Home: React.FC = () => {
+const Home: React.FC = async () => {
+  const markets = await fetchMarkets();
   const triangles = Array.from({ length: 100 }, (_, i) => (
     <Triangle
       key={i}
@@ -52,23 +57,25 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-        <div className="relative flex items-center justify-center flex-col m-auto h-full z-10">
-          <h1 className="text-7xl px-2 mb-3 md:px-0 text-center font-bold text-[#DCDBDB]">
-            Discover. Analyze. Invest.{" "}
-          </h1>
-          <span className="text-[#CCCBCB] text-xl leading-8 text-center mt-5 mb-2 md:px-0">
-            The easiest way to invest in the Solana ecosystem!
-            <br /> We tokenize Solana startups, a new way of investing in the
-            ecosystem!
-          </span>
+        <div className="h-full pt-28">
+          <div className="relative flex items-center justify-center flex-col m-auto z-10">
+            <h1 className="text-7xl px-2 mb-3 md:px-0 text-center font-bold text-[#DCDBDB]">
+              Discover. Analyze. Invest.{" "}
+            </h1>
+            <span className="text-[#CCCBCB] text-xl leading-8 text-center mt-5 mb-2 md:px-0">
+              The easiest way to invest in the Solana ecosystem!
+              <br /> We tokenize Solana startups, a new way of investing in the
+              ecosystem!
+            </span>
 
-          <Link href="https://app.triadfi.co" target="_blank">
-            <button className="text-lg text-white bg-white/10 h-[50px] px-20 font-bold md:px-28 mt-5 rounded-[10px] border border-white/30 hover:opacity-80 transition-all">
-              Launch App
-            </button>
-          </Link>
+            <Link href="https://app.triadfi.co" target="_blank">
+              <button className="text-lg text-white bg-white/10 h-[50px] px-20 font-bold md:px-28 mt-5 rounded-[10px] border border-white/30 hover:opacity-80 transition-all">
+                Launch App
+              </button>
+            </Link>
+          </div>
+          <Tickers markets={markets} />
         </div>
-
         <div className="flex flex-col">
           <hr className="border-white/10 w-full" />
 

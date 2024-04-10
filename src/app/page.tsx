@@ -56,10 +56,10 @@ const Home: React.FC = () => {
           <h1 className="text-7xl px-2 mb-3 md:px-0 text-center font-bold text-[#DCDBDB]">
             Discover. Analyze. Invest.{" "}
           </h1>
-          <span className="text-[#CCCBCB] text-xl leading-8 md:w-7/12 text-center mt-5 mb-2 px-4 md:px-0">
+          <span className="text-[#CCCBCB] text-xl leading-8 text-center mt-5 mb-2 md:px-0">
             The easiest way to invest in the Solana ecosystem!
-            <br /> Making economies accessible to a broader investor base has
-            transformed nations and the world.
+            <br /> We tokenize Solana startups, a new way of investing in the
+            ecosystem!
           </span>
 
           <Link href="https://app.triadfi.co" target="_blank">
@@ -75,10 +75,17 @@ const Home: React.FC = () => {
           <div className="flex items-center justify-between h-[70px]">
             <span className="text-sm text-white/30 pl-5">TRIAD © 2024</span>
 
-            <span className="text-sm text-white/30 pr-5 flex items-center gap-x-1">
+            <span className="text-sm text-white/30 pr-5 flex items-center gap-x-2">
               Powered by{" "}
               <a href="https://pyth.network/">
                 <img className="w-12" src="/img/pyth.png" alt="logo-pyth" />
+              </a>
+              <a href="https://solana.com/">
+                <img
+                  className="w-16"
+                  src="/img/genesys.svg"
+                  alt="logo-genesys"
+                />
               </a>
             </span>
           </div>

@@ -3,11 +3,9 @@ import "../styles/globals.scss";
 import type { Metadata } from "next";
 import { poppins } from "@/utils/fonts";
 
-
-
 export const metadata: Metadata = {
   title: "Triad",
-  description: "The first Arbitrage on Solana",
+  description: "The easiest way to invest in the Solana ecosystem! We tokenize Solana startups, a new way of investing in the ecosystem!",
   icons: [
     {
       url: "/favicon/favicon.ico",

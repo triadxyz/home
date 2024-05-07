@@ -39,13 +39,13 @@ const Home: React.FC = async () => {
           <img src="/img/logo-triad.svg" width={80} alt="logo" />
 
           <div className="flex items-center space-x-4">
-            <Link href="https://discord.gg/Kh4ZRfffKC" target="_blank">
+            {/* <Link href="https://discord.gg/Kh4ZRfffKC" target="_blank">
               <img
                 className="hover:opacity-50 transition-all"
                 src="/img/icon-discord.svg"
                 alt="bg"
               />
-            </Link>
+            </Link> */}
 
             <Link href="https://twitter.com/triadfi" target="_blank">
               <img

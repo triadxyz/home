@@ -4,6 +4,7 @@ import { MarketType } from "@/types/market";
 import { cn } from "@/utils/cn";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 import Slider from "react-slick";
 
 type TickersProps = {
@@ -85,14 +86,20 @@ export const Tickers = ({ markets = [] }: TickersProps) => {
     return totalPercentageChange;
   }
 
+  useEffect(() => {
+    console.log(markets)
+  }, [markets])
+
   return (
     <div className="slider-container mb-5 mt-20">
       <Slider {...settings}>
-        {markets.map((market, index) => (
+        {/* {markets.map((market, index) => (
           <Link
-          href={`https://app.triadfi.co/markets/${market.ticker}`}
-          target="_blank"
-          className="max-w-[210px] min-w-[210px]" key={index}>
+            href={`https://app.triadfi.co/markets/${market.ticker}`}
+            target="_blank"
+            className="max-w-[210px] min-w-[210px]"
+            key={index}
+          >
             <div className="bg-black/40 border border-blue-600/20 rounded-xl min-h-[100px]  p-4">
               <div className="flex justify-between items-center">
                 <h3 className="text-blue-600 text-base">{market.about.name}</h3>
@@ -111,24 +118,27 @@ export const Tickers = ({ markets = [] }: TickersProps) => {
                     <span className="text-white text-base font-medium">
                       ${market.tvl.toFixed(2)}
                     </span>
-                
-                      <span
-                        className={cn("text-white",
-                         {
-                          "text-green-600": calculatePercentageChange(market.metadata.chart) > 0,
-                          "text-red-600": calculatePercentageChange(market.metadata.chart) < 0
-                         }
-                        )}
-                      >
-                        {calculatePercentageChange(market.metadata.chart) === 0 ? '' : `${calculatePercentageChange(market.metadata.chart).toFixed(2)}%`}
-                      </span>
-               
+
+                    <span
+                      className={cn("text-white", {
+                        "text-green-600":
+                          calculatePercentageChange(market.metadata.chart) > 0,
+                        "text-red-600":
+                          calculatePercentageChange(market.metadata.chart) < 0,
+                      })}
+                    >
+                      {calculatePercentageChange(market.metadata.chart) === 0
+                        ? ""
+                        : `${calculatePercentageChange(
+                            market.metadata.chart
+                          ).toFixed(2)}%`}
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
           </Link>
-        ))}
+        ))} */}
       </Slider>
     </div>
   );

@@ -5,14 +5,14 @@ import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Tickers } from "@/components/Tickers";
-import { fetchMarkets } from "./hooks";
+// import { fetchMarkets } from "./hooks";
 
 export const metadata = {
   title: "Triad | Discover. Analyze. Invest.",
 };
 
 const Home: React.FC = async () => {
-  const markets = await fetchMarkets();
+  // const markets = await fetchMarkets();
   const triangles = Array.from({ length: 100 }, (_, i) => (
     <Triangle
       key={i}
@@ -68,13 +68,13 @@ const Home: React.FC = async () => {
               ecosystem!
             </span>
 
-            <Link href="https://app.triadfi.co" target="_blank">
-              <button className="text-lg text-white bg-white/10 h-[50px] px-20 font-bold md:px-28 mt-5 rounded-[10px] border border-white/30 hover:opacity-80 transition-all">
-                Launch App
+            {/* <Link href="https://app.triadfi.co" target="_blank"> */}
+              <button className="text-lg text-white bg-white/10 h-[50px] px-20 font-bold md:px-28 mt-5 rounded-[10px] cursor-default">
+                Coming soon
               </button>
-            </Link>
+            {/* </Link> */}
           </div>
-          <Tickers markets={markets} />
+          {/* <Tickers markets={markets} /> */}
         </div>
         <div className="flex flex-col">
           <hr className="border-white/10 w-full" />

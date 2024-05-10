@@ -68,7 +68,7 @@ const Home: React.FC = () => {
                 <Image
                   width={16}
                   height={12}
-                  className="hidden xl:block absolute bottom-[45%] -right-2.5"
+                  className="hidden xl:block absolute bottom-[35%] -right-2.5"
                   src={require("../../../public/img/icon-decoration.svg")}
                   alt=""
                 />
@@ -76,14 +76,14 @@ const Home: React.FC = () => {
                 <Image
                   width={16}
                   height={16}
-                  className="hidden xl:block absolute bottom-[40%] -right-4"
+                  className="hidden xl:block absolute bottom-[30%] -right-4"
                   src={require("../../../public/img/icon-decoration.svg")}
                   alt=""
                 />
                 <Image
                   width={16}
                   height={16}
-                  className="hidden xl:block absolute -top-1 -left-6"
+                  className="hidden xl:block absolute -top-2 -left-6"
                   src={require("../../../public/img/icon-decoration.svg")}
                   alt=""
                 />

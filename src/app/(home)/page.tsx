@@ -8,7 +8,6 @@ import "slick-carousel/slick/slick-theme.css";
 import { WhiteList } from "@/components/WhiteList";
 import Image from "next/image";
 
-
 const Home: React.FC = () => {
   const [formStarted, setFormStarted] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
@@ -98,9 +97,8 @@ const Home: React.FC = () => {
                 />
 
                 <span className="text-white/60 lg:text-white text-sm lg:text-lg lg:leading-8 text-center mt-4 mb-7 md:px-0">
-                  The easiest way to invest in the Solana ecosystem!
-                  <br /> We tokenize Solana startups, a new way of investing in
-                  the ecosystem!
+                  We tokenize Solana projects, a new way of investing in the
+                  ecosystem!
                 </span>
               </div>
             </div>

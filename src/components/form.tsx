@@ -40,12 +40,14 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
     (data: string[], index: number): void => {
       const isEmailField = index === 1;
       const isEmpty = data[index].trim() === "";
-      let isDisabled = false;
+      let isDisabled = isEmpty;
 
-      if (!isEmpty && index === 0 && !isEmailField) {
+      if (!isEmpty && index === 0) {
         isDisabled = !validateSolanaAddress(data[0]);
       } else if (!isEmpty && isEmailField) {
         isDisabled = !isValidEmail(data[1]);
+      } else if (isEmpty && isEmailField) {
+        isDisabled = false;
       } else if (isEmpty && index === 2) {
         isDisabled = true;
       }

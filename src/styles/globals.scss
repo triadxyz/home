@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 body {
+  font-family: 'inter';
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
   background: #020409;
@@ -41,4 +42,37 @@ html {
 
 .triangle {
   animation: fly linear infinite;
+}
+
+
+@keyframes slideUp {
+  0% {
+    opacity: 0.5;
+    transform: translateY(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.9s forwards;
+}
+
+
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.animate-right {
+  animation: slideRight 0.8s forwards;
 }

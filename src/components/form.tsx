@@ -72,6 +72,14 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
     }
   }, [buttonClicked, setStartedForm]);
 
+  const handlePreviousQuestion = useCallback(() => {
+    setCurrentQuestionIndex(currentQuestionIndex - 1);
+
+    if (currentQuestionIndex === 0) {
+      setStartedForm(false);
+    }
+  }, [currentQuestionIndex, setStartedForm]);
+
   const handleNextQuestion = useCallback(async () => {
     if (!buttonClicked) {
       setButtonClicked(true);
@@ -130,10 +138,23 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
         {questions[currentQuestionIndex]}
       </label>
 
-      <div className="lg:flex w-full lg:w-2/3 mx-auto relative mt-8 gap-x-3">
-        <div className="lg:w-10/12">
+      <div className="lg:flex w-full lg:w-2/3 mx-auto relative mt-14 gap-x-3">
+        <div className="lg:w-10/12 relative">
+          {currentQuestionIndex !== 0 && (
+            <button
+              onClick={handlePreviousQuestion}
+              className="absolute -bottom-10 left-0"
+            >
+              <Image
+                className="rotate-180 opacity-75"
+                src={require("../../public/img/icon-arrow.svg")}
+                alt=""
+              />
+            </button>
+          )}
+
           <input
-            className="w-full text-white px-4 h-16 placeholder:text-lg placeholder:text-white/40 bg-fire-gray-custom rounded-2xl border border-white/20"
+            className="w-full text-white px-4 h-16 lg:placeholder:text-lg placeholder:text-white/40 bg-fire-gray-custom rounded-2xl border border-white/20"
             type="text"
             value={formData[currentQuestionIndex]}
             required={currentQuestionIndex !== 1}

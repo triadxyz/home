@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { WhiteList } from "@/components/WhiteList";
@@ -98,7 +98,10 @@ const Home: React.FC = () => {
               </div>
             </div>
           </div>
-          <WhiteList initForm={() => setFormStarted(true)} />
+          <WhiteList
+            formStarted={formStarted}
+            initForm={() => setFormStarted(true)}
+          />
         </div>
       </div>
       <Footer />

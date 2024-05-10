@@ -6,23 +6,15 @@ import Image from "next/image";
 import MockupImage from "../../public/img/mockup.png";
 import { cn } from "@/utils/cn";
 
-export const WhiteList: React.FC<{ initForm: (value: boolean) => void }> = ({
-  initForm,
-}) => {
+export const WhiteList: React.FC<{
+  formStarted: boolean;
+  initForm: (value: boolean) => void;
+}> = ({ formStarted, initForm }) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [formStarted, setFormStarted] = useState(false);
 
   const handleFormSubmit = useCallback(() => {
     setFormSubmitted(true);
   }, []);
-
-  const handleInitForm = useCallback(
-    (value: boolean) => {
-      setFormStarted(value);
-      initForm(formStarted);
-    },
-    [initForm, formStarted]
-  );
 
   useEffect(() => {
     if (formSubmitted) {
@@ -48,7 +40,7 @@ export const WhiteList: React.FC<{ initForm: (value: boolean) => void }> = ({
               Thank you for joining our whitelist
             </span>
 
-            <div className="relative p-4 pt-8 mt-10 lg:mt-40 w-full lg:w-2/3 h-[400px] lg:h-[200px] mx-auto bg-fire-gray-custom rounded-2xl">
+            <div className="relative p-4 pt-8 mt-10 lg:mt-40 w-full lg:w-2/3 h-[300px] lg:h-[200px] mx-auto bg-fire-gray-custom rounded-2xl">
               <div className="w-full lg:w-1/2">
                 <h3 className="text-center lg:text-start text-2xl leading-7 text-white">
                   <span className="font-semibold">Follow us</span> for more
@@ -64,7 +56,7 @@ export const WhiteList: React.FC<{ initForm: (value: boolean) => void }> = ({
               <Image
                 width={240}
                 height={320}
-                className="absolute right-4 bottom-0 w-40 h-48 lg:w-60 lg:h-72 object-contain"
+                className="absolute right-4 bottom-0 w-40 h-32 lg:w-60 lg:h-72 object-contain"
                 src={MockupImage}
                 alt=""
               />
@@ -97,8 +89,8 @@ export const WhiteList: React.FC<{ initForm: (value: boolean) => void }> = ({
             </div>
 
             <WhiteListForm
-              setStartedForm={handleInitForm}
               formStarted={formStarted}
+              setStartedForm={initForm}
               onSubmit={handleFormSubmit}
             />
           </>

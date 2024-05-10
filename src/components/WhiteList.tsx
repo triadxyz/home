@@ -28,14 +28,14 @@ export const WhiteList: React.FC<{
   return (
     <div className="w-full lg:max-w-[1330px] h-fit text-center">
       <div className="w-full">
-        {formSubmitted ? (
+        {!formSubmitted ? (
           <div
             className={cn("grid relative place-content-center", {
-              "-mt-40": formStarted,
+              "-mt-48 lg:-mt-64": formStarted,
             })}
           >
             <Image
-              className="mx-auto mb-10"
+              className="mx-auto mb-10 w-20 h-20 lg:w-auto lg:h-auto"
               src={require("../../public/img/concludedForm.svg")}
               alt=""
             />
@@ -75,7 +75,7 @@ export const WhiteList: React.FC<{
               />
             </div>
 
-            <div className="relative py-4 pl-6 pr-10 pt-8 mt-10 lg:mt-40 w-full lg:w-2/3 h-[300px] lg:h-[200px] mx-auto bg-fire-gray-custom rounded-2xl">
+            <div className="relative py-4 pl-6 pr-10 pt-8 mt-10 lg:mt-36 w-full lg:w-2/3 h-[350px] lg:h-[200px] mx-auto bg-fire-gray-custom rounded-2xl">
               <div className="w-full lg:w-1/2">
                 <h3 className="text-center lg:text-start text-2xl leading-7 text-white">
                   <span className="font-semibold">Follow us</span> for more
@@ -91,7 +91,7 @@ export const WhiteList: React.FC<{
               <Image
                 width={240}
                 height={320}
-                className="absolute right-4 bottom-0 w-40 h-32 lg:w-60 lg:h-72 object-contain"
+                className="absolute right-4 bottom-0 w-40 h-40 lg:w-60 lg:h-72 object-contain"
                 src={MockupImage}
                 alt=""
               />

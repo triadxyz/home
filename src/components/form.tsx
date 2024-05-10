@@ -149,6 +149,7 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
       className={cn("relative z-30", {
         "animate-right": animateRight,
         "animate-slide-left": animateleft,
+         "-top-28": currentQuestionIndex !== 0
       })}
     >
       <label className="font-semibold lg:text-5xl text-white">
@@ -201,7 +202,7 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
       </div>
 
       {formStarted === true && (
-        <div className="flex w-fit gap-x-4 mx-auto mt-28 lg:mt-[160px] items-center">
+        <div className="flex w-fit gap-x-4 mx-auto mt-28 lg:mt-[140px] items-center">
           <button
             className="rounded-lg bg-fire-gray-custom p-2 disabled:cursor-not-allowed disabled:opacity-60"
             onClick={handlePreviousQuestion}

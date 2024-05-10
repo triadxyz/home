@@ -7,7 +7,7 @@ import { Footer } from "@/components/footer";
 export const metadata: Metadata = {
   title: "Triad Fi",
   description:
-    "The easiest way to invest in the Solana ecosystem! We tokenize Solana startups, a new way of investing in the ecosystem!",
+    "We tokenize Solana projects, a new way to invest in the ecosystem!",
   icons: [
     {
       url: "/favicon/favicon.ico",

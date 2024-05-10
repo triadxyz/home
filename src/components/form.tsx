@@ -140,19 +140,6 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
 
       <div className="lg:flex w-full lg:w-2/3 mx-auto relative mt-14 gap-x-3">
         <div className="lg:w-10/12 relative">
-          {currentQuestionIndex !== 0 && (
-            <button
-              onClick={handlePreviousQuestion}
-              className="absolute -bottom-10 left-0"
-            >
-              <Image
-                className="rotate-180 opacity-75"
-                src={require("../../public/img/icon-arrow.svg")}
-                alt=""
-              />
-            </button>
-          )}
-
           <input
             className="w-full text-white px-4 h-16 lg:placeholder:text-lg placeholder:text-white/40 bg-fire-gray-custom rounded-2xl border border-white/20"
             type="text"
@@ -162,7 +149,7 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
             onChange={handleInputChange}
           />
 
-          {currentQuestionIndex === 0 && (
+          {/* {currentQuestionIndex === 0 && (
             <div className="w-fit mt-1.5 lg:mt-4 mr-auto cursor-default">
               <p className="text-center text-white/60 text-[10px] lg:text-sm leading-4">
                 If you prefer, use your{" "}
@@ -172,7 +159,7 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
                 .
               </p>
             </div>
-          )}
+          )} */}
         </div>
 
         <button
@@ -207,6 +194,34 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
           )}
         </button>
       </div>
+
+      {formStarted === true && (
+        <div className="flex w-fit gap-x-4 mx-auto mt-28 lg:mt-[160px] items-center">
+          <button
+            className="rounded-lg bg-fire-gray-custom p-2 disabled:cursor-not-allowed disabled:opacity-60"
+            onClick={handlePreviousQuestion}
+            disabled={currentQuestionIndex === 0}
+          >
+            <Image
+              className="rotate-180 opacity-75"
+              src={require("../../public/img/icon-arrow.svg")}
+              alt=""
+            />
+          </button>
+
+          <button
+            disabled={isButtonDisabled}
+            className="rounded-lg bg-fire-gray-custom p-2 disabled:cursor-not-allowed disabled:opacity-60"
+            onClick={handleNextQuestion}
+          >
+            <Image
+              className="opacity-75"
+              src={require("../../public/img/icon-arrow.svg")}
+              alt=""
+            />
+          </button>
+        </div>
+      )}
     </div>
   );
 };

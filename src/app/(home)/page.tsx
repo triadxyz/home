@@ -21,7 +21,9 @@ const Home: React.FC = () => {
     >
       <div className="flex flex-col relative z-10 h-full px-4">
         <div className="flex w-full max-w-[1330px] mx-auto justify-between items-center pt-6">
-          <img src="/img/logo-triad.svg" width={100} alt="logo" />
+          <Link href={"/"}>
+            <img src="/img/logo-triad.svg" width={100} alt="logo" />
+          </Link>
 
           <div className="flex items-center space-x-4">
             <Link href="https://twitter.com/triad_labs" target="_blank">
@@ -104,7 +106,6 @@ const Home: React.FC = () => {
           />
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

@@ -5,6 +5,7 @@ import { WhiteListForm } from "./form";
 import Image from "next/image";
 import MockupImage from "../../public/img/mockup.png";
 import { cn } from "@/utils/cn";
+import { init } from "next/dist/compiled/@vercel/og/satori";
 
 export const WhiteList: React.FC<{
   formStarted: boolean;
@@ -36,9 +37,41 @@ export const WhiteList: React.FC<{
               src={require("../../public/img/concludedForm.svg")}
               alt=""
             />
-            <span className="text-xl lg:text-5xl leading-snug text-white font-medium">
-              Thank you for joining our whitelist
-            </span>
+            <div className="relative">
+              <span className="text-xl lg:text-5xl leading-snug text-white font-medium">
+                Thank you for joining our whitelist
+              </span>
+              <Image
+                width={16}
+                height={12}
+                className="hidden xl:block absolute -bottom-1.5 -right-2.5"
+                src={require("../../public/img/icon-decoration.svg")}
+                alt=""
+              />
+
+              <Image
+                width={16}
+                height={16}
+                className="hidden xl:block absolute -bottom-2.5 -right-4"
+                src={require("../../public/img/icon-decoration.svg")}
+                alt=""
+              />
+              <Image
+                width={16}
+                height={16}
+                className="hidden xl:block absolute -top-1 -left-6"
+                src={require("../../public/img/icon-decoration.svg")}
+                alt=""
+              />
+
+              <Image
+                width={16}
+                height={16}
+                className="hidden xl:block absolute top-0 -left-5"
+                src={require("../../public/img/icon-decoration.svg")}
+                alt=""
+              />
+            </div>
 
             <div className="relative p-4 pt-8 mt-10 lg:mt-40 w-full lg:w-2/3 h-[300px] lg:h-[200px] mx-auto bg-fire-gray-custom rounded-2xl">
               <div className="w-full lg:w-1/2">

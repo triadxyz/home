@@ -41,7 +41,7 @@ export const WhiteList: React.FC<{
             />
             <div className="relative">
               <span className="text-xl lg:text-5xl leading-snug text-white font-medium">
-                Thank you for joining our whitelist
+                Thank you for joining our whitelist!
               </span>
               <Image
                 width={16}
@@ -75,7 +75,7 @@ export const WhiteList: React.FC<{
               />
             </div>
 
-            <div className="relative p-4 pt-8 mt-10 lg:mt-40 w-full lg:w-2/3 h-[300px] lg:h-[200px] mx-auto bg-fire-gray-custom rounded-2xl">
+            <div className="relative py-4 pl-6 pr-10 pt-8 mt-10 lg:mt-40 w-full lg:w-2/3 h-[300px] lg:h-[200px] mx-auto bg-fire-gray-custom rounded-2xl">
               <div className="w-full lg:w-1/2">
                 <h3 className="text-center lg:text-start text-2xl leading-7 text-white">
                   <span className="font-semibold">Follow us</span> for more

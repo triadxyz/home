@@ -2,14 +2,20 @@
 "use client";
 
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { WhiteList } from "@/components/WhiteList";
 import Image from "next/image";
 
+
 const Home: React.FC = () => {
   const [formStarted, setFormStarted] = useState(false);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
+
+  const updateCurrentIndex = useCallback((index: number) => {
+    setCurrentQuestionIndex(index);
+  }, []);
 
   return (
     <div
@@ -40,7 +46,7 @@ const Home: React.FC = () => {
         <div className="h-[calc(100%-70px)] w-full max-w-[1330px] mx-auto flex flex-col">
           <div
             className={`transition-opacity duration-500 w-full ${
-              formStarted ? "opacity-0" : "opacity-100"
+              currentQuestionIndex !== 0 ? "opacity-0" : "opacity-100"
             }`}
           >
             <div className="relative flex items-center justify-center mx-auto mt-14 lg:mt-40 flex-col z-10 px-0">
@@ -102,6 +108,8 @@ const Home: React.FC = () => {
           <WhiteList
             formStarted={formStarted}
             initForm={() => setFormStarted(true)}
+            currentIndex={currentQuestionIndex}
+            setCurrentIndex={updateCurrentIndex}
           />
         </div>
       </div>

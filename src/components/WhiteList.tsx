@@ -9,8 +9,11 @@ import { cn } from "@/utils/cn";
 export const WhiteList: React.FC<{
   formStarted: boolean;
   initForm: (value: boolean) => void;
-}> = ({ formStarted, initForm }) => {
+  currentIndex: number;
+  setCurrentIndex: (index: number) => void;
+}> = ({ formStarted, initForm, currentIndex, setCurrentIndex }) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
+
 
   const handleFormSubmit = useCallback(() => {
     setFormSubmitted(true);
@@ -124,6 +127,8 @@ export const WhiteList: React.FC<{
               formStarted={formStarted}
               setStartedForm={initForm}
               onSubmit={handleFormSubmit}
+              currentIndex={currentIndex}
+              setCurrentIndex={setCurrentIndex}
             />
           </>
         )}

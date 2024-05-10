@@ -8,12 +8,15 @@ interface WhiteListFormProps {
   onSubmit: () => void;
   setStartedForm: (value: boolean) => void;
   formStarted: boolean;
+  currentIndex: number;
+  setCurrentIndex: (index: number) => void;
 }
 
 export const WhiteListForm: React.FC<WhiteListFormProps> = ({
   onSubmit,
   setStartedForm,
   formStarted,
+  setCurrentIndex,
 }) => {
   const [animateRight, setAnimateRight] = useState(false);
   const [animateleft, setAnimateleft] = useState(false);
@@ -64,8 +67,9 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
   useEffect(() => {
     if (buttonClicked) {
       setStartedForm(true);
+      setCurrentIndex(currentQuestionIndex);
     }
-  }, [buttonClicked, setStartedForm]);
+  }, [buttonClicked, setStartedForm, setCurrentIndex, currentQuestionIndex]);
 
   const handlePreviousQuestion = useCallback(() => {
     setCurrentQuestionIndex(currentQuestionIndex - 1);
@@ -74,12 +78,16 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
     if (currentQuestionIndex === 0) {
       setStartedForm(false);
     }
-  }, [currentQuestionIndex, setStartedForm]);
+
+    setCurrentIndex(currentQuestionIndex);
+  }, [currentQuestionIndex, setStartedForm, setCurrentIndex]);
 
   const handleNextQuestion = useCallback(async () => {
     if (!buttonClicked) {
       setButtonClicked(true);
     }
+
+    setCurrentIndex(currentQuestionIndex);
 
     if (currentQuestionIndex < questions.length - 1) {
       setAnimateRight(true);
@@ -110,6 +118,7 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
     questions.length,
     onSubmit,
     buttonClicked,
+    setCurrentIndex,
   ]);
 
   useEffect(() => {

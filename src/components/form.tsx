@@ -38,7 +38,7 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
     (data: string[], index: number): void => {
       const isEmailField = index === 1;
       const isEmpty = data[index].trim() === "";
-      let isDisabled = isEmpty;
+      let isDisabled = false;
 
       if (!isEmpty && index === 0) {
         isDisabled = !validateSolanaAddress(data[0]);
@@ -46,8 +46,6 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
         isDisabled = !isValidEmail(data[1]);
       } else if (isEmpty && isEmailField) {
         isDisabled = false;
-      } else if (isEmpty && index === 2) {
-        isDisabled = true;
       }
 
       setIsButtonDisabled(isDisabled);
@@ -167,18 +165,6 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
             placeholder={placeholders[currentQuestionIndex]}
             onChange={handleInputChange}
           />
-
-          {/* {currentQuestionIndex === 0 && (
-            <div className="w-fit mt-1.5 lg:mt-4 mr-auto cursor-default">
-              <p className="text-center text-white/60 text-[10px] lg:text-sm leading-4">
-                If you prefer, use your{" "}
-                <span className="text-fire-blue-medium underline">Email</span>{" "}
-                to join our whitelist. And keep an eye on our{" "}
-                <span className="text-fire-blue-medium underline">Twitter</span>
-                .
-              </p>
-            </div>
-          )} */}
         </div>
 
         <button
@@ -189,7 +175,7 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
           disabled={isButtonDisabled}
         >
           {loading ? (
-            <div className="animate-spin ease-in w-6 h-6 border border-white rounded-full"></div>
+            <div className="loader"></div>
           ) : (
             <>
               {currentQuestionIndex === questions.length - 1 ? "Done" : "Next"}

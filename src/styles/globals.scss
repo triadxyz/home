@@ -84,3 +84,21 @@ html {
   background-clip: text;
   color: transparent;
 }
+
+.loader{
+  pointer-events: none;
+  width: 25px;
+  height: 25px;
+  animation: spinner ease 1s infinite;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #fff;
+}
+@keyframes spinner {
+0%{
+    transform: rotate(0turn);
+}
+100%{
+    transform: rotate(1turn);
+}
+}

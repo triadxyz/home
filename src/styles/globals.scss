@@ -45,19 +45,19 @@ html {
 }
 
 
-@keyframes slideUp {
+@keyframes slideLeft {
   0% {
-    opacity: 0.5;
-    transform: translateY(10%);
+    opacity: 0;
+    transform: translateX(-100%);
   }
   100% {
     opacity: 1;
-    transform: translateY(0%);
+    transform: translateX(0%);
   }
 }
 
-.animate-slide-up {
-  animation: slideUp 0.9s forwards;
+.animate-slide-left {
+  animation: slideLeft 1s ease;
 }
 
 

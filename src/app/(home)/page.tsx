@@ -7,7 +7,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { WhiteList } from "@/components/WhiteList";
 import Image from "next/image";
-import { Footer } from "@/components/footer";
 
 const Home: React.FC = () => {
   const [formStarted, setFormStarted] = useState(false);

@@ -16,6 +16,7 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
   formStarted,
 }) => {
   const [animateRight, setAnimateRight] = useState(false);
+  const [animateleft, setAnimateleft] = useState(false);
   const [loading, setLoading] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -29,12 +30,6 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
   const [formData, setFormData] = useState<string[]>(
     Array(questions.length).fill("")
   );
-
-  const placeholders: string[] = [
-    "Enter your Solana wallet address",
-    "Enter your email",
-    "Enter your DAO Community",
-  ];
 
   const validateFormData = useCallback(
     (data: string[], index: number): void => {
@@ -74,6 +69,7 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
 
   const handlePreviousQuestion = useCallback(() => {
     setCurrentQuestionIndex(currentQuestionIndex - 1);
+    setAnimateleft(true);
 
     if (currentQuestionIndex === 0) {
       setStartedForm(false);
@@ -119,20 +115,34 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
   useEffect(() => {
     setTimeout(() => {
       setAnimateRight(false);
+      setAnimateleft(false);
     }, 1000);
-  }, [animateRight]);
+  }, [animateRight, animateleft]);
 
   useEffect(() => {
     validateFormData(formData, currentQuestionIndex);
   }, [formData, currentQuestionIndex, validateFormData]);
 
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (event.key === "Enter" && !isButtonDisabled) {
+        handleNextQuestion();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyPress);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [handleNextQuestion, isButtonDisabled]);
+
   return (
     <div
-      className={cn(
-        "relative z-30",
-        formStarted && currentQuestionIndex === 1 ? "animate-slide-up" : "",
-        animateRight && currentQuestionIndex !== 1 ? "animate-right" : ""
-      )}
+      className={cn("relative z-30", {
+        "animate-right": animateRight,
+        "animate-slide-left": animateleft,
+      })}
     >
       <label className="font-semibold lg:text-5xl text-white">
         {questions[currentQuestionIndex]}
@@ -227,3 +237,9 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
 };
 
 // utils
+
+const placeholders: string[] = [
+  "Enter your Solana wallet address",
+  "Enter your email",
+  "Enter your DAO Community... Ex: @triadlabs",
+];

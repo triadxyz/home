@@ -5,7 +5,6 @@ import { WhiteListForm } from "./form";
 import Image from "next/image";
 import MockupImage from "../../public/img/mockup.png";
 import { cn } from "@/utils/cn";
-import { init } from "next/dist/compiled/@vercel/og/satori";
 
 export const WhiteList: React.FC<{
   formStarted: boolean;

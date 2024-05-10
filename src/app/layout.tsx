@@ -1,11 +1,13 @@
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 import "../styles/globals.scss";
 import type { Metadata } from "next";
 import { poppins } from "@/utils/fonts";
+import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Triad",
-  description: "The easiest way to invest in the Solana ecosystem! We tokenize Solana startups, a new way of investing in the ecosystem!",
+  title: "Triad Fi",
+  description:
+    "The easiest way to invest in the Solana ecosystem! We tokenize Solana startups, a new way of investing in the ecosystem!",
   icons: [
     {
       url: "/favicon/favicon.ico",
@@ -49,6 +51,7 @@ export default function RootLayout({
       <body suppressHydrationWarning={true} className={poppins.className}>
         {children}
         <Analytics />
+        <Footer />
       </body>
     </html>
   );

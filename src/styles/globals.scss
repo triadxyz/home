@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 body {
+  font-family: 'inter';
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
   background: #020409;
@@ -41,4 +42,63 @@ html {
 
 .triangle {
   animation: fly linear infinite;
+}
+
+
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.animate-slide-left {
+  animation: slideLeft 1s ease;
+}
+
+
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.animate-right {
+  animation: slideRight 1s ease;
+}
+
+
+.gradient-text {
+  background: linear-gradient(90deg, #ffb639, #a26701);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader{
+  pointer-events: none;
+  width: 25px;
+  height: 25px;
+  animation: spinner ease 1s infinite;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #fff;
+}
+@keyframes spinner {
+0%{
+    transform: rotate(0turn);
+}
+100%{
+    transform: rotate(1turn);
+}
 }

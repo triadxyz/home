@@ -14,6 +14,8 @@ const config: Config = {
         "fire-gray-medium": "#7E7F80",
         "fire-gray-dark": "#4F5359",
         "fire-green": "#2AEB49",
+        "fire-gray-custom": "#2E3038",
+        "fire-blue-medium": "#3961FB",
       },
     },
   },

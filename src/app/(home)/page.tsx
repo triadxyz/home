@@ -24,7 +24,7 @@ const Home: React.FC = () => {
           <img src="/img/logo-triad.svg" width={100} alt="logo" />
 
           <div className="flex items-center space-x-4">
-            <Link href="https://twitter.com/triadfi" target="_blank">
+            <Link href="https://twitter.com/triad_labs" target="_blank">
               <Image
                 width={20}
                 height={20}

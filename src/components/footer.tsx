@@ -9,13 +9,7 @@ export const Footer: React.FC = () => {
 
         <span className="text-sm text-white/30 flex items-center gap-x-2">
           Powered by{" "}
-          <a href="">
-            <img
-              className="w-16 h-12"
-              src="/img/powered-fire.svg"
-              alt="logo-pyth"
-            />
-          </a>
+           <span className="text-sm font-semibold gradient-text">Triad Labs</span>
         </span>
       </div>
     </div>

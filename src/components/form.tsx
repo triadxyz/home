@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { cn } from "@/utils/cn";
 import api from "@/constants/api";
+import { isValidEmail, validateSolanaAddress } from "@/utils/validateForm";
 
 interface WhiteListFormProps {
   onSubmit: () => void;
@@ -18,7 +19,6 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
   const [loading, setLoading] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const [buttonClicked, setButtonClicked] = useState(false);
-
   const questions: string[] = [
     "",
     "1. Your email (optional)",
@@ -30,17 +30,27 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
     Array(questions.length).fill("")
   );
 
+  const placeholders: string[] = [
+    "Enter your Solana wallet address",
+    "Enter your email",
+    "Enter your DAO Community",
+  ];
+
   const validateFormData = useCallback(
     (data: string[], index: number): void => {
       const isEmailField = index === 1;
       const isEmpty = data[index].trim() === "";
-      if (!isEmailField && !isEmpty) {
-        setIsButtonDisabled(false);
-      } else if (isEmailField) {
-        setIsButtonDisabled(false);
-      } else {
-        setIsButtonDisabled(true);
+      let isDisabled = false;
+
+      if (!isEmpty && index === 0 && !isEmailField) {
+        isDisabled = !validateSolanaAddress(data[0]);
+      } else if (!isEmpty && isEmailField) {
+        isDisabled = !isValidEmail(data[1]);
+      } else if (isEmpty && index === 2) {
+        isDisabled = true;
       }
+
+      setIsButtonDisabled(isDisabled);
     },
     []
   );
@@ -77,7 +87,7 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
           community: formData[2],
         };
 
-         await api.post("/whitelist", requestData);
+        await api.post("/whitelist", requestData);
 
         setCurrentQuestionIndex(0);
         setFormData(Array(questions.length).fill(""));
@@ -121,7 +131,7 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
       <div className="lg:flex w-full lg:w-2/3 mx-auto relative mt-8 gap-x-3">
         <div className="lg:w-10/12">
           <input
-            className="w-full text-white px-4 h-16 placeholder:text-sm bg-fire-gray-custom rounded-2xl border border-white/20"
+            className="w-full text-white px-4 h-16 placeholder:text-lg placeholder:text-white/40 bg-fire-gray-custom rounded-2xl border border-white/20"
             type="text"
             value={formData[currentQuestionIndex]}
             required={currentQuestionIndex !== 1}
@@ -134,7 +144,7 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
               <p className="text-center text-white/60 text-[10px] lg:text-sm leading-4">
                 If you prefer, use your{" "}
                 <span className="text-fire-blue-medium underline">Email</span>{" "}
-                to enlist. And keep an eye on our{" "}
+                to join our whitelist. And keep an eye on our{" "}
                 <span className="text-fire-blue-medium underline">Twitter</span>
                 .
               </p>
@@ -179,8 +189,3 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
 };
 
 // utils
-const placeholders: string[] = [
-  "Enter your wallet address",
-  "Enter your email",
-  "Enter your DAO Community",
-];

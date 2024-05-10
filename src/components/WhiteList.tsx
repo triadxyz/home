@@ -28,7 +28,7 @@ export const WhiteList: React.FC<{
   return (
     <div className="w-full lg:max-w-[1330px] h-fit text-center">
       <div className="w-full">
-        {!formSubmitted ? (
+        {formSubmitted ? (
           <div
             className={cn("grid relative place-content-center", {
               "-mt-48 lg:-mt-64": formStarted,

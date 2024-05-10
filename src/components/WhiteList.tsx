@@ -32,7 +32,7 @@ export const WhiteList: React.FC<{ initForm: (value: boolean) => void }> = ({
 
   return (
     <div className="w-full lg:max-w-[1330px] h-fit text-center">
-      <div className="w-full ">
+      <div className="w-full">
         {formSubmitted ? (
           <div
             className={cn("grid relative place-content-center", {

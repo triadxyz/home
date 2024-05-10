@@ -65,7 +65,7 @@ html {
 @keyframes slideRight {
   0% {
     opacity: 0;
-    transform: translateX(-10%);
+    transform: translateX(-60%);
   }
   100% {
     opacity: 1;
@@ -74,5 +74,5 @@ html {
 }
 
 .animate-right {
-  animation: slideRight 0.8s forwards;
+  animation: slideRight 1.2s forwards;
 }

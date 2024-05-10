@@ -46,7 +46,10 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
         isDisabled = !isValidEmail(data[1]);
       } else if (isEmpty && isEmailField) {
         isDisabled = false;
+      } else if (isEmpty && index === 0){
+        isDisabled = true
       }
+
 
       setIsButtonDisabled(isDisabled);
     },
@@ -99,7 +102,10 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
           community: formData[2],
         };
 
-        await api.post("/whitelist", requestData);
+        await fetch(`/api/whitelist`, {
+          method: 'POST',
+          body: JSON.stringify(requestData)
+        })
 
         setCurrentQuestionIndex(0);
         setFormData(Array(questions.length).fill(""));

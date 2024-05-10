@@ -8,7 +8,6 @@ import "slick-carousel/slick/slick-theme.css";
 import { WhiteList } from "@/components/WhiteList";
 import Image from "next/image";
 
-
 const Home: React.FC = () => {
   const [formStarted, setFormStarted] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
@@ -69,7 +68,7 @@ const Home: React.FC = () => {
                 <Image
                   width={16}
                   height={12}
-                  className="hidden xl:block absolute bottom-[45%] -right-2.5"
+                  className="hidden xl:block absolute bottom-[35%] -right-2.5"
                   src={require("../../../public/img/icon-decoration.svg")}
                   alt=""
                 />
@@ -77,14 +76,14 @@ const Home: React.FC = () => {
                 <Image
                   width={16}
                   height={16}
-                  className="hidden xl:block absolute bottom-[40%] -right-4"
+                  className="hidden xl:block absolute bottom-[30%] -right-4"
                   src={require("../../../public/img/icon-decoration.svg")}
                   alt=""
                 />
                 <Image
                   width={16}
                   height={16}
-                  className="hidden xl:block absolute -top-1 -left-6"
+                  className="hidden xl:block absolute -top-2 -left-6"
                   src={require("../../../public/img/icon-decoration.svg")}
                   alt=""
                 />
@@ -98,9 +97,8 @@ const Home: React.FC = () => {
                 />
 
                 <span className="text-white/60 lg:text-white text-sm lg:text-lg lg:leading-8 text-center mt-4 mb-7 md:px-0">
-                  The easiest way to invest in the Solana ecosystem!
-                  <br /> We tokenize Solana startups, a new way of investing in
-                  the ecosystem!
+                  We tokenize Solana projects, a new way of investing in the
+                  ecosystem!
                 </span>
               </div>
             </div>

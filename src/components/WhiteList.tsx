@@ -83,7 +83,7 @@ export const WhiteList: React.FC<{
                 </h3>
                 <button className="px-10 max-[768px]:w-full py-2 mt-6 text-white rounded-xl flex justify-center items-center bg-fire-blue-medium">
                   <a target="_blank" href="https://twitter.com/triadfi">
-                    Join
+                    Follow
                   </a>
                 </button>
               </div>

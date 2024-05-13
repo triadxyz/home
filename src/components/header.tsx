@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Header: React.FC = () => {
   return (
-    <div className="flex w-full max-w-[1330px] mx-auto justify-between items-center pt-6">
+    <div className="flex w-full max-w-[1240px] mx-auto justify-between items-center pt-6">
       <Link href={"/"}>
         <Image src="/img/logo-triad.svg" width={100} height={37} alt="logo" />
       </Link>

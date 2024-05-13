@@ -99,3 +99,7 @@ html {
     transform: rotate(1turn);
 }
 }
+
+img {
+  pointer-events: none;
+}

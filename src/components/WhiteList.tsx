@@ -26,7 +26,7 @@ export const WhiteList: React.FC<{
   }, [formSubmitted]);
 
   return (
-    <div className="w-full lg:max-w-[1330px] h-fit text-center">
+    <div className="w-full lg:max-w-[1240px] h-fit text-center">
       <div className="w-full">
         {formSubmitted ? (
           <div

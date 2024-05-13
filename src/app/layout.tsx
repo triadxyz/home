@@ -57,7 +57,7 @@ export default function RootLayout({
       <body suppressHydrationWarning={true} className={inter.className}>
         {children}
         <Analytics />
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

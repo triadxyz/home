@@ -9,6 +9,7 @@ import { WhiteList } from "@/components/WhiteList";
 import Image from "next/image";
 import Header from "@/components/header";
 import Island from "@/components/island";
+import Mosaic from "@/components/mosaic";
 
 const Home: React.FC = () => {
   const [formStarted, setFormStarted] = useState(false);
@@ -23,7 +24,7 @@ const Home: React.FC = () => {
       <div className="flex flex-col relative z-10 h-full px-4">
         <Header />
 
-        <div className="h-full w-full max-w-[1330px] mx-auto flex flex-col pt-24">
+        <div className="h-full w-full max-w-[1240px] mx-auto flex flex-col pt-24">
           <div
             className={`transition-opacity duration-500 w-full ${
               currentQuestionIndex !== 0 ? "opacity-0" : "opacity-100"
@@ -92,11 +93,32 @@ const Home: React.FC = () => {
                 <h4 className="text-white font-medium text-6xl">
                   <span className="font-light">Keep</span> BUILDING 🏗️
                 </h4>
-                <h3 className="text-[#A1A7BB] font-light text-xl mt-4">
+                <h3 className="text-[#A1A7BB] font-light text-xl mt-4 mb-10">
                   The easiest way to{" "}
                   <span className="font-medium text-white">invest</span> in the
                   Solana ecosystem!
                 </h3>
+              </div>
+
+              <Mosaic />
+
+              <div
+                style={{
+                  background:
+                    "linear-gradient(90deg, #1F2026 0%, #2E3038 49.79%, #1F2026 100%)",
+                }}
+                className="w-full mt-5 h-[440px] rounded-[40px] flex items-center flex-col pt-7 px-20"
+              >
+                <span className="text-white tracking-[2%] text-3xl mb-5 font-light border-dashed border-b border-white/40">
+                  <span className="font-normal">How</span> it all{" "}
+                  <span className="font-normal">works</span>
+                </span>
+
+                <img
+                  className="w-full h-[313px]"
+                  src="img/how-it-works.webp"
+                  alt=""
+                />
               </div>
             </div>
           </div>

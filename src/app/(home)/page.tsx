@@ -7,6 +7,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { WhiteList } from "@/components/WhiteList";
 import Image from "next/image";
+import Header from "@/components/header";
+import Island from "@/components/island";
 
 const Home: React.FC = () => {
   const [formStarted, setFormStarted] = useState(false);
@@ -17,98 +19,93 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <div
-      style={{
-        background: "#1F2026",
-      }}
-      className="flex flex-col h-screen w-screen"
-    >
+    <div className="flex flex-col min-h-screen w-screen pb-20">
       <div className="flex flex-col relative z-10 h-full px-4">
-        <div className="flex w-full max-w-[1330px] mx-auto justify-between items-center pt-6">
-          <Link href={"/"}>
-            <img src="/img/logo-triad.svg" width={100} alt="logo" />
-          </Link>
+        <Header />
 
-          <div className="flex items-center space-x-4">
-            <Link href="https://twitter.com/triad_labs" target="_blank">
-              <Image
-                width={20}
-                height={20}
-                className="hover:opacity-50 transition-all"
-                src="/img/icon-x.svg"
-                alt="bg"
-              />
-            </Link>
-          </div>
-        </div>
-
-        <div className="h-[calc(100%-70px)] w-full max-w-[1330px] mx-auto flex flex-col">
+        <div className="h-full w-full max-w-[1330px] mx-auto flex flex-col pt-24">
           <div
             className={`transition-opacity duration-500 w-full ${
               currentQuestionIndex !== 0 ? "opacity-0" : "opacity-100"
             }`}
           >
-            <div className="relative flex items-center justify-center mx-auto mt-14 lg:mt-40 flex-col z-10 px-0">
-              <div className="absolute max-[768px]:w-full h-[500px] -top-1/3 left-1/2 -translate-x-1/2">
-                <Image
-                  width={800}
-                  height={500}
-                  objectFit="cover"
-                  className="h-full"
-                  src={require("../../../public/img/blur.png")}
+            <div className="relative flex items-center mx-auto mt-14 flex-col z-10 px-0">
+              <div className="relative transition-all duration-200 text-center">
+                <Island />
+                <img
+                  className="absolute max-[768px]:w-full lg:w-[900px] h-[750px] -top-[60%] left-1/2 -translate-x-1/2"
+                  src="/img/blur.png"
+                  alt=""
+                />
+                <h1 className="text-4xl lg:text-7xl mb-3 md:px-0 text-center font-light text-[#DCDBDB]">
+                  <span className="font-medium">Trade</span> the best <br />
+                  <span className="font-medium">Solana Projects</span>
+                </h1>
+                <img
+                  className="hidden xl:block absolute top-12 left-[120px]"
+                  src="img/icon-decoration.svg"
+                  alt=""
+                />
+
+                <img
+                  className="hidden xl:block absolute bottom-[85px] right-[105px]"
+                  src="img/icon-decoration.svg"
+                  alt=""
+                />
+
+                <h2 className="text-white/60 lg:text-white text-sm lg:text-2xl block lg:leading-8 font-light text-center mt-8 mb-7 md:px-0">
+                  We <span className="text-[#3961FB]">tokenize</span> Solana
+                  projects, a new way to investing in the ecosystem!
+                </h2>
+              </div>
+
+              <div className="relative mt-5">
+                <div className="w-[340px] h-16 rounded-2xl bg-[#2E3038] pl-4 pr-1 flex items-center justify-between">
+                  <div className="text-white">
+                    <span className="block font-medium">ALPHA Launch</span>
+                    <span className="text-sm font-light">
+                      Secure your entry for the future
+                    </span>
+                  </div>
+
+                  <button className="bg-[#1F2026] w-16 h-14 flex items-center justify-center rounded-xl hover:bg-[#1F2026]/70 transition-all duration-200">
+                    <img src="img/icon-arrow-right.svg" alt="" />
+                  </button>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-x-5 justify-between mt-28">
+                <img
+                  className="h-[293px] w-1/2"
+                  src="img/banner-1.webp"
+                  alt=""
+                />
+
+                <img
+                  className="h-[293px] w-1/2"
+                  src="img/banner-2.webp"
                   alt=""
                 />
               </div>
 
-              <div className="relative transition-all duration-200 text-center">
-                <h1 className="text-4xl lg:text-7xl mb-3 md:px-0 text-center font-light text-[#DCDBDB]">
-                  <span className="font-bold">Trade</span> the best{" "}
-                  <span className="font-bold">Solana Projects</span>.{" "}
-                </h1>
-                <Image
-                  width={16}
-                  height={12}
-                  className="hidden xl:block absolute bottom-[35%] -right-2.5"
-                  src={require("../../../public/img/icon-decoration.svg")}
-                  alt=""
-                />
-
-                <Image
-                  width={16}
-                  height={16}
-                  className="hidden xl:block absolute bottom-[30%] -right-4"
-                  src={require("../../../public/img/icon-decoration.svg")}
-                  alt=""
-                />
-                <Image
-                  width={16}
-                  height={16}
-                  className="hidden xl:block absolute -top-2 -left-6"
-                  src={require("../../../public/img/icon-decoration.svg")}
-                  alt=""
-                />
-
-                <Image
-                  width={16}
-                  height={16}
-                  className="hidden xl:block absolute top-0 -left-5"
-                  src={require("../../../public/img/icon-decoration.svg")}
-                  alt=""
-                />
-
-                <span className="text-white/60 lg:text-white text-sm lg:text-lg lg:leading-8 text-center mt-4 mb-7 md:px-0">
-                  We tokenize Solana projects, a new way of investing in the
-                  ecosystem!
-                </span>
+              <div className="w-full mt-48">
+                <h4 className="text-white font-medium text-6xl">
+                  <span className="font-light">Keep</span> BUILDING 🏗️
+                </h4>
+                <h3 className="text-[#A1A7BB] font-light text-xl mt-4">
+                  The easiest way to{" "}
+                  <span className="font-medium text-white">invest</span> in the
+                  Solana ecosystem!
+                </h3>
               </div>
             </div>
           </div>
-          <WhiteList
+          {/* <WhiteList
             formStarted={formStarted}
             initForm={() => setFormStarted(true)}
             currentIndex={currentQuestionIndex}
             setCurrentIndex={updateCurrentIndex}
-          />
+          /> */}
         </div>
       </div>
     </div>

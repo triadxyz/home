@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 export const Footer: React.FC = () => {
   return (
-    <div className="flex absolute bottom-0 w-full flex-col">
+    <div className="fixed left-0 flex bottom-0 w-full flex-col z-10">
       <hr className="border-white/10 w-full" />
 
       <div className="flex items-center justify-between px-4 w-full mx-auto h-[70px]">

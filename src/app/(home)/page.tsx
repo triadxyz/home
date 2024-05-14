@@ -11,6 +11,7 @@ import Header from "@/components/header";
 import Island from "@/components/island";
 import Mosaic from "@/components/mosaic";
 import HowItWorks from "@/components/how-it-works";
+import News from "@/components/news";
 
 const Home: React.FC = () => {
   const [formStarted, setFormStarted] = useState(false);
@@ -21,7 +22,7 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen w-screen pb-20">
+    <div className="flex flex-col min-h-screen w-screen pb-56">
       <div className="flex flex-col relative z-10 h-full px-4">
         <Header />
 
@@ -100,7 +101,7 @@ const Home: React.FC = () => {
 
               <HowItWorks />
 
-              <div className="relative w-full mt-52 h-[655px]">
+              <div className="relative w-full mt-52 mb-40 h-[655px]">
                 <img
                   className="absolute left-0 top-0 w-full h-[655px]"
                   alt=""
@@ -130,6 +131,8 @@ const Home: React.FC = () => {
                   />
                 </div>
               </div>
+
+              <News />
 
               
             </div>

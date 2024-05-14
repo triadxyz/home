@@ -10,6 +10,7 @@ import Image from "next/image";
 import Header from "@/components/header";
 import Island from "@/components/island";
 import Mosaic from "@/components/mosaic";
+import HowItWorks from "@/components/how-it-works";
 
 const Home: React.FC = () => {
   const [formStarted, setFormStarted] = useState(false);
@@ -97,6 +98,8 @@ const Home: React.FC = () => {
 
               <Mosaic />
 
+              <HowItWorks />
+
               <div className="relative w-full mt-52 h-[655px]">
                 <img
                   className="absolute left-0 top-0 w-full h-[655px]"
@@ -127,6 +130,8 @@ const Home: React.FC = () => {
                   />
                 </div>
               </div>
+
+              
             </div>
           </div>
           {/* <WhiteList

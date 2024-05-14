@@ -75,50 +75,57 @@ const Home: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-x-5 justify-between mt-28">
-                <img
-                  className="h-[293px] w-1/2"
-                  src="img/banner-1.webp"
-                  alt=""
-                />
-
-                <img
-                  className="h-[293px] w-1/2"
-                  src="img/banner-2.webp"
-                  alt=""
-                />
-              </div>
-
               <div className="w-full mt-48">
-                <h4 className="text-white font-medium text-6xl">
-                  <span className="font-light">Keep</span> BUILDING 🏗️
-                </h4>
-                <h3 className="text-[#A1A7BB] font-light text-xl mt-4 mb-10">
+                <h3 className="relative text-[#A1A7BB] tracking-[2%] mb-5 font-light text-6xl leading-[72px]">
+                  <span className="font-medium text-white">Market</span> the{" "}
+                  <span className="font-medium text-white">rise</span> or{" "}
+                  <span className="font-medium text-white">fall</span> <br />
+                  of <span className="font-medium text-white">Projects</span>
+                  <img
+                    className="hidden xl:block absolute bottom-[0px] left-[25%]"
+                    src="img/icon-decoration.svg"
+                    alt=""
+                  />
+                </h3>
+
+                <h4 className="font-light text-xl text-[#A1A7BB] mb-10">
                   The easiest way to{" "}
                   <span className="font-medium text-white">invest</span> in the
                   Solana ecosystem!
-                </h3>
+                </h4>
               </div>
 
               <Mosaic />
 
-              <div
-                style={{
-                  background:
-                    "linear-gradient(90deg, #1F2026 0%, #2E3038 49.79%, #1F2026 100%)",
-                }}
-                className="w-full mt-5 h-[440px] rounded-[40px] flex items-center flex-col pt-7 px-20"
-              >
-                <span className="text-white tracking-[2%] text-3xl mb-5 font-light border-dashed border-b border-white/40">
-                  <span className="font-normal">How</span> it all{" "}
-                  <span className="font-normal">works</span>
-                </span>
-
+              <div className="relative w-full mt-52 h-[655px]">
                 <img
-                  className="w-full h-[313px]"
-                  src="img/how-it-works.webp"
+                  className="absolute left-0 top-0 w-full h-[655px]"
                   alt=""
+                  src="img/how-it-works-bg.webp"
                 />
+
+                <div className="w-full relative flex items-center flex-col pt-28">
+                  <span className="relative text-[#A1A7BB] text-6xl mb-5 font-light">
+                    <img
+                      className="absolute -top-2.5 -left-6"
+                      src="img/icon-decoration.svg"
+                      alt=""
+                    />
+                    <span className="font-medium text-white">How</span> it all{" "}
+                    <span className="font-medium text-white">works</span>
+                    <img
+                      className="absolute -bottom-2.5 -right-6"
+                      src="img/icon-decoration.svg"
+                      alt=""
+                    />
+                  </span>
+
+                  <img
+                    className="w-full h-[313px]"
+                    src="img/how-it-works.webp"
+                    alt=""
+                  />
+                </div>
               </div>
             </div>
           </div>

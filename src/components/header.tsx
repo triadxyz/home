@@ -1,15 +1,28 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
 const Header: React.FC = () => {
+
   return (
     <div className="flex w-full max-w-[1240px] mx-auto justify-between items-center pt-6">
       <Link href={"/"}>
-        <Image src="/img/logo-triad.svg" width={100} height={37} alt="logo" />
+        <Image
+          className="z-20 relative"
+          src="/img/logo-triad.svg"
+          width={100}
+          height={37}
+          alt="logo"
+        />
       </Link>
 
-      <div className="flex items-center space-x-4">
-        <Link href="https://twitter.com/triadfi" target="_blank" rel="noopener noreferrer">
+      <div className="hidden lg:flex items-center space-x-4">
+        <Link
+          href="https://twitter.com/triadfi"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Image
             width={20}
             height={20}

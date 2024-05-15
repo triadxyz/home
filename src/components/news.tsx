@@ -22,18 +22,19 @@ const dataNews = [
 
 const News: React.FC = () => {
   return (
-    <div className="flex items-center flex-col">
-      <h5 className="text-white font-medium text-6xl leading-[72px] mb-20 relative">
-        Explore <span className="font-light text-[#A1A7BB]">what&apos;s</span>{" "}
-        new 🗞️{" "}
-        <img
+    <div className="w-full flex lg:items-center flex-col">
+      <h5 className="text-white font-medium text-4xl md:text-6xl lg:leading-[72px] mb-10 lg:mb-20 relative">
+        Explore <span className="font-light text-[#A1A7BB]">what&apos;s</span>{" "} <br className="inline-block lg:hidden" />
+        <span className="relative">new 🗞️{" "}        <img
           className="absolute -bottom-2.5 -right-6"
           src="img/icon-decoration.svg"
           alt=""
-        />
+        /></span>
+
+
       </h5>
 
-      <div className="w-full flex justify-center gap-x-16">
+      <div className="w-full flex flex-col md:flex-row justify-center gap-y-8 lg:gap-y-0 gap-x-16">
         {dataNews.map((item, index) => (
           <CardNew data={item} key={index} />
         ))}

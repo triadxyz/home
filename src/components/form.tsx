@@ -155,7 +155,8 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
       className={cn("relative z-30", {
         "animate-right": animateRight,
         "animate-slide-left": animateleft,
-         "-top-28": currentQuestionIndex !== 0
+         "-top-28": currentQuestionIndex !== 0,
+         "pt-40": formStarted
       })}
     >
       <label className="font-semibold lg:text-5xl text-white">

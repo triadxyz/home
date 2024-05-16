@@ -16,16 +16,16 @@ const WhiteListPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col h-screen w-screen">
+    <div className="flex flex-col h-full w-screen">
       <div className="flex flex-col relative z-10 h-full px-4">
-        <div className="h-[calc(100%-70px)] w-full max-w-[1330px] mx-auto flex flex-col">
+        <div className="h-[calc(100vh-70px)] w-full max-w-[1330px] mx-auto flex flex-col justify-center">
           <div
             className={`transition-opacity duration-500 w-full ${
-              currentQuestionIndex !== 0 ? "opacity-0" : "opacity-100"
+              currentQuestionIndex !== 0 ? "opacity-0 invisible hidden" : "opacity-100"
             }`}
           >
-            <div className="relative flex items-center justify-center mx-auto mt-14 lg:mt-40 flex-col z-10 px-0">
-              <div className="absolute max-[768px]:w-full h-[500px] -top-1/3 left-1/2 -translate-x-1/2">
+            <div className="relative flex items-center justify-center mx-auto mt-14 lg:mt-0 flex-col z-10 px-0">
+              <div className="absolute max-[768px]:w-full h-[500px] -top-1/5 left-1/2 -translate-x-1/2">
                 <Image
                   width={800}
                   height={500}
@@ -34,48 +34,6 @@ const WhiteListPage: React.FC = () => {
                   src={require("../../../public/img/blur.png")}
                   alt=""
                 />
-              </div>
-
-              <div className="relative transition-all duration-200 text-center">
-                <h1 className="text-4xl lg:text-7xl mb-3 md:px-0 text-center font-light text-[#DCDBDB]">
-                  <span className="font-bold">Trade</span> the best{" "}
-                  <span className="font-bold">Solana Projects</span>.{" "}
-                </h1>
-                <Image
-                  width={16}
-                  height={12}
-                  className="hidden xl:block absolute bottom-[35%] -right-2.5"
-                  src={require("../../../public/img/icon-decoration.svg")}
-                  alt=""
-                />
-
-                <Image
-                  width={16}
-                  height={16}
-                  className="hidden xl:block absolute bottom-[30%] -right-4"
-                  src={require("../../../public/img/icon-decoration.svg")}
-                  alt=""
-                />
-                <Image
-                  width={16}
-                  height={16}
-                  className="hidden xl:block absolute -top-2 -left-6"
-                  src={require("../../../public/img/icon-decoration.svg")}
-                  alt=""
-                />
-
-                <Image
-                  width={16}
-                  height={16}
-                  className="hidden xl:block absolute top-0 -left-5"
-                  src={require("../../../public/img/icon-decoration.svg")}
-                  alt=""
-                />
-
-                <span className="text-white/60 lg:text-white text-sm lg:text-lg lg:leading-8 text-center mt-4 mb-7 md:px-0">
-                  We tokenize Solana projects, a new way of investing in the
-                  ecosystem!
-                </span>
               </div>
             </div>
           </div>

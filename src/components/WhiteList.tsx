@@ -30,7 +30,7 @@ export const WhiteList: React.FC<{
       <div className="w-full">
         {formSubmitted ? (
           <div
-            className={cn("grid relative place-content-center", {
+            className={cn("grid relative place-content-center pt-40", {
               "-mt-48 lg:-mt-64": formStarted,
             })}
           >
@@ -104,7 +104,7 @@ export const WhiteList: React.FC<{
                 hidden: formStarted,
               })}
             >
-              <h3 className="font-medium relative text-white text-2xl mb-10">
+              <h3 className="font-medium relative text-white text-4xl mb-10">
                 Whitelist is open!
               </h3>
               <Image

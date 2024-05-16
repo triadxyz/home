@@ -24,9 +24,9 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const [buttonClicked, setButtonClicked] = useState(false);
   const questions: string[] = [
-    "",
-    "1. Your email (optional)",
-    "2. Your DAO Community (Twitter handle)",
+    "1. Your Solana address",
+    "2. Your email (optional)",
+    "3. Your DAO Community (Twitter handle)",
   ];
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);

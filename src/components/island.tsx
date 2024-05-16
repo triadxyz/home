@@ -3,8 +3,8 @@ import React from "react";
 
 const Island: React.FC = () => {
   return (
-    <div className="mb-7 w-full lg:w-[305px] h-[29px] mx-auto px-2 bg-[#3961FB1A] rounded-full border border-[#3961FB33] flex items-center">
-      <div className="bg-[#3961FB] text-white rounded-full px-2 text-xs lg:text-sm font-medium mr-7">
+    <div className="mb-7 w-full lg:w-[305px] h-[29px] mx-auto px-2 bg-[#3961FB1A] rounded-full border border-[#3961FB33] flex justify-between items-center">
+      <div className="bg-[#3961FB] text-white rounded-full px-2 text-xs lg:text-sm font-medium">
         New ✨
       </div>
       <span className="text-white text-sm font-light">
@@ -19,6 +19,7 @@ const Island: React.FC = () => {
         </Link>{" "}
         🏝️
       </span>
+      <span></span>
     </div>
   );
 };

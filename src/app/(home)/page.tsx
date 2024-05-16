@@ -71,7 +71,7 @@ const Home: React.FC = () => {
                 </Link>
               </div>
 
-              <div className="w-full mt-48">
+              <div className="w-full mt-28">
                 <h3 className="relative text-[#A1A7BB] tracking-[2%] mb-5 font-light text-4xl lg:text-6xl lg:leading-[72px]">
                   <span className="font-medium text-white">Market</span> the{" "}
                   <span className="font-medium text-white">rise</span> or{" "}

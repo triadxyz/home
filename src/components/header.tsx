@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Header: React.FC = () => {
-
   return (
     <div className="flex w-full max-w-[1240px] mx-auto justify-between items-center pt-6 px-4 xl:px-0 z-20 relative">
       <Link href={"/"}>
@@ -35,11 +34,11 @@ const Header: React.FC = () => {
 
       <Link
         className="w-[140px] h-[44px] bg-[#3961FB] text-white font-medium flex items-center justify-center rounded-xl"
-        href="https://app.triadfi.co/"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="/whitelist"
+        // target="_blank"
+        // rel="noopener noreferrer"
       >
-        Launch App
+        Join Whitelist
       </Link>
     </div>
   );

@@ -16,31 +16,8 @@ const WhiteListPage: React.FC = () => {
   }, []);
 
   return (
-    <div
-      style={{
-        background: "#1F2026",
-      }}
-      className="flex flex-col h-screen w-screen"
-    >
+    <div className="flex flex-col h-screen w-screen">
       <div className="flex flex-col relative z-10 h-full px-4">
-        <div className="flex w-full max-w-[1330px] mx-auto justify-between items-center pt-6">
-          <Link href={"/"}>
-            <img src="/img/logo-triad.svg" width={100} alt="logo" />
-          </Link>
-
-          <div className="flex items-center space-x-4">
-            <Link href="https://twitter.com/triad_labs" target="_blank">
-              <Image
-                width={20}
-                height={20}
-                className="hover:opacity-50 transition-all"
-                src="/img/icon-x.svg"
-                alt="bg"
-              />
-            </Link>
-          </div>
-        </div>
-
         <div className="h-[calc(100%-70px)] w-full max-w-[1330px] mx-auto flex flex-col">
           <div
             className={`transition-opacity duration-500 w-full ${

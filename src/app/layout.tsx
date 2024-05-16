@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { Inter } from "next/font/google";
 import { cn } from "@/utils/cn";
 import { Suspense } from "react";
+import Header from "@/components/header";
 
 export const metadata: Metadata = {
   title: "Triad Fi",
@@ -57,6 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={false} className={cn(inter.className)}>
+        <Header />
         <Suspense>
           {children}
         </Suspense>

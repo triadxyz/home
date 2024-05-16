@@ -5,7 +5,6 @@ import Link from "next/link";
 import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Header from "@/components/header";
 import Island from "@/components/island";
 import Mosaic from "@/components/mosaic";
 import HowItWorks from "@/components/how-it-works";
@@ -16,8 +15,6 @@ const Home: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen w-screen pb-32 lg:pb-56">
       <div className="flex flex-col relative z-10 h-full px-4">
-        <Header />
-
         <div className="h-full w-full max-w-[1240px] mx-auto flex flex-col pt-12 lg:pt-24">
           <div
             className={`transition-opacity duration-500 w-full`}

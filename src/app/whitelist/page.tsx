@@ -20,7 +20,7 @@ const WhiteListPage: React.FC = () => {
       style={{
         background: "#1F2026",
       }}
-      className="flex flex-col h-4/5 w-screen"
+      className="flex flex-col h-screen w-screen"
     >
       <div className="flex flex-col relative z-10 h-full px-4">
         <div className="flex w-full max-w-[1330px] mx-auto justify-between items-center pt-6">

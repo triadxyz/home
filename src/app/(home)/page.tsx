@@ -2,11 +2,9 @@
 "use client";
 
 import Link from "next/link";
-import React, { useCallback, useState } from "react";
+import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { WhiteList } from "@/components/WhiteList";
-import Image from "next/image";
 import Header from "@/components/header";
 import Island from "@/components/island";
 import Mosaic from "@/components/mosaic";
@@ -14,12 +12,6 @@ import HowItWorks from "@/components/how-it-works";
 import News from "@/components/news";
 
 const Home: React.FC = () => {
-  const [formStarted, setFormStarted] = useState(false);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
-
-  const updateCurrentIndex = useCallback((index: number) => {
-    setCurrentQuestionIndex(index);
-  }, []);
 
   return (
     <div className="flex flex-col min-h-screen w-screen pb-32 lg:pb-56">
@@ -28,15 +20,13 @@ const Home: React.FC = () => {
 
         <div className="h-full w-full max-w-[1240px] mx-auto flex flex-col pt-12 lg:pt-24">
           <div
-            className={`transition-opacity duration-500 w-full ${
-              currentQuestionIndex !== 0 ? "opacity-0" : "opacity-100"
-            }`}
+            className={`transition-opacity duration-500 w-full`}
           >
             <div className="relative flex items-center mx-auto lg:mt-14 flex-col z-10 px-0">
               <div className="relative transition-all duration-200 text-center">
                 <Island />
                 <img
-                  className="absolute max-[768px]:w-full lg:w-[900px] h-[750px] -top-[60%] left-1/2 -translate-x-1/2"
+                  className="absolute max-[768px]:w-full lg:w-[900px] h-[600px] lg:h-[750px] -top-[60%] left-1/2 -translate-x-1/2"
                   src="/img/blur.png"
                   alt=""
                 />

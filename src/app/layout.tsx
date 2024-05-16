@@ -56,12 +56,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={false} className={cn(inter.className, "min-h-screen h-full")}>
+      <body suppressHydrationWarning={false} className={cn(inter.className)}>
         <Suspense>
           {children}
         </Suspense>
         <Analytics />
-        <Footer />
       </body>
     </html>
   );

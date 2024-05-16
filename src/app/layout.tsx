@@ -3,6 +3,7 @@ import "../styles/globals.scss";
 import type { Metadata } from "next";
 import { Footer } from "@/components/footer";
 import { Inter } from "next/font/google";
+import { cn } from "@/utils/cn";
 
 export const metadata: Metadata = {
   title: "Triad Fi",
@@ -54,7 +55,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true} className={inter.className}>
+      <body suppressHydrationWarning={true} className={cn(inter.className, "min-h-screen h-full")}>
         {children}
         <Analytics />
         <Footer />

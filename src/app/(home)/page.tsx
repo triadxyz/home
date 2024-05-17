@@ -16,7 +16,7 @@ const Home: React.FC = () => {
       <div className="flex flex-col relative z-10 h-full px-4">
         <div className="h-full w-full max-w-[1240px] mx-auto flex flex-col pt-12 lg:pt-24">
           <div className={`transition-opacity duration-500 w-full`}>
-            <div className="relative flex items-center mx-auto lg:mt-14 flex-col z-10 px-0">
+            <div className="relative flex items-center mx-auto mt-14 flex-col z-10 px-0">
               <div className="relative transition-all duration-200 text-center">
                 <Island />
                 <img

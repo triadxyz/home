@@ -26,11 +26,11 @@ export const WhiteList: React.FC<{
   }, [formSubmitted]);
 
   return (
-    <div className="w-full lg:max-w-[1330px] h-fit text-center">
+    <div className="w-full lg:max-w-[1240px] h-fit text-center">
       <div className="w-full">
         {formSubmitted ? (
           <div
-            className={cn("grid relative place-content-center", {
+            className={cn("grid relative place-content-center pt-40", {
               "-mt-48 lg:-mt-64": formStarted,
             })}
           >
@@ -99,30 +99,6 @@ export const WhiteList: React.FC<{
           </div>
         ) : (
           <>
-            <div
-              className={cn("w-fit mt-6 mx-auto relative", {
-                hidden: formStarted,
-              })}
-            >
-              <h3 className="font-medium relative text-white text-2xl mb-10">
-                Whitelist is open!
-              </h3>
-              <Image
-                width={12}
-                height={12}
-                className="absolute bottom-0 -right-2.5"
-                src={require("../../public/img/icon-decoration.svg")}
-                alt=""
-              />
-              <Image
-                width={12}
-                height={12}
-                className="absolute -bottom-1 -right-4"
-                src={require("../../public/img/icon-decoration.svg")}
-                alt=""
-              />
-            </div>
-
             <WhiteListForm
               formStarted={formStarted}
               setStartedForm={initForm}

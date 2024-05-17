@@ -3,10 +3,8 @@
 @tailwind utilities;
 
 body {
-  font-family: 'inter';
-  overflow: hidden;
   -webkit-font-smoothing: antialiased;
-  background: #020409;
+  background: #13141A;
 }
 
 * {
@@ -28,7 +26,6 @@ input {
 html {
   height: 100%;
   background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
-  overflow: hidden;
 }
 
 @keyframes fly {
@@ -101,4 +98,8 @@ html {
 100%{
     transform: rotate(1turn);
 }
+}
+
+img {
+  pointer-events: none;
 }

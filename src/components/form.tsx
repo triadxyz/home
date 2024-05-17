@@ -24,9 +24,9 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const [buttonClicked, setButtonClicked] = useState(false);
   const questions: string[] = [
-    "",
-    "1. Your email (optional)",
-    "2. Your DAO Community (Twitter handle)",
+    "1. Your Solana address",
+    "2. Your email (optional)",
+    "3. Your DAO Community (Twitter handle)",
   ];
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -46,10 +46,9 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
         isDisabled = !isValidEmail(data[1]);
       } else if (isEmpty && isEmailField) {
         isDisabled = false;
-      } else if (isEmpty && index === 0){
-        isDisabled = true
+      } else if (isEmpty && index === 0) {
+        isDisabled = true;
       }
-
 
       setIsButtonDisabled(isDisabled);
     },
@@ -103,9 +102,9 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
         };
 
         await fetch(`/api/whitelist`, {
-          method: 'POST',
-          body: JSON.stringify(requestData)
-        })
+          method: "POST",
+          body: JSON.stringify(requestData),
+        });
 
         setCurrentQuestionIndex(0);
         setFormData(Array(questions.length).fill(""));
@@ -152,10 +151,10 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
 
   return (
     <div
-      className={cn("relative z-30", {
+      className={cn("relative z-30 pt-20", {
         "animate-right": animateRight,
         "animate-slide-left": animateleft,
-         "-top-28": currentQuestionIndex !== 0
+        // "-top-28": currentQuestionIndex !== 0,
       })}
     >
       <label className="font-semibold lg:text-5xl text-white">
@@ -207,33 +206,36 @@ export const WhiteListForm: React.FC<WhiteListFormProps> = ({
         </button>
       </div>
 
-      {formStarted === true && (
-        <div className="flex w-fit gap-x-4 mx-auto mt-28 lg:mt-[140px] items-center">
-          <button
-            className="rounded-lg bg-fire-gray-custom p-2 disabled:cursor-not-allowed disabled:opacity-60"
-            onClick={handlePreviousQuestion}
-            disabled={currentQuestionIndex === 0}
-          >
-            <Image
-              className="rotate-180 opacity-75"
-              src={require("../../public/img/icon-arrow.svg")}
-              alt=""
-            />
-          </button>
+      <div
+        className={cn(
+          "flex w-fit gap-x-4 mx-auto mt-28 lg:mt-[140px] items-center",
+          formStarted ? "" : "opacity-0"
+        )}
+      >
+        <button
+          className="rounded-lg bg-fire-gray-custom p-2 disabled:cursor-not-allowed disabled:opacity-60"
+          onClick={handlePreviousQuestion}
+          disabled={currentQuestionIndex === 0}
+        >
+          <Image
+            className="rotate-180 opacity-75"
+            src={require("../../public/img/icon-arrow.svg")}
+            alt=""
+          />
+        </button>
 
-          <button
-            disabled={isButtonDisabled}
-            className="rounded-lg bg-fire-gray-custom p-2 disabled:cursor-not-allowed disabled:opacity-60"
-            onClick={handleNextQuestion}
-          >
-            <Image
-              className="opacity-75"
-              src={require("../../public/img/icon-arrow.svg")}
-              alt=""
-            />
-          </button>
-        </div>
-      )}
+        <button
+          disabled={isButtonDisabled}
+          className="rounded-lg bg-fire-gray-custom p-2 disabled:cursor-not-allowed disabled:opacity-60"
+          onClick={handleNextQuestion}
+        >
+          <Image
+            className="opacity-75"
+            src={require("../../public/img/icon-arrow.svg")}
+            alt=""
+          />
+        </button>
+      </div>
     </div>
   );
 };

@@ -1,8 +1,11 @@
 import { Analytics } from "@vercel/analytics/react";
 import "../styles/globals.scss";
 import type { Metadata } from "next";
-import { poppins } from "@/utils/fonts";
 import { Footer } from "@/components/footer";
+import { Inter } from "next/font/google";
+import { cn } from "@/utils/cn";
+import { Suspense } from "react";
+import Header from "@/components/header";
 
 export const metadata: Metadata = {
   title: "Triad Fi",
@@ -41,6 +44,12 @@ export const metadata: Metadata = {
   ],
 };
 
+const inter = Inter({
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+})
+
 export default function RootLayout({
   children,
 }: {
@@ -48,10 +57,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true} className={poppins.className}>
-        {children}
+      <body suppressHydrationWarning={false} className={cn(inter.className)}>
+        <Header />
+        <Suspense>
+          {children}
+        </Suspense>
         <Analytics />
-        <Footer />
       </body>
     </html>
   );

@@ -11,14 +11,11 @@ import HowItWorks from "@/components/how-it-works";
 import News from "@/components/news";
 
 const Home: React.FC = () => {
-
   return (
     <div className="flex flex-col min-h-screen w-screen pb-32 lg:pb-56">
       <div className="flex flex-col relative z-10 h-full px-4">
         <div className="h-full w-full max-w-[1240px] mx-auto flex flex-col pt-12 lg:pt-24">
-          <div
-            className={`transition-opacity duration-500 w-full`}
-          >
+          <div className={`transition-opacity duration-500 w-full`}>
             <div className="relative flex items-center mx-auto lg:mt-14 flex-col z-10 px-0">
               <div className="relative transition-all duration-200 text-center">
                 <Island />
@@ -27,32 +24,39 @@ const Home: React.FC = () => {
                   src="/img/blur.png"
                   alt=""
                 />
-                <h1 className="text-5xl lg:text-7xl mb-3 md:px-0 text-center font-light text-white">
+                <h1 className="relative text-5xl lg:text-7xl mb-8 md:px-0 text-center font-light text-white">
+                  <img
+                    className="hidden xl:block absolute -top-2.5 left-1"
+                    src="img/icon-decoration.svg"
+                    alt=""
+                  />
                   <span className="font-medium">Trade</span> the best <br />
                   <span className="font-medium">Solana-Projects</span>
+                  <img
+                    className="hidden xl:block absolute -bottom-2 -right-5"
+                    src="img/icon-decoration.svg"
+                    alt=""
+                  />
                 </h1>
-                <img
-                  className="hidden xl:block absolute top-12 left-[120px]"
-                  src="img/icon-decoration.svg"
-                  alt=""
-                />
 
-                <img
-                  className="hidden xl:block absolute bottom-[85px] right-[105px]"
-                  src="img/icon-decoration.svg"
-                  alt=""
-                />
-
-                <h2 className="text-white lg:text-white text-lg lg:text-2xl block lg:leading-8 font-light text-center mt-8 mb-7 md:px-0">
-                  We <span className="text-[#3961FB]">tokenize</span> Solana
-                  projects, a new way to investing in the ecosystem!
+                <h2 className="text-2xl text-white">
+                  Predict the{" "}
+                  <span className="text-[#00B471] border-b border-dashed border-[#00B471]">
+                    Success
+                  </span>{" "}
+                  or{" "}
+                  <span className="text-[#EE5F67] border-b border-dashed border-[#EE5F67]">
+                    Failure
+                  </span>{" "}
+                  of the Ecosystem.
                 </h2>
               </div>
 
-              <div className="relative mt-5">
+              <div className="relative mt-12">
                 <Link
-                 href="/whitelist"
-                className="w-[340px] h-16 rounded-2xl bg-[#2E3038] pl-4 pr-1 flex items-center justify-between">
+                  href="/whitelist"
+                  className="w-[340px] h-16 rounded-2xl bg-[#2E3038] pl-4 pr-1 flex items-center justify-between"
+                >
                   <div className="text-white">
                     <span className="block font-medium text-sm lg:text-base">
                       ALPHA Launch

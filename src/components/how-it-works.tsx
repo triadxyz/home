@@ -8,7 +8,7 @@ const permanent_maker = Permanent_Marker({
 
 const HowItWorks: React.FC = () => {
   return (
-    <div className="flex flex-col w-full mt-28 lg;mt-[323px]">
+    <div className="flex flex-col w-full mt-80 lg;mt-[323px]">
       <div className="w-full flex flex-col lg:flex-row justify-between lg:items-center">
         <span className="text-4xl lg:text-5xl text-[#A1A7BB] font-light lg:leading-[58px]">
           How <span className="text-white font-normal">ticker prices</span> are

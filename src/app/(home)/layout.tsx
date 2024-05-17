@@ -1,10 +1,11 @@
 import { Footer } from "@/components/footer";
+import { Metadata } from "next";
 import NextTopLoader from "nextjs-toploader";
 
 export const metadata: Metadata = {
   title: "Triad Fi",
   description:
-    "We tokenize Solana projects, a new way to invest in the ecosystem!",
+    "Predict the Success or Failure of the Ecosystem.",
   icons: [
     {
       url: "/favicon/favicon.ico",

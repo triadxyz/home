@@ -1,16 +1,14 @@
 import { Analytics } from "@vercel/analytics/react";
 import "../styles/globals.scss";
-import type { Metadata } from "next";
-import { Footer } from "@/components/footer";
 import { Inter } from "next/font/google";
 import { cn } from "@/utils/cn";
 import { Suspense } from "react";
 import Header from "@/components/header";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Triad Fi",
   description:
-    "We tokenize Solana projects, a new way to invest in the ecosystem!",
+    "Predict the Success or Failure of the Ecosystem.",
   icons: [
     {
       url: "/favicon/favicon.ico",

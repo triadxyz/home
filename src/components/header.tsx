@@ -60,14 +60,14 @@ const Header: React.FC = () => {
           </Link>
         </div>
 
-        <Link
+        {/* <Link
           className="w-[140px] h-[44px] bg-[#3961FB] text-white font-medium flex items-center justify-center rounded-xl"
           href="/whitelist"
           // target="_blank"
           // rel="noopener noreferrer"
         >
           Join Whitelist
-        </Link>
+        </Link> */}
       </div>
     </header>
   );

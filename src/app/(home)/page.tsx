@@ -53,7 +53,7 @@ const Home: React.FC = () => {
               </div>
 
               <div className="relative mt-12">
-                <Link
+                {/* <Link
                   href="/whitelist"
                   className="w-[340px] h-16 rounded-2xl bg-[#2E3038] pl-4 pr-1 flex items-center justify-between"
                 >
@@ -69,7 +69,7 @@ const Home: React.FC = () => {
                   <button className="bg-[#1F2026] w-16 h-14 flex items-center justify-center rounded-xl hover:bg-[#1F2026]/70 transition-all duration-200">
                     <img src="img/icon-arrow-right.svg" alt="" />
                   </button>
-                </Link>
+                </Link> */}
               </div>
 
               <div className="w-full mt-28">

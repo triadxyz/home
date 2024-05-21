@@ -26,12 +26,9 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={cn(
-        "fixed left-0 top-0 xl:px-0 px-4 z-30 h-[76px] w-full",
-        {
-          "bg-[#13141A1A] backdrop-blur-xl": bgHeader,
-        }
-      )}
+      className={cn("fixed left-0 top-0 xl:px-0 px-4 z-30 h-[76px] w-full", {
+        "bg-[#13141A1A] backdrop-blur-xl": bgHeader,
+      })}
     >
       <div className="max-w-[1240px] w-full h-full flex mx-auto justify-between items-center">
         <Link href={"/"}>
@@ -58,16 +55,29 @@ const Header: React.FC = () => {
               alt="bg"
             />
           </Link>
+          <Link
+            href="https://docs.triadfi.co/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              width={20}
+              height={20}
+              className="hover:opacity-50 transition-all"
+              src="/img/docs.svg"
+              alt="docs"
+            />
+          </Link>
         </div>
 
-        {/* <Link
+        <Link
           className="w-[140px] h-[44px] bg-[#3961FB] text-white font-medium flex items-center justify-center rounded-xl"
-          href="/whitelist"
-          // target="_blank"
-          // rel="noopener noreferrer"
+          href="https://app.triadfi.co/"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Join Whitelist
-        </Link> */}
+          Launch App
+        </Link>
       </div>
     </header>
   );

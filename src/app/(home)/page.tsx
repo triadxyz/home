@@ -12,7 +12,7 @@ import News from "@/components/news";
 
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen w-screen pb-32 lg:pb-56">
+    <div className="flex flex-col min-h-screen  pb-32 lg:pb-56">
       <div className="flex flex-col relative z-10 h-full px-4">
         <div className="h-full w-full max-w-[1240px] mx-auto flex flex-col pt-12 lg:pt-24">
           <div className={`transition-opacity duration-500 w-full`}>

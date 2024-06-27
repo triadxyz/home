@@ -3,9 +3,11 @@
 import { cn } from "@/utils/cn";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Header: React.FC = () => {
+  const pathname = usePathname()
   const [bgHeader, setBgHeader] = useState(false);
 
   useEffect(() => {
@@ -23,6 +25,10 @@ const Header: React.FC = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  if(pathname === '/pitch') {
+    return null
+  }
 
   return (
     <header

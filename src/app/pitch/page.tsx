@@ -8,7 +8,6 @@ const Pitch: React.FC = () => {
         src="/img/triad.pdf"
         frameBorder="0"
         height="100%"
-        allowFullScreen
         width="100%"
       ></iframe>
     </div>

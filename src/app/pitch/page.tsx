@@ -5,7 +5,7 @@ const Pitch: React.FC = () => {
     <div style={{ width: "100%", minHeight: "100vh" }}>
       <iframe
         style={{ minHeight: "100vh" }}
-        src="/img/pitch.pdf"
+        src="/img/triad.pdf"
         frameBorder="0"
         height="100%"
         allowFullScreen

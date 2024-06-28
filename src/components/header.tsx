@@ -26,7 +26,7 @@ const Header: React.FC = () => {
     };
   }, []);
 
-  if(pathname === '/pitch') {
+  if(pathname === '/deck') {
     return null
   }
 

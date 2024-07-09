@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
           </p>
 
           <div className="flex items-center lg:ml-auto mt-7 lg:mt-0 flex-wrap">
-            <span className="text-sm text-[#A1A7BB] mr-4 mb-2">Powered by:</span>
+            <span className="text-sm text-[#A1A7BB] mr-4">Powered by:</span>
 
             <div className="flex">
             <Link href="https://twitter.com/PythNetwork">

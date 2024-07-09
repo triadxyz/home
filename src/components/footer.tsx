@@ -42,12 +42,8 @@ export const Footer: React.FC = () => {
             <span className="text-sm text-[#A1A7BB] mr-4 mb-2">Powered by:</span>
 
             <div className="flex">
-            <Link className="mr-4" href="https://twitter.com/PythNetwork">
+            <Link href="https://twitter.com/PythNetwork">
               <img src="img/pyth.svg" alt="pyth network" />
-            </Link>
-
-            <Link href="https://twitter.com/Vybe_Network">
-              <img src="img/vybe.svg" alt="vybe network" />
             </Link>
             </div>
 

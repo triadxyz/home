@@ -18,7 +18,6 @@ const Home: React.FC = () => {
           <div className={`transition-opacity duration-500 w-full`}>
             <div className="relative flex items-center mx-auto mt-14 flex-col z-10 px-0">
               <div className="relative transition-all duration-200 text-center">
-                <Island />
                 <img
                   className="absolute max-[768px]:w-full lg:w-[900px] h-[600px] lg:h-[750px] -top-[60%] left-1/2 -translate-x-1/2"
                   src="/img/blur.png"
@@ -142,12 +141,6 @@ const Home: React.FC = () => {
               <News />
             </div>
           </div>
-          {/* <WhiteList
-            formStarted={formStarted}
-            initForm={() => setFormStarted(true)}
-            currentIndex={currentQuestionIndex}
-            setCurrentIndex={updateCurrentIndex}
-          /> */}
         </div>
       </div>
     </div>

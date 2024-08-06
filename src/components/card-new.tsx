@@ -24,9 +24,6 @@ const CardNew: React.FC<CardNewProps> = ({ data }) => {
       <span className="text-[#A1A7BB] text-sm lg:text-base font-light lg:h-[66px] mb-5 lg:mb-8 block">
         {data.description}
       </span>
-      <span className="text-[#A1A7BB] text-sm lg:text-base font-light italic block">
-        {format(data.date, "hh:mm aa - MMMM do, yyyy")}
-      </span>
     </div>
   );
 };

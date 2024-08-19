@@ -4,11 +4,11 @@ import { Inter } from "next/font/google";
 import { cn } from "@/utils/cn";
 import { Suspense } from "react";
 import Header from "@/components/header";
+import AppProvider from "@/providers/AppProvider";
 
 export const metadata = {
   title: "Triad Fi",
-  description:
-    "Predict the Success or Failure of the Ecosystem.",
+  description: "Predict the Success or Failure of the Ecosystem.",
   icons: [
     {
       url: "/favicon/favicon.ico",
@@ -43,10 +43,10 @@ export const metadata = {
 };
 
 const inter = Inter({
-  weight: ['300', '400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-})
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -58,7 +58,7 @@ export default function RootLayout({
       <body suppressHydrationWarning={false} className={cn(inter.className)}>
         <Header />
         <Suspense>
-          {children}
+          <AppProvider>{children}</AppProvider>
         </Suspense>
         <Analytics />
       </body>

@@ -29,8 +29,8 @@ const Home: React.FC = () => {
                     src="img/icon-decoration.svg"
                     alt=""
                   />
-                  <span className="font-medium">Trade</span> the best <br />
-                  <span className="font-medium">Solana-Projects</span>
+                  <span className="font-medium">Trade</span> the <br />
+                  <span className="font-medium">Hype</span>
                   <img
                     className="hidden xl:block absolute -bottom-2 -right-5"
                     src="img/icon-decoration.svg"

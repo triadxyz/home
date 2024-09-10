@@ -94,50 +94,6 @@ const Home: React.FC = () => {
 
               <Mosaic />
 
-              <HowItWorks />
-
-              <div className="relative w-full mt-24 lg:mt-52 mb-40 lg:h-[655px]">
-                <img
-                  className="absolute left-0 top-0 w-full h-[1333px] lg:h-[655px] hidden lg:block"
-                  alt=""
-                  src="img/how-it-works-bg.webp"
-                />
-
-                <img
-                  className=" absolute left-0 top-0 w-full object-cover h-[1333px] lg:h-[655px] lg:hidden"
-                  alt=""
-                  src="img/bg-how-it-works-mobile.svg"
-                />
-
-                <div className="w-full relative flex items-center flex-col pt-28">
-                  <span className="relative text-[#A1A7BB] text-4xl lg:text-6xl mb-5 font-light">
-                    <img
-                      className="absolute -top-2.5 -left-6"
-                      src="img/icon-decoration.svg"
-                      alt=""
-                    />
-                    <span className="font-medium text-white">How</span> it all{" "}
-                    <span className="font-medium text-white">works</span>
-                    <img
-                      className="absolute -bottom-2.5 -right-6 "
-                      src="img/icon-decoration.svg"
-                      alt=""
-                    />
-                  </span>
-
-                  <img
-                    className="w-full h-[313px] hidden lg:block"
-                    src="img/how-it-works.webp"
-                    alt=""
-                  />
-                  <img
-                    className=" h-auto lg:hidden"
-                    src="img/how-it-works-mobile.svg"
-                    alt=""
-                  />
-                </div>
-              </div>
-
               <News />
             </div>
           </div>

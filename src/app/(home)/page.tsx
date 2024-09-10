@@ -41,11 +41,11 @@ const Home: React.FC = () => {
                 <h2 className="text-2xl text-white">
                   Predict the{" "}
                   <span className="text-[#00B471] border-b border-dashed border-[#00B471]">
-                    Success
+                    Hype
                   </span>{" "}
                   or{" "}
                   <span className="text-[#EE5F67] border-b border-dashed border-[#EE5F67]">
-                    Failure
+                    Flop
                   </span>{" "}
                   of the Ecosystem.
                 </h2>

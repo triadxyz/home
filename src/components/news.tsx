@@ -22,7 +22,7 @@ const dataNews = [
 
 const News: React.FC = () => {
   return (
-    <div className="w-full flex lg:items-center flex-col">
+    <div className="w-full flex lg:items-center flex-col mt-10">
       <h5 className="text-white font-medium text-4xl md:text-6xl lg:leading-[72px] mb-10 lg:mb-20 relative">
         Explore <span className="font-light text-[#A1A7BB]">what&apos;s</span>{" "} <br className="inline-block lg:hidden" />
         <span className="relative">new 🗞️{" "}        <img

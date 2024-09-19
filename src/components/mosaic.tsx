@@ -38,7 +38,7 @@ const Mosaic: React.FC = () => {
                 className="w-full h-[232px] lg:object-cover lg:h-[255px]"
               />
               <img
-                src="img/banner-5.webp"
+                src="img/cardHype.png"
                 alt=""
                 className="w-full h-[232px] lg:object-cover lg:h-[255px]"
               />
@@ -47,7 +47,7 @@ const Mosaic: React.FC = () => {
 
           <div className="w-full lg:w-[33%]">
             <img
-              src="img/nft.webp"
+              src="img/cardPoseidon.png"
               className="w-full lg:max-w-none lg:h-[530px] mx-auto lg:block"
               alt=""
             />

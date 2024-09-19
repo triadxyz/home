@@ -8,12 +8,12 @@ const BetaLaunchButton = () => {
       target="_blank"
       rel="noopener noreferrer" 
     >
-      <button className="flex items-center justify-between gap-6 bg-[#1D1E24] text-white py-2 px-4 rounded-2xl hover:bg-[#0e0e11] transition duration-300 ease-in-out">
+      <button className="flex items-center justify-between gap-6 bg-[#1D1E24] text-white py-1 pl-4 pr-1 rounded-md hover:bg-[#0e0e11] transition duration-300 ease-in-out">
         <div className='text-start'>
           <p className='inter text-base font-medium'>BETA Launch</p>
-          <p className='font-light text-sm'>Secure your entry for the future</p>
+          <p className='font-light text-sm'>Prediction of hype or flop in Web3</p>
         </div>
-        <div className='flex justify-center items-center bg-[#131419] h-14 w-16 rounded-2xl'>
+        <div className='flex justify-center items-center bg-[#131419] h-14 w-16 rounded-md'>
           <svg
             className="w-5 h-5 fill-white"
             xmlns="http://www.w3.org/2000/svg"

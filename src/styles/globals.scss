@@ -121,15 +121,14 @@ img {
 
 .mb-10.relative {
   position: relative;
-  text-align: start; /* Centraliza o texto */
+  text-align: start; 
 }
 
 .hype-effect {
-  position: absolute; /* Posicionamento absoluto para a imagem */
-  bottom: 0; /* Alinhado com a parte inferior do texto */
-  left: 439px; /* Ajuste horizontal conforme necessário */
-  transform: translateX(80%); /* Ajusta a posição horizontal */
-  z-index: -1; /* Mantém a imagem atrás do texto */
-  width: 30px; /* Ajuste o tamanho conforme necessário */
+  position: absolute; 
+  bottom: 0; 
+  left: 439px; 
+  transform: translateX(80%); 
+  z-index: -1; 
+  width: 30px; 
 }
-

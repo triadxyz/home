@@ -6,7 +6,7 @@ import { Suspense } from "react";
 import Header from "@/components/header";
 
 export const metadata = {
-  title: "Triad Fi",
+  title: "Triad",
   description:
     "Predict the Success or Failure of the Ecosystem.",
   icons: [

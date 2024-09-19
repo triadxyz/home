@@ -70,14 +70,14 @@ const Header: React.FC = () => {
               width={20}
               height={20}
               className="hover:opacity-50 transition-all"
-              src="/img/docs.svg"
+              src="/img/icon-discord.svg"
               alt="docs"
             />
           </Link>
         </div>
 
         <Link
-          className="w-[140px] h-[44px] bg-[#3961FB] text-white font-medium flex items-center justify-center rounded-xl"
+          className="w-[132px] h-[40px] bg-[#3961FB] text-white font-medium flex items-center justify-center rounded-md"
           href="https://app.triadfi.co/"
           target="_blank"
           rel="noopener noreferrer"

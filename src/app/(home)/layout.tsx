@@ -5,7 +5,7 @@ import NextTopLoader from "nextjs-toploader";
 export const metadata: Metadata = {
   title: "Triad",
   description:
-    "Predict the Success or Failure of the Ecosystem.",
+    "",
   icons: [
     {
       url: "/favicon/favicon.ico",

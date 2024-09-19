@@ -24,8 +24,8 @@ input {
 }
 
 html {
-  height: 100%;
-  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  height: 100vh;
+  background: radial-gradient(#1B1F2F 0%, #141519 100%);
 }
 
 @keyframes fly {
@@ -103,3 +103,33 @@ html {
 img {
   pointer-events: none;
 }
+
+.inter{
+  font-family: "Inter", sans-serif;
+}
+
+.textMarket {
+  font-family: "Inter", sans-serif;
+  font-size: 60px;
+  line-height: 72px; 
+}
+
+.spanMarket {
+  color: #A1A7BB;
+  font-weight: 400;
+}
+
+.mb-10.relative {
+  position: relative;
+  text-align: start; /* Centraliza o texto */
+}
+
+.hype-effect {
+  position: absolute; /* Posicionamento absoluto para a imagem */
+  bottom: 0; /* Alinhado com a parte inferior do texto */
+  left: 439px; /* Ajuste horizontal conforme necessário */
+  transform: translateX(80%); /* Ajusta a posição horizontal */
+  z-index: -1; /* Mantém a imagem atrás do texto */
+  width: 30px; /* Ajuste o tamanho conforme necessário */
+}
+

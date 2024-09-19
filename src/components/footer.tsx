@@ -37,18 +37,6 @@ export const Footer: React.FC = () => {
             to invest in the Solana ecosystem. We recommend that you carefully
             assess the risks mentioned above and be fully aware.
           </p>
-
-          <div className="flex items-center lg:ml-auto mt-7 lg:mt-0 flex-wrap">
-            <span className="text-sm text-[#A1A7BB] mr-4">Powered by:</span>
-
-            <div className="flex">
-            <Link href="https://twitter.com/PythNetwork">
-              <img src="img/pyth.svg" alt="pyth network" />
-            </Link>
-            </div>
-
-
-          </div>
         </div>
 
         <p className="font-light text-[#A1A7BB] text-sm mt-5 hidden lg:block">

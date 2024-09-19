@@ -1,100 +1,41 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import Link from "next/link";
 import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Island from "@/components/island";
 import Mosaic from "@/components/mosaic";
-import HowItWorks from "@/components/how-it-works";
-import News from "@/components/news";
+import BetaLaunchButton from "@/components/buttonBetaLaunch";
 
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen  pb-32 lg:pb-56">
+    <div className="flex flex-col min-h-screen lg:pb-56">
       <div className="flex flex-col relative z-10 h-full px-4">
         <div className="h-full w-full max-w-[1240px] mx-auto flex flex-col pt-12 lg:pt-24">
-          <div className={`transition-opacity duration-500 w-full`}>
-            <div className="relative flex items-center mx-auto mt-14 flex-col z-10 px-0">
-              <div className="relative transition-all duration-200 text-center">
+          <div className="relative flex items-center mx-auto mt-14 flex-col z-10 px-0">
+            <div className="relative transition-all duration-200 text-center">
+              <div className="flex flex-col justify-center items-center">
+                <img 
+                  src="/img/titleHapy.svg"
+                  alt="" 
+                 />   
+                 <img
+                    src="/img/TRADE ANYTHING FROM WEB3.svg"
+                    alt="" 
+                  />
+              </div>
+              <div className="flex justify-center items-center mt-16">
+                <BetaLaunchButton />  
+              </div>
+              <div className="mt-20 mb-14">
                 <img
-                  className="absolute max-[768px]:w-full lg:w-[900px] h-[600px] lg:h-[750px] -top-[60%] left-1/2 -translate-x-1/2"
-                  src="/img/blur.png"
+                  src="img/Group 41386.png"
                   alt=""
+                  className="h-32 w-max"
                 />
-                <h1 className="relative text-5xl lg:text-7xl mb-8 md:px-0 text-center font-light text-white">
-                  <img
-                    className="hidden xl:block absolute -top-2.5 left-1"
-                    src="img/icon-decoration.svg"
-                    alt=""
-                  />
-                  <span className="font-medium">Trade</span> the Hype
-                  <img
-                    className="hidden xl:block absolute -bottom-2 -right-5"
-                    src="img/icon-decoration.svg"
-                    alt=""
-                  />
-                </h1>
-
-                <h2 className="text-2xl text-white">
-                  Predict the{" "}
-                  <span className="text-[#00B471] border-b border-dashed border-[#00B471]">
-                    Hype
-                  </span>{" "}
-                  or{" "}
-                  <span className="text-[#EE5F67] border-b border-dashed border-[#EE5F67]">
-                    Flop
-                  </span>{" "}
-                  of the Ecosystem.
-                </h2>
               </div>
-
-              <div className="relative mt-12">
-                {/* <Link
-                  href="/whitelist"
-                  className="w-[340px] h-16 rounded-2xl bg-[#2E3038] pl-4 pr-1 flex items-center justify-between"
-                >
-                  <div className="text-white">
-                    <span className="block font-medium text-sm lg:text-base">
-                      ALPHA Launch
-                    </span>
-                    <span className="text-xs lg:text-sm font-light">
-                      Secure your entry for the future
-                    </span>
-                  </div>
-
-                  <button className="bg-[#1F2026] w-16 h-14 flex items-center justify-center rounded-xl hover:bg-[#1F2026]/70 transition-all duration-200">
-                    <img src="img/icon-arrow-right.svg" alt="" />
-                  </button>
-                </Link> */}
-              </div>
-
-              <div className="w-full mt-28">
-                <h3 className="relative text-[#A1A7BB] tracking-[2%] mb-5 font-light text-4xl lg:text-6xl lg:leading-[72px]">
-                  <span className="font-medium text-white">Market</span> the{" "}
-                  <span className="font-medium text-white">rise</span> or{" "}
-                  <span className="font-medium text-white">fall</span>{" "}
-                  <br className="hidden lg:inline-block" />
-                  of <span className="font-medium text-white">Projects</span>
-                  <img
-                    className="hidden xl:block absolute bottom-[0px] left-[25%]"
-                    src="img/icon-decoration.svg"
-                    alt=""
-                  />
-                </h3>
-
-                <h4 className="font-light text-lg lg;text-xl text-[#A1A7BB] mb-10">
-                  The easiest way to{" "}
-                  <span className="font-medium text-white">invest</span> in the
-                  Solana ecosystem!
-                </h4>
-              </div>
-
-              <Mosaic />
-
-              <News />
             </div>
+            <Mosaic />
           </div>
         </div>
       </div>

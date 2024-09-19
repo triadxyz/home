@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import NextTopLoader from "nextjs-toploader";
 
 export const metadata: Metadata = {
-  title: "Triad Fi",
+  title: "Triad",
   description:
     "Predict the Success or Failure of the Ecosystem.",
   icons: [

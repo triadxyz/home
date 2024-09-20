@@ -132,3 +132,67 @@ img {
   z-index: -1; 
   width: 30px; 
 }
+
+.imagemLatter2{
+  display: none;
+}
+
+.imagemLTradeMobile{
+  display: none;
+}
+
+.sessionPrimeira{
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+  .sessionPrimeira{
+    margin-top: 50px;
+  }
+  .grupoNamesMobile{
+    .imagemLatter{
+      display: none;
+    }
+    .imagemLatter2{
+      display: flex;
+    }
+  }
+  .tradeText{
+    .imagemLTrade{
+      display: none;
+    }
+    .imagemLTradeMobile{
+      display: flex;
+    }
+  }
+  .textMobile{
+    font-size: 38px;
+    line-height: 45px;
+
+    .hype-effect{
+      left: 276px;  
+    }
+    .spanText{
+      font-size: 17px;
+    }
+  }
+  .adjusteImagens{
+    .poseidon{
+      height: 620px;
+    }
+    .session{
+      display: none;
+    }
+    .sessionPrimeira{
+      display: flex;
+      height: 480px;
+    }
+    .cardAtlanta{
+      height: 360px;
+    }
+    .cardHype{
+      height: 350px;
+    }
+  }
+}

@@ -77,12 +77,12 @@ const Header: React.FC = () => {
         </div>
 
         <Link
-          className="w-[132px] h-[40px] bg-[#3961FB] text-white font-medium flex items-center justify-center rounded-md"
+          className="w-[122px] h-[40px] bg-[#3961FB] text-white font-medium flex items-center justify-center rounded-md sm:w-[132px] sm:h-[40px]"
           href="https://app.triadfi.co/"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          Launch App
+          >
+            Launch App
         </Link>
       </div>
     </header>

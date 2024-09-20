@@ -32,7 +32,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={cn("fixed left-0 top-0 xl:px-0 px-4 z-30 h-[76px] w-full", {
+      className={cn("fixed left-0 top-0 xl:px-0 px-4 z-30 h-[50px] w-full", {
         "bg-[#13141A1A] backdrop-blur-xl": bgHeader,
       })}
     >
@@ -77,7 +77,7 @@ const Header: React.FC = () => {
         </div>
 
         <Link
-          className="w-[122px] h-[40px] bg-[#3961FB] text-white font-medium flex items-center justify-center rounded-md sm:w-[132px] sm:h-[40px]"
+          className="w-fit h-[35px] px-2 bg-[#3961FB] text-white font-medium flex items-center justify-center rounded-md lg:px-3 whitespace-nowrap sm:h-[35px]"
           href="https://app.triadfi.co/"
           target="_blank"
           rel="noopener noreferrer"

@@ -77,7 +77,7 @@ const Header: React.FC = () => {
         </div>
 
         <Link
-          className="w-fit h-[35px] px-2 bg-[#3961FB] text-white font-medium flex items-center justify-center rounded-md lg:px-3 whitespace-nowrap sm:h-[35px]"
+          className="w-fit h-[30px] px-2 bg-[#3961FB] text-white font-medium text-sm flex items-center justify-center rounded-md whitespace-nowrap"
           href="https://app.triadfi.co/"
           target="_blank"
           rel="noopener noreferrer"

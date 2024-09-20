@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Triad Markets | Real-Value Exchange",
     description:
       "Discover the true value of projects — unaffected by market speculation.",
-    images: "/assets/img/markets.png",
+    images: "/img/market.png",
     card: "summary_large_image",
   },
   viewport: {

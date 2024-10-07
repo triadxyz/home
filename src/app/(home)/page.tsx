@@ -2,8 +2,7 @@
 import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Mosaic from "@/components/mosaic";
-import BetaLaunchButton from "@/components/buttonBetaLaunch";
+import ButtonTradeNow from "@/components/buttonTradeNow";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -42,46 +41,40 @@ export const metadata: Metadata = {
   },
 };
 
+const GreetingBanner = () => (
+  <div className="flex flex-col justify-center items-center mt-12">
+    <div className="bg-white/10 pl-[10px] border-[1px] border-white/20 relative w-[364px] h-[24px] flex items-center rounded">
+      <span className="text-[#A4A5A7] text-xs font-normal textMarket">
+        Hello Traveler, conquer the Triad Season: Atlantis!
+      </span>
+    </div>
+    <img src="/img/poseidom.svg" className="relative -top-[42px] -right-[146px]" alt="Poseidom" />
+  </div>
+);
+
+const TitleSection = () => (
+  <>
+    <div className="flex flex-col items-center justify-center">
+    <GreetingBanner />
+      <img src="/img/titleHapy.svg" alt="Title Hapy" />
+      <p className="text-2xl text-white text-center font-normal">
+        Shape the future of the Solana ecosystem with your{' '}
+        <span className="textMarket font-bold italic">PREDICTIONS</span>
+      </p>
+    </div>
+  </>
+);
+
 const Home: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen lg:pb-56">
       <div className="flex flex-col relative z-10 h-full px-4">
         <div className="h-full w-full max-w-[1240px] mx-auto flex flex-col">
-          <div className="relative flex items-center mx-auto mt-14 flex-col z-10 px-0">
-            <div className="relative transition-all duration-200 text-center">
-              <div className="tradeText flex flex-col justify-center items-center">
-                <img 
-                  src="/img/titleHapy.svg"
-                  alt="" 
-                 />   
-                 <img
-                    src="/img/TRADE ANYTHING FROM WEB3.svg"
-                    alt="" 
-                    className="imagemLTrade"
-                  />
-                 <img
-                    src="/img/tradeMobile.svg"
-                    alt="" 
-                    className="imagemLTradeMobile"
-                  />
-              </div>
-              <div className="flex justify-center items-center mt-16">
-                <BetaLaunchButton />  
-              </div>
-              <div className="mt-20 mb-14 grupoNamesMobile flex justify-center items-center">
-                <img
-                  src="img/Group 41386.png"
-                  alt=""
-                  className="h-32 w-max imagemLatter"
-                />
-                <img
-                  src="img/grupoNamesMobile.svg"
-                  alt=""
-                  className="imagemLatter2"
-                />
-              </div>
+          <div className="relative flex items-center mx-auto mt-16 flex-col z-10 px-0">
+            <TitleSection />
+            <div className="flex justify-center items-center mt-11">
+              <ButtonTradeNow />
             </div>
-            <Mosaic />
           </div>
         </div>
       </div>

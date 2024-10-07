@@ -2,9 +2,11 @@
 import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Mosaic from "@/components/mosaic";
+
 import BetaLaunchButton from "@/components/buttonBetaLaunch";
+import MarketCarousel from "@/components/MarketCarousel";
 import { Metadata } from "next";
+import { inter } from "@/utils/fonts";
 
 export const metadata: Metadata = {
   title: "Triad",
@@ -44,9 +46,9 @@ export const metadata: Metadata = {
 
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen lg:pb-56">
+    <div className={`${inter.className} flex flex-col min-h-screen lg:pb-56`}>
       <div className="flex flex-col relative z-10 h-full px-4">
-        <div className="h-full w-full max-w-[1240px] mx-auto flex flex-col">
+        <div className="h-full w-full  mx-auto flex flex-col">
           <div className="relative flex items-center mx-auto mt-14 flex-col z-10 px-0">
             <div className="relative transition-all duration-200 text-center">
               <div className="tradeText flex flex-col justify-center items-center">
@@ -67,8 +69,10 @@ const Home: React.FC = () => {
               </div>
               <div className="flex justify-center items-center mt-16">
                 <BetaLaunchButton />  
+                
               </div>
-              <div className="mt-20 mb-14 grupoNamesMobile flex justify-center items-center">
+              <MarketCarousel />
+              {/* <div className="mt-20 mb-14 grupoNamesMobile flex justify-center items-center">
                 <img
                   src="img/Group 41386.png"
                   alt=""
@@ -79,9 +83,10 @@ const Home: React.FC = () => {
                   alt=""
                   className="imagemLatter2"
                 />
-              </div>
+              </div> */}
             </div>
-            <Mosaic />
+            {/* <Mosaic /> */}
+            
           </div>
         </div>
       </div>

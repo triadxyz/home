@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 };
 
 const GreetingBanner = () => (
-  <div className="flex flex-col justify-end items-center relative top-14">
+  <div className="flex flex-col justify-center items-center relative lg:top-14">
     <div className="bg-white/10 pl-2.5 border border-white/20 relative w-[364px] h-[24px] flex items-center rounded">
       <span className="text-[#A4A5A7] text-xs font-normal textMarket">
         Hello Traveler, conquer the Triad Season: Atlantis!
@@ -59,8 +59,8 @@ const TitleSection = () => (
   <>
     <div className="flex flex-col items-center justify-center">
     <GreetingBanner />
-      <img src="/img/titleHapy.svg" alt="Title Hapy" />
-      <p className="text-2xl text-white text-center font-normal">
+      <img className="max-w-[300px] lg:max-w-full" src="/img/titleHapy.svg" alt="Title Hapy" />
+      <p className="lg:text-2xl text-white text-center font-normal">
         Shape the future of the Solana ecosystem with your{' '}
         <span className={cn("font-bold italic", permanent_marker.className)}>PREDICTIONS</span>
       </p>
@@ -72,8 +72,8 @@ const Home: React.FC = () => {
   return (
     <div className={`flex flex-col pt-10 min-h-screen lg:pb-56`}>
       <div className="flex flex-col relative z-10 h-full px-4">
-        <div className="h-full mx-auto flex flex-col">
-          <div className="relative flex items-center mx-auto mt-16 flex-col z-10 px-0">
+        <div className="h-full flex flex-col">
+          <div className="relative flex items-center mt-16 flex-col z-10 px-0">
             <TitleSection />
             <div className="flex justify-center items-center mt-11">
               <ButtonTradeNow />

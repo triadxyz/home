@@ -41,7 +41,7 @@ const MarketCard: React.FC<MarketCardProps> = ({
   status,
 }) => {
   return (
-    <div className="px-2">
+    <div className="pr-2">
       <Link
         href="https://app.triadfi.co/"
         target="_blank"
@@ -51,7 +51,7 @@ const MarketCard: React.FC<MarketCardProps> = ({
         <div
           className={cn(
             "bg-[#FFFFFF04] rounded-lg p-4 flex flex-col border border-[#FFFFFF29]",
-            "w-[430px] h-[170px]"
+            "w-full lg:w-[430px] h-[170px]"
           )}
         >
           <div className="flex items-center mb-2">
@@ -92,7 +92,7 @@ const MarketCarousel: React.FC = () => {
       <div className="max-w-[100vw]">
         <Slider {...Slidersettings}>
           {markets.map((market, index) => (
-            <div key={index} className="mr-4">
+            <div key={index}>
               <MarketCard {...market} />
             </div>
           ))}

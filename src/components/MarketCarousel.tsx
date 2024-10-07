@@ -1,10 +1,11 @@
-'use client'
+"use client";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import DefaultCard from './DefaultCard';
 import { cn } from "@/utils/cn";
 import { permanent_marker } from "@/utils/fonts";
 
@@ -28,20 +29,9 @@ const MarketCard: React.FC<MarketCardProps> = ({
       rel="noopener noreferrer"
       className="block"
     >
-      <div
-        className={cn(
-          "bg-[#FFFFFF04] rounded-lg p-4 flex flex-col border border-[#FFFFFF29]",
-          "w-[430px] h-[170px]"
-        )}
-      >
+       <DefaultCard>
         <div className="flex items-center mb-2">
-          <Image
-            src={logo}
-            alt={name}
-            width={44}
-            height={44}
-            className="mr-2"
-          />
+          <Image src={logo} alt={name} width={44} height={44} className="mr-2" />
           <div className="flex flex-col items-start">
             <span className="text-[#FFFFFF50] text-[12px]">Market</span>
             <h3 className="text-white font-[500]">{name}</h3>
@@ -49,7 +39,7 @@ const MarketCard: React.FC<MarketCardProps> = ({
         </div>
         <p className="text-white text-[14px] flex-grow">{description}</p>
         <div className="flex w-full space-x-1">
-          <button
+        <button
             className={cn(
               "flex-1 h-[36px] py-1 rounded-lg text-xs font-medium bg-[#00B47133] text-[#00B471] backdrop-blur-[54px]",
               permanent_marker.className
@@ -66,7 +56,7 @@ const MarketCard: React.FC<MarketCardProps> = ({
             FLOP
           </button>
         </div>
-      </div>
+      </DefaultCard>
     </Link>
   </div>
 );
@@ -83,39 +73,14 @@ const MarketCarousel: React.FC = () => {
     autoplaySpeed: 2000,
     cssEase: "linear",
     centerMode: false,
-    
+
     variableWidth: true,
     responsive: [
-      {
-        breakpoint: 1920,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 1600,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 1280,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
+      { breakpoint: 1920, settings: { slidesToShow: 3 } },
+      { breakpoint: 1600, settings: { slidesToShow: 3 } },
+      { breakpoint: 1280, settings: { slidesToShow: 2 } },
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 1 } },
     ],
   };
 
@@ -145,7 +110,7 @@ const MarketCarousel: React.FC = () => {
       <div className="max-w-[100vw]">
         <Slider {...settings}>
           {markets.map((market, index) => (
-            <div key={index} className="mr-4"> 
+            <div key={index} className="mr-4">
               <MarketCard {...market} />
             </div>
           ))}

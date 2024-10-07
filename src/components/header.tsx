@@ -30,9 +30,15 @@ const Header: React.FC = () => {
     return null
   }
 
+  const solicialLinks = [
+    {href: "https://twitter.com/triadfi", src: "/img/twitter.svg", alt: "imagem twitter" },
+    {href: "https://docs.triadfi.co/", src: "/img/discord.svg", alt: "imagem discord" },
+    {href: "https://docs.triadfi.co/", src: "/img/docs.svg", alt: "imagem docs" },
+  ];
+
   return (
     <header
-      className={cn("fixed left-0 top-0 xl:px-0 px-4 z-30 h-[50px] w-full", {
+      className={cn("fixed lg:mt-5 px-4 z-30 rounded-2xl h-[72px] w-full", {
         "bg-[#13141A1A] backdrop-blur-xl": bgHeader,
       })}
     >
@@ -48,36 +54,27 @@ const Header: React.FC = () => {
         </Link>
 
         <div className="hidden lg:flex items-center space-x-4">
-          <Link
-            href="https://twitter.com/triadfi"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              width={20}
-              height={20}
-              className="hover:opacity-50 transition-all"
-              src="/img/icon-x.svg"
-              alt="bg"
-            />
-          </Link>
-          <Link
-            href="https://docs.triadfi.co/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              width={20}
-              height={20}
-              className="hover:opacity-50 transition-all"
-              src="/img/icon-discord.svg"
-              alt="docs"
-            />
-          </Link>
+        {solicialLinks.map((link, index) => (
+            <Link
+              key={index}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={link.alt}
+            >
+              <Image
+                width={20}
+                height={20}
+                className="hover:opacity-50 transition-all"
+                src={link.src}
+                alt={link.alt}
+              />
+            </Link>
+          ))}
         </div>
 
         <Link
-          className="w-fit h-[30px] px-3 bg-[#3961FB] text-white font-medium !text-xs flex items-center justify-center rounded-md whitespace-nowrap"
+          className="w-[122px] lg:w-[132px] h-[40px] bg-[#3961FB] text-white font-medium !text-xs flex items-center justify-center rounded-md whitespace-nowrap"
           href="https://app.triadfi.co/"
           target="_blank"
           rel="noopener noreferrer"

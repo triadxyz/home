@@ -1,11 +1,13 @@
-import { Poppins, Source_Code_Pro } from "next/font/google";
+import {  Permanent_Marker, Inter } from "next/font/google";
 
-export const poppins = Poppins({
+
+
+export const permanent_marker = Permanent_Marker({
+  weight: "400",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
 });
 
-export const source_code_pro = Source_Code_Pro({
+export const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["300", "400", "500", "600", "700"],
 });

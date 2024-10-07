@@ -71,7 +71,7 @@ const Home: React.FC = () => {
   return (
     <div className={`${inter.className} flex flex-col min-h-screen lg:pb-56`}>
       <div className="flex flex-col relative z-10 h-full px-4">
-        <div className="h-full w-full max-w-[1240px] mx-auto flex flex-col">
+        <div className="h-full  mx-auto flex flex-col">
           <div className="relative flex items-center mx-auto mt-16 flex-col z-10 px-0">
             <TitleSection />
             <div className="flex justify-center items-center mt-11">

@@ -5,7 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import MarketCarousel from "@/components/MarketCarousel";
 import ButtonTradeNow from "@/components/buttonTradeNow";
 import { Metadata } from "next";
-import { inter } from "@/utils/fonts";
+import { inter, permanent_marker } from "@/utils/fonts";
+import { cn } from "@/utils/cn";
 
 export const metadata: Metadata = {
   title: "Triad",
@@ -44,8 +45,8 @@ export const metadata: Metadata = {
 };
 
 const GreetingBanner = () => (
-  <div className="flex flex-col justify-center items-center mt-12">
-    <div className="bg-white/10 pl-[10px] border-[1px] border-white/20 relative w-[364px] h-[24px] flex items-center rounded">
+  <div className="flex flex-col justify-end items-center relative top-14">
+    <div className="bg-white/10 pl-2.5 border border-white/20 relative w-[364px] h-[24px] flex items-center rounded">
       <span className="text-[#A4A5A7] text-xs font-normal textMarket">
         Hello Traveler, conquer the Triad Season: Atlantis!
       </span>
@@ -61,7 +62,7 @@ const TitleSection = () => (
       <img src="/img/titleHapy.svg" alt="Title Hapy" />
       <p className="text-2xl text-white text-center font-normal">
         Shape the future of the Solana ecosystem with your{' '}
-        <span className="textMarket font-bold italic">PREDICTIONS</span>
+        <span className={cn("font-bold italic", permanent_marker.className)}>PREDICTIONS</span>
       </p>
     </div>
   </>
@@ -69,9 +70,9 @@ const TitleSection = () => (
 
 const Home: React.FC = () => {
   return (
-    <div className={`${inter.className} flex flex-col min-h-screen lg:pb-56`}>
+    <div className={`flex flex-col pt-10 min-h-screen lg:pb-56`}>
       <div className="flex flex-col relative z-10 h-full px-4">
-        <div className="h-full  mx-auto flex flex-col">
+        <div className="h-full mx-auto flex flex-col">
           <div className="relative flex items-center mx-auto mt-16 flex-col z-10 px-0">
             <TitleSection />
             <div className="flex justify-center items-center mt-11">

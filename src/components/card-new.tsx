@@ -1,4 +1,3 @@
-import { format } from "date-fns";
 import Link from "next/link";
 
 type CardNewProps = {

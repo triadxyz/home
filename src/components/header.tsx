@@ -42,7 +42,7 @@ const Header: React.FC = () => {
         "bg-[#13141A1A] backdrop-blur-xl": bgHeader,
       })}
     >
-      <div className="max-w-[1240px] w-full h-full flex mx-auto justify-between items-center">
+      <div className="max-w-[1330px] w-full h-full flex mx-auto justify-between items-center">
         <Link href={"/"}>
           <Image
             className="z-20 relative"

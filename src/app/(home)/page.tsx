@@ -9,6 +9,7 @@ import { cn } from "@/utils/cn";
 import { SectionEarnYield } from "@/Shared/YieldsSection";
 import { AtlantisSection } from "@/Shared/AtlantisSection";
 import WillTheyHype from "@/components/willTheyHype";
+import News from "@/components/news";
 
 export const metadata: Metadata = {
   title: "Triad",
@@ -109,6 +110,7 @@ const Home: React.FC = () => {
       <div className="my-28 backgroundImageWillThey">
         <WillTheyHype />
       </div>
+      <News/>
     </div>
   );
 };

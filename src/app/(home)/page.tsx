@@ -8,7 +8,6 @@ import { permanent_marker } from "@/utils/fonts";
 import { cn } from "@/utils/cn";
 import AtlantisSeasonSection from "@/components/AtlantisSeasonSection";
 import { SectionEarnYield } from "@/Shared/YieldsSection";
-import { RadialGradients } from "@/components/blurs";
 
 export const metadata: Metadata = {
   title: "Triad",

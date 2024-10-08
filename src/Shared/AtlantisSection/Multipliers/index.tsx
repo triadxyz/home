@@ -32,8 +32,8 @@ const multipliersCards: MultiplierCard[] = [
   {
     title: "Poseidon",
     img: "/img/Poseidon.webp",
-    attack: 1000000000,
-    defense: 5000000000,
+    attack: 1000000,
+    defense: 5000000,
     multiplier: "30x",
   },
   {

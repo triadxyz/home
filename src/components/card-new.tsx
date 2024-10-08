@@ -1,4 +1,3 @@
-import { format } from "date-fns";
 import Link from "next/link";
 
 type CardNewProps = {
@@ -13,17 +12,21 @@ type CardNewProps = {
 
 const CardNew: React.FC<CardNewProps> = ({ data }) => {
   return (
-    <div className="w-full max-w-[440px]">
-      <img className="w-full h-[210px] lg:h-[260px] rounded-[30px] lg:rounded-[40px]" src={data.img} alt="" />
-      <span className="flex items-center justify-between font-medium text-white text-xl mt-5 mb-5">
-        {data.title}{" "}
+    <div className="w-full lg:max-w-[440px]">
+      <img className="w-full h-[210px] sm:h-[320px] lg:h-[260px]  object-cover" src={data.img} alt="" />
+      <div className="flex justify-between font-medium text-white lg:text-xl mt-5 mb-5">
+       <div className="w-3/4"> {data.title}{" "}</div>
         <Link target="_blank" href={data.link} rel="noopener noreferrer">
           <img src="img/icon-arrow-link.svg" alt="" />
         </Link>
-      </span>
-      <span className="text-[#A1A7BB] text-sm lg:text-base font-light lg:h-[66px] mb-5 lg:mb-8 block">
+      </div>
+      <span className="text-fire-gray-medium/80 font-light text-sm lg:text-base  lg:h-[66px] block">
         {data.description}
       </span>
+
+      <div className="text-fire-gray-medium text-sm lg:text-base font-light mt-4 lg:h-[66px] block">
+        {data.date.toDateString()}
+      </div>
     </div>
   );
 };

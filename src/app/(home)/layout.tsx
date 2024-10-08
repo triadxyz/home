@@ -1,6 +1,7 @@
 import { Footer } from "@/components/footer";
 import { Metadata } from "next";
 import NextTopLoader from "nextjs-toploader";
+import { inter } from "@/utils/fonts";
 
 export const metadata: Metadata = {
   title: "Triad",
@@ -46,7 +47,7 @@ export default function HomeLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="h-full w-full">
+    <div className={`${inter.className} h-full overflow-hidden w-full `}>
       <NextTopLoader
         color="#3961FB"
         initialPosition={0.08}

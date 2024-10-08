@@ -1,19 +1,22 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Mosaic from "@/components/mosaic";
-import BetaLaunchButton from "@/components/buttonBetaLaunch";
+
+import MarketCarousel from "@/components/MarketCarousel";
+import ButtonTradeNow from "@/components/buttonTradeNow";
 import { Metadata } from "next";
+import { permanent_marker } from "@/utils/fonts";
+import { cn } from "@/utils/cn";
+import { SectionEarnYield } from "@/Shared/YieldsSection";
+import { AtlantisSection } from "@/Shared/AtlantisSection";
+import News from "@/components/news";
+import HypeOrFlop from "@/Shared/HypeOrFlopSection";
 
 export const metadata: Metadata = {
   title: "Triad",
-  description:
-    "Predict the Success or Failure of the Ecosystem.",
+  description: "Predict the Success or Failure of the Ecosystem.",
   openGraph: {
     title: "Triad | Home",
-    description:
-      "Gauge the Ecosystem's Success or Failure",
+    description: "Gauge the Ecosystem's Success or Failure",
     url: "https://triadfi.co",
     siteName: "Triad",
     images: [
@@ -42,49 +45,78 @@ export const metadata: Metadata = {
   },
 };
 
+const GreetingBanner = () => (
+  <div className="flex flex-col justify-center items-center relative lg:top-4">
+    <div className="bg-white/5 px-2.5 border pr-12 border-white/20 relative w-full h-[24px] flex items-center rounded">
+      <span className="text-[#A4A5A7] max-[350px]:text-[10px] text-xs whitespace-nowrap font-normal">
+        Hello Traveler, conquer the Triad Season: Atlantis!
+      </span>
+      <img
+        src="/img/poseidom.svg"
+        className="size-10 absolute right-0 bottom-0"
+        alt="Poseidom"
+      />
+    </div>
+  </div>
+);
+
+const TitleSection = () => (
+  <>
+    <div className="flex flex-col items-center justify-center">
+      <GreetingBanner />
+      <img
+        className="max-w-[300px] lg:max-w-full"
+        src="/img/titleHapy.svg"
+        alt="Title Hapy"
+      />
+      <p className="text-sm lg:text-2xl relative bottom-4 text-white text-center font-normal">
+        Shape the future of the Solana ecosystem with your{" "}
+        <span className={cn("font-bold italic", permanent_marker.className)}>
+          PREDICTIONS
+        </span>
+      </p>
+    </div>
+  </>
+);
+
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen lg:pb-56">
+    <div
+      className={`flex flex-col pt-14 overflow-hidden relative min-h-screen lg:pb-56`}
+    >
+      <div
+        style={{
+          background:
+            "radial-gradient(32.27% 32.27% at 44.35% 54.57%, #19244e  10%, #13141A 100%)",
+        }}
+        className="absolute  rounded-full lg:-left-[400px] lg:-top-[200px] w-full h-[600px] lg:w-[1600px] lg:h-[1200px]"
+      />
+
+      <div
+        style={{
+          background:
+            "radial-gradient(32.27% 32.27% at 44.35% 54.57%, #19244e 10%, #13141A 100%)",
+        }}
+        className="absolute rounded-full hidden lg:block lg:-right-[500px] lg:-top-[200px] w-[400px] h-[800px] lg:w-[1100px] lg:h-[1100px]"
+      />
+
       <div className="flex flex-col relative z-10 h-full px-4">
-        <div className="h-full w-full max-w-[1240px] mx-auto flex flex-col">
-          <div className="relative flex items-center mx-auto mt-14 flex-col z-10 px-0">
-            <div className="relative transition-all duration-200 text-center">
-              <div className="tradeText flex flex-col justify-center items-center">
-                <img 
-                  src="/img/titleHapy.svg"
-                  alt="" 
-                 />   
-                 <img
-                    src="/img/TRADE ANYTHING FROM WEB3.svg"
-                    alt="" 
-                    className="imagemLTrade"
-                  />
-                 <img
-                    src="/img/tradeMobile.svg"
-                    alt="" 
-                    className="imagemLTradeMobile"
-                  />
-              </div>
-              <div className="flex justify-center items-center mt-16">
-                <BetaLaunchButton />  
-              </div>
-              <div className="mt-20 mb-14 grupoNamesMobile flex justify-center items-center">
-                <img
-                  src="img/Group 41386.png"
-                  alt=""
-                  className="h-32 w-max imagemLatter"
-                />
-                <img
-                  src="img/grupoNamesMobile.svg"
-                  alt=""
-                  className="imagemLatter2"
-                />
-              </div>
+        <div className="h-full flex flex-col">
+          <div className="relative flex items-center mt-16 flex-col z-10 px-0">
+            <TitleSection />
+            <div className="flex justify-center items-center mt-8">
+              <ButtonTradeNow />
             </div>
-            <Mosaic />
+            <MarketCarousel />
           </div>
         </div>
       </div>
+      <SectionEarnYield />
+      <AtlantisSection />
+      <div className="my-4 lg:my-28">
+        <HypeOrFlop />
+      </div>
+      <News />
     </div>
   );
 };

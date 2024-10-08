@@ -45,13 +45,14 @@ export const metadata: Metadata = {
 };
 
 const GreetingBanner = () => (
-  <div className="flex flex-col justify-center items-center relative lg:top-14">
-    <div className="bg-white/10 pl-2.5 border border-white/20 relative w-[364px] h-[24px] flex items-center rounded">
-      <span className="text-[#A4A5A7] text-xs font-normal textMarket">
+  <div className="flex flex-col justify-center items-center relative lg:top-4">
+    <div className="bg-white/10 px-2.5 border pr-12 border-white/20 relative w-full h-[24px] flex items-center rounded">
+      <span className="text-[#A4A5A7]  max-[350px]:text-[10px] text-xs whitespace-nowrap font-normal">
         Hello Traveler, conquer the Triad Season: Atlantis!
       </span>
+    <img src="/img/poseidom.svg" className="size-10 absolute right-0 bottom-0" alt="Poseidom" />
+
     </div>
-    <img src="/img/poseidom.svg" className="relative -top-[42px] -right-[146px]" alt="Poseidom" />
   </div>
 );
 
@@ -70,7 +71,7 @@ const TitleSection = () => (
 
 const Home: React.FC = () => {
   return (
-    <div className={`flex flex-col pt-10 min-h-screen lg:pb-56`}>
+    <div className={`flex flex-col pt-14 min-h-screen lg:pb-56`}>
       <div className="flex flex-col relative z-10 h-full px-4">
         <div className="h-full flex flex-col">
           <div className="relative flex items-center mt-16 flex-col z-10 px-0">

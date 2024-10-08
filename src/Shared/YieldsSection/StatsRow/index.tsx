@@ -3,7 +3,7 @@ import React, { useMemo } from "react";
 
 const StatsRow: React.FC = () => {
   const statsData = useMemo(() => [
-    { id: 1, value: "$1,313,898.00 ", label: "Value Staked ($)", valueColor: "text-green-400" },
+    { id: 1, value: "$96,822.75", label: "Value Staked ($)", valueColor: "text-green-400" },
     { id: 2, value: "7.5x", label: "Max Boost", valueColor: "text-white" },
     { id: 3, value: "12,199,592.91", label: "Total Staked ($TRD)", valueColor: "text-white" },
   ], []);

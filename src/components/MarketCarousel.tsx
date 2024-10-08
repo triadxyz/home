@@ -3,8 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import { cn } from "@/utils/cn";
 import { permanent_marker } from "@/utils/fonts";
 import { Slidersettings } from "@/constants/slider";
@@ -49,7 +48,7 @@ const MarketCard: React.FC<MarketCardProps> = ({
       >
         <div
           className={cn(
-            "bg-[#FFFFFF04] rounded-lg p-4 flex flex-col border border-[#FFFFFF29]",
+            "bg-white/5 border border-white/10 backdrop-blur-2xl rounded-lg p-4 flex flex-col",
             "w-full lg:w-[430px] h-[170px]"
           )}
         >

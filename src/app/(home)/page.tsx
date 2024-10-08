@@ -7,15 +7,14 @@ import ButtonTradeNow from "@/components/buttonTradeNow";
 import { Metadata } from "next";
 import { permanent_marker } from "@/utils/fonts";
 import { cn } from "@/utils/cn";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Triad",
-  description:
-    "Predict the Success or Failure of the Ecosystem.",
+  description: "Predict the Success or Failure of the Ecosystem.",
   openGraph: {
     title: "Triad | Home",
-    description:
-      "Gauge the Ecosystem's Success or Failure",
+    description: "Gauge the Ecosystem's Success or Failure",
     url: "https://triadfi.co",
     siteName: "Triad",
     images: [
@@ -50,8 +49,11 @@ const GreetingBanner = () => (
       <span className="text-[#A4A5A7]  max-[350px]:text-[10px] text-xs whitespace-nowrap font-normal">
         Hello Traveler, conquer the Triad Season: Atlantis!
       </span>
-    <img src="/img/poseidom.svg" className="size-10 absolute right-0 bottom-0" alt="Poseidom" />
-
+      <img
+        src="/img/poseidom.svg"
+        className="size-10 absolute right-0 bottom-0"
+        alt="Poseidom"
+      />
     </div>
   </div>
 );
@@ -59,11 +61,17 @@ const GreetingBanner = () => (
 const TitleSection = () => (
   <>
     <div className="flex flex-col items-center justify-center">
-    <GreetingBanner />
-      <img className="max-w-[300px] lg:max-w-full" src="/img/titleHapy.svg" alt="Title Hapy" />
+      <GreetingBanner />
+      <img
+        className="max-w-[300px] lg:max-w-full"
+        src="/img/titleHapy.svg"
+        alt="Title Hapy"
+      />
       <p className="lg:text-2xl text-white text-center font-normal">
-        Shape the future of the Solana ecosystem with your{' '}
-        <span className={cn("font-bold italic", permanent_marker.className)}>PREDICTIONS</span>
+        Shape the future of the Solana ecosystem with your{" "}
+        <span className={cn("font-bold italic", permanent_marker.className)}>
+          PREDICTIONS
+        </span>
       </p>
     </div>
   </>
@@ -72,6 +80,10 @@ const TitleSection = () => (
 const Home: React.FC = () => {
   return (
     <div className={`flex flex-col pt-14 min-h-screen lg:pb-56`}>
+      <div className="absolute top-0  z-0 left-0 w-[100vw] h-full">
+      <img width={400} height={400} className="object-cover w-[100vw]" src={"/img/azure-blurs.webp"} alt="" />
+
+      </div>
       <div className="flex flex-col relative z-10 h-full px-4">
         <div className="h-full flex flex-col">
           <div className="relative flex items-center mt-16 flex-col z-10 px-0">

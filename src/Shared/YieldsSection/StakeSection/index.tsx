@@ -38,7 +38,7 @@ const stakeCards = [
       title: "Stake Triad",
       apr: "5.96%",
       description: "Stake your NFT and watch your earnings grow based on its rarity. The rarer the NFT, the higher the returns!",
-      bgColor: "fire-yellow",
+      bgColor: "bg-fire-yellow",
     },
     {
       id: 2,
@@ -47,6 +47,6 @@ const stakeCards = [
       title: "Stake $TRD",
       apr: "11.05%",
       description: "Stake your $TRD and earn yield automatically. Boost your returns with Market Making and Staking Vaults.",
-      bgColor: "fire-blue-medium",
+      bgColor: "bg-fire-blue-medium",
     },
   ];

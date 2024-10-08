@@ -11,7 +11,7 @@ interface StakeCardProps {
 }
 
 const StakeCard: React.FC<StakeCardProps> = ({ imgSrc, altText, title, apr, description, bgColor }) => (
-  <div className="bg-white/5 hover:bg-white/10 p-8 h-[370px] w-full max-w-[370px] flex items-center justify-between flex-col rounded-lg border border-white/10 shadow-md backdrop-blur-xl">
+  <div className="bg-white/5 transition-all ease hover:bg-white/10 p-8 h-[370px] w-full max-w-[370px] flex items-center justify-between flex-col rounded-lg border border-white/10 shadow-md backdrop-blur-xl">
     <div>
       <div className="flex justify-center">
         <img src={imgSrc} alt={altText} className="w-20 h-20" />
@@ -19,7 +19,7 @@ const StakeCard: React.FC<StakeCardProps> = ({ imgSrc, altText, title, apr, desc
       <div className="text-center ">
         <div className="flex items-center justify-center gap-2 mt-4 mb-5 lg:my-3">
           <h2 className="text-2xl font-semibold">{title}</h2>
-          <span className={cn(`bg-${bgColor} text-xs font-medium px-2 py-1 rounded`, apr.includes('11.05') ? 'text-white' : 'text-black')}>
+          <span className={cn(`${bgColor} text-xs font-medium px-2 py-1 rounded`, apr.includes('11.05') ? 'text-white' : 'text-black')}>
             {apr} APR
           </span>
         </div>

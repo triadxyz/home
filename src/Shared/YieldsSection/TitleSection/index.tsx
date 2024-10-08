@@ -5,7 +5,7 @@ import Diamond from "../../../../public/svg/diamond.svg";
 
 export const TitleSection: React.FC = () => {
   return (
-    <div className="w-full">
+    <div className="w-full px-4 lg:px-0">
       <div className="bg-white/10 backdrop-blur-xl h-6 w-fit px-2 border border-white/10 justify-center rounded flex items-center mb-2 mt-20">
         <span className="text-xs font-normal text-white/80">
           + Boost + Rewards

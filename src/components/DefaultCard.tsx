@@ -8,7 +8,7 @@ interface DefaultCardProps {
 
 const DefaultCard: React.FC<DefaultCardProps> = ({ children, className }) => {
   return (
-    <div className={cn('bg-[#FFFFFF04] rounded-lg p-4 flex flex-col border border-[#FFFFFF29]', className)}>
+    <div className={cn('bg-white/5 backdrop-blur-xl rounded-[10px] p-6 flex flex-col border border-[#FFFFFF29]', className)}>
       {children}
     </div>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { permanent_marker } from "@/utils/fonts";
+import { formatCurrency } from '@/utils/formatCurrency';
 
 interface MultiplierCard {
   title: string;
@@ -32,42 +33,42 @@ const multipliersCards: MultiplierCard[] = [
     title: "Poseidon",
     img: "/img/Poseidon.webp",
     attack: 1000000000,
-    defense: 1000000000,
-    multiplier: "1000000x",
+    defense: 5000000000,
+    multiplier: "30x",
   },
   {
     title: "Moonad",
     img: "/img/mooad.webp",
-    attack: 15000,
-    defense: 1000,
+    attack: 10000,
+    defense: 1500,
     multiplier: "2x",
   },
   {
     title: "Alligator",
     img: "/img/alligator.webp",
     attack: 15000,
-    defense: 1000,
+    defense: 1200,
     multiplier: "2x",
   },
   {
     title: "Queen",
     img: "/img/queen.webp",
     attack: 500,
-    defense: 25000,
-    multiplier: "1.5x",
+    defense: 20000,
+    multiplier: "2x",
   },
   {
     title: "pickaxe",
     img: "/img/PICARETA.webp",
-    damage: 500,
+    damage: 800,
     durability: 15000,
-    multiplier: "1.3x",
+    multiplier: "2.5x",
   },
   {
     title: "pyth",
     img: "/img/pyth.webp",
-    financial: 999999,
-    multiplier: "100000000x",
+    financial: 100000,
+    multiplier: "2x",
   },
 ];
 
@@ -83,8 +84,17 @@ const MultiplierCardComponent: React.FC<MultiplierCard> = ({
 }) => {
   const size = imageSizes[title as keyof typeof imageSizes] || { width: 100, height: 100 };
 
+  const stats = [
+    { label: 'Attack', value: attack },
+    { label: 'Defense', value: defense },
+    { label: 'Damage', value: damage },
+    { label: 'Durability', value: durability },
+    { label: 'Financial', value: financial },
+    { label: 'Multiplier', value: multiplier },
+  ];
+
   return (
-    <div className={`${permanent_marker.className} bg-[#D1C5AD] border border-black backdrop-blur-[87px] rounded-lg p-4 text-center h-full flex flex-col text-[#3D3122]`}>
+    <div className={`${permanent_marker.className} bg-[#D1C5AD] border border-black backdrop-blur-[87px] rounded-lg p-4 w-full min-w-[207px] text-center h-full min-h-[292px] max-h-[292px] lg:min-h-[276px]  flex flex-col text-[#3D3122]`}>
       <div className="flex-grow flex items-center justify-center mb-2">
         <div className="relative" style={{ width: `${size.width}px`, height: `${size.height}px` }}>
           <Image
@@ -96,13 +106,16 @@ const MultiplierCardComponent: React.FC<MultiplierCard> = ({
           />
         </div>
       </div>
+
       <div className="text-sm">
-        {attack !== undefined && <p>Attack: {attack}</p>}
-        {defense !== undefined && <p>Defense: {defense}</p>}
-        {damage !== undefined && <p>Damage: {damage}</p>}
-        {durability !== undefined && <p>Durability: {durability}</p>}
-        {financial !== undefined && <p>Financial: {financial}</p>}
-        <p>Multiplier: {multiplier}</p>
+        {stats.map((stat, index) => (
+          stat.value !== undefined && (
+            <div key={index} className="flex items-center justify-between">
+              <span>{stat.label}</span>
+              <span>{typeof stat.value === 'number' ? formatCurrency(stat.value)?.replace('$', '') : stat.value}</span>
+            </div>
+          )
+        ))}
       </div>
     </div>
   );

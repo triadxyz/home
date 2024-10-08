@@ -6,8 +6,8 @@ import ButtonTradeNow from "@/components/buttonTradeNow";
 import { Metadata } from "next";
 import { permanent_marker } from "@/utils/fonts";
 import { cn } from "@/utils/cn";
-import AtlantisSeasonSection from "@/components/AtlantisSeasonSection";
 import { SectionEarnYield } from "@/Shared/YieldsSection";
+import { AtlantisSection } from "@/Shared/AtlantisSection";
 
 export const metadata: Metadata = {
   title: "Triad",
@@ -81,7 +81,7 @@ const Home: React.FC = () => {
   return (
     <div className={`flex flex-col pt-14 min-h-screen lg:pb-56`}>
       {/* <RadialGradients primaryColor="#19244e" secondaryColor="#19244e" /> */}
-      <div className="absolute top-0  z-0 left-0 w-[100vw] h-full">
+      <div className="absolute top-0  z-[1] left-0 w-[100vw] h-full">
         <img
           width={400}
           height={400}
@@ -101,10 +101,11 @@ const Home: React.FC = () => {
             <MarketCarousel />
           </div>
         </div>
-        <SectionEarnYield />
-
-        <AtlantisSeasonSection />
+       
       </div>
+      <SectionEarnYield />
+
+      <AtlantisSection />
     </div>
   );
 };

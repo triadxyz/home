@@ -7,7 +7,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { cn } from "@/utils/cn";
 import { permanent_marker } from "@/utils/fonts";
-import { settings } from "nprogress";
 import { Slidersettings } from "@/constants/slider";
 
 interface MarketCardProps {

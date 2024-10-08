@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import MarketCarousel from "@/components/MarketCarousel";
 import ButtonTradeNow from "@/components/buttonTradeNow";
 import { Metadata } from "next";
-import { inter, permanent_marker } from "@/utils/fonts";
+import { permanent_marker } from "@/utils/fonts";
 import { cn } from "@/utils/cn";
 
 export const metadata: Metadata = {

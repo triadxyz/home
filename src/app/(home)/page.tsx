@@ -8,6 +8,7 @@ import { permanent_marker } from "@/utils/fonts";
 import { cn } from "@/utils/cn";
 import { SectionEarnYield } from "@/Shared/YieldsSection";
 import { AtlantisSection } from "@/Shared/AtlantisSection";
+import News from "@/components/news";
 
 export const metadata: Metadata = {
   title: "Triad",
@@ -106,6 +107,8 @@ const Home: React.FC = () => {
       <SectionEarnYield />
 
       <AtlantisSection />
+
+      <News/>
     </div>
   );
 };

@@ -27,7 +27,7 @@ const footerLinks = [
 
 export const Footer: React.FC = () => {
   return (
-    <div className="flex w-full h-full lg:flex-col px-4 mt-[140px]">
+    <div className="flex w-full h-full lg:flex-col px-4 mt-10">
       <div className="w-full max-w-[1330px] mx-auto">
         <div className="flex flex-col gap-y-3 lg:gap-y-0 lg:items-center pt-10 pb-6">
           <div className="flex items-start w-full flex-col lg:flex-row lg:items-center mr-auto lg:pb-4">

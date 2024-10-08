@@ -13,7 +13,7 @@ type CardNewProps = {
 const CardNew: React.FC<CardNewProps> = ({ data }) => {
   return (
     <div className="w-full max-w-[440px]">
-      <img className="w-full h-[210px] lg:h-[260px] rounded-lg lg:rounded-[40px]" src={data.img} alt="" />
+      <img className="w-full h-[210px] lg:h-[260px]" src={data.img} alt="" />
       <div className="flex justify-between font-medium text-white lg:text-xl mt-5 mb-5">
        <div className="w-3/4"> {data.title}{" "}</div>
         <Link target="_blank" href={data.link} rel="noopener noreferrer">

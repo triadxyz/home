@@ -80,17 +80,23 @@ const TitleSection = () => (
 
 const Home: React.FC = () => {
   return (
-    <div className={`flex flex-col pt-14 min-h-screen lg:pb-56`}>
+    <div className={`flex flex-col pt-14 overflow-hidden min-h-screen lg:pb-56`}>
       {/* <RadialGradients primaryColor="#19244e" secondaryColor="#19244e" /> */}
-      <div className="absolute top-0  z-[1] left-0 w-[100vw] h-full">
-        <img
-          width={400}
-          height={400}
-          className="object-cover w-[100vw]"
-          src={"/img/azure-blurs.webp"}
-          alt=""
-        />
-      </div>
+      <div
+        style={{
+          background:
+            "radial-gradient(32.27% 32.27% at 44.35% 54.57%, #19244e  10%, #13141A 100%)",
+        }}
+        className="absolute rounded-full lg:-left-[400px] lg:-top-[200px] w-full h-[600px] lg:w-[1600px] lg:h-[1200px]"
+      />
+
+      <div
+        style={{
+          background:
+            "radial-gradient(32.27% 32.27% at 44.35% 54.57%, #19244e 10%, #13141A 100%)",
+        }}
+        className="absolute rounded-full hidden lg:block lg:-right-[500px] lg:-top-[200px] w-[400px] h-[800px] lg:w-[1100px] lg:h-[1100px]"
+      />
 
       <div className="flex flex-col relative z-10 h-full px-4">
         <div className="h-full flex flex-col">

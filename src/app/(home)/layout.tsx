@@ -47,7 +47,7 @@ export default function HomeLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className={`${inter.className} h-full w-full `}>
+    <div className={`${inter.className} h-full overflow-hidden w-full `}>
       <NextTopLoader
         color="#3961FB"
         initialPosition={0.08}

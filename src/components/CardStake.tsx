@@ -18,7 +18,7 @@ const StakeCard: React.FC<StakeCardProps> = ({ imgSrc, altText, title, apr, desc
       </div>
       <div className="text-center ">
         <div className="flex items-center justify-center gap-2 mt-4 mb-5 lg:my-3">
-          <h2 className="text-2xl font-semibold">{title}</h2>
+          <h2 className="lg:text-2xl font-semibold">{title}</h2>
           <span className={cn(`${bgColor} text-xs font-medium px-2 py-1 rounded`, apr.includes('11.05') ? 'text-white' : 'text-black')}>
             {apr} APR
           </span>

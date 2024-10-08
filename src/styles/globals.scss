@@ -32,6 +32,10 @@ html {
   background: #13141A;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 @keyframes fly {
   from {
     top: 100%;

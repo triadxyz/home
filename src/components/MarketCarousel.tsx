@@ -40,7 +40,7 @@ const MarketCard: React.FC<MarketCardProps> = ({
   status,
 }) => {
   return (
-    <div className="pr-2">
+    <div className="pr-2 min-w-[350px]">
       <Link
         href="https://app.triadfi.co/"
         target="_blank"
@@ -66,7 +66,7 @@ const MarketCard: React.FC<MarketCardProps> = ({
               <h3 className="text-white font-[500]">{name}</h3>
             </div>
           </div>
-          <p className="text-white text-[14px] flex-grow">{description}</p>
+          <p className="text-white text-xs flex-grow">{description}</p>
           <div className="flex w-full space-x-1">
             <StatusButton
               text="HYPE"
@@ -157,19 +157,34 @@ const markets: MarketCardProps[] = [
   {
     name: "Drift Protocol",
     logo: "/img/drift-logo.svg",
-    description: "Lorem ipsum dolor sit amet consectetur pellentesque",
+    description:
+      "Drift surpass $33M in volume on prediction markets by the end of October?",
     status: "HYPE",
   },
   {
-    name: "Jupiter Exchange",
-    logo: "/img/tjup-logo.svg",
-    description: "Lorem ipsum dolor sit amet consectetur pellentesque",
+    name: "Coleta",
+    logo: "/svg/coleta.svg",
+    description:
+      "COLETA PFP reach 500 SOL in total volume by the end of October (based on Tensor)?",
+    status: "FLOP",
+  },
+  {
+    name: "Symmetry",
+    logo: "/svg/symmetry.svg",
+    description: "Symmetry's TVL exceed $5.5M by the end of October?",
+    status: "FLOP",
+  },
+  {
+    name: "undead",
+    logo: "/svg/undead.svg",
+    description:
+      "Pikenians Undeads reach more than 1,600 holders by the end of October?",
     status: "FLOP",
   },
   {
     name: "Pyth Network",
     logo: "/img/pyth-logo.svg",
-    description: "Lorem ipsum dolor sit amet consectetur pellentesque",
+    description: "$PYTH's market cap exceed $1.5B by the end of October?",
     status: "HYPE",
   },
 ];

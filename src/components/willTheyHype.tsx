@@ -17,26 +17,25 @@ const HypeOrFlop = () => {
   ];
 
   return (
-    <div className="text-white bg-['/img/hype-background.png')] bg-cover bg-center p-8">
-      {/* Título e Descrição */}
+    <div className="text-white p-[70px]">
       <div className="mb-8 lg:flex block lg:justify-between items-center">
         <div>
             <button className={cn("font-bold italic", permanent_marker.className, "bg-white/5 mb-[14px] px-3 py-1 rounded border-[1px] border-white/10")}>
-              <span className='text-gray-400 text-xs text-center'>Track the HYPE</span>
+              <span className='text-gray-400 text-xs text-center'>Trade the HYPE</span>
             </button>
-            <h1 className="text-4xl font-bold">
+            <h1 className="text-5xl font-semibold">
               <p>Will they <span className={cn("font-bold italic", permanent_marker.className, "text-green-500")}> HYPE </span> </p>
                 or 
-              <span className={cn("font-bold italic", permanent_marker.className, "text-red-400")}> FLOP</span>?
+              <span className={cn("font-bold italic", permanent_marker.className, "text-red-400")}> FLOP<span className='text-white'>?</span></span>
             </h1>
         </div>
-        <p className="text-gray-400 mt-2 max-w-md">
+        <p className="text-gray-300 mt-2 max-w-md text-base">
           Make your predictions on any Projects, NFT collections, DAOs, or Events on the web3 hype platform. Capture market sentiment and decide between <span className={cn("font-bold italic", permanent_marker.className, "text-green-500")}>HYPE</span> or <span className={cn("font-bold italic", permanent_marker.className, "text-red-400")}>FLOP</span>.
         </p>
       </div>
 
       {/* Grid de Projetos */}
-      <div className="grid lg:grid-cols-5 grid-cols-2">
+      <div className="grid lg:grid-cols-5 grid-cols-2 gap-0 m-0">
         {projects.map((project, index) => (
           <div 
             key={project.id} 
@@ -51,7 +50,7 @@ const HypeOrFlop = () => {
             {project.logo ? (
               <img src={project.logo} alt={project.name} className="h-9 w-[139px] mt-4 mb-2" />
             ) : ( 
-                <a href="#" className="text-center text-lg font-semibold mt-4 mb-2">{project.name} →</a>
+                <a href="#" className={cn("font-bold italic", permanent_marker.className, "text-center text-lg font-semibold")}>{project.name} →</a>
              )}
           </div>
         ))}

@@ -8,6 +8,7 @@ import { permanent_marker } from "@/utils/fonts";
 import { cn } from "@/utils/cn";
 import { SectionEarnYield } from "@/Shared/YieldsSection";
 import { AtlantisSection } from "@/Shared/AtlantisSection";
+import WillTheyHype from "@/components/willTheyHype";
 
 export const metadata: Metadata = {
   title: "Triad",
@@ -104,8 +105,10 @@ const Home: React.FC = () => {
        
       </div>
       <SectionEarnYield />
-
       <AtlantisSection />
+      <div className="my-28 backgroundImageWillThey">
+        <WillTheyHype />
+      </div>
     </div>
   );
 };

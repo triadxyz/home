@@ -5,12 +5,12 @@ import "slick-carousel/slick/slick-theme.css";
 import MarketCarousel from "@/components/MarketCarousel";
 import ButtonTradeNow from "@/components/buttonTradeNow";
 import { Metadata } from "next";
-import { inter } from "@/utils/fonts";
+import { inter, permanent_marker } from "@/utils/fonts";
+
 import { cn } from "@/utils/cn";
 import SectionEarnYield from "@/components/sectionEarnYield";
 import Image from "next/image";
-import AtlantisSeasonSection from '@/components/AtlantisSeasonSection';
-
+import AtlantisSeasonSection from "@/components/AtlantisSeasonSection";
 
 export const metadata: Metadata = {
   title: "Triad",
@@ -92,7 +92,6 @@ const Home: React.FC = () => {
             </div>
             <MarketCarousel />
             <AtlantisSeasonSection />
-
           </div>
         </div>
         <SectionEarnYield />

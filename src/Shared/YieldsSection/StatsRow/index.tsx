@@ -11,7 +11,7 @@ const StatsRow: React.FC = () => {
   return (
     <div className="sm:flex justify-around block w-full sm:bg-white/5 sm:border border-white/10 py-5 lg:px-4 rounded-lg text-center h-auto">
       {statsData.map((stat, index) => (
-        <div key={stat.id} className="space-y-1 mt-0.5  flex items-center justify-center flex-col rounded lg:mt-0 h-[72px] bg-white/5 sm:bg-transparent">
+        <div key={stat.id} className="space-y-1 mt-0.5 border-r border-white/10 last-of-type:border-none pr-16 flex items-center justify-center flex-col max-[768px]:rounded lg:mt-0 h-[72px] bg-white/5 sm:bg-transparent">
           <p className={cn(`text-lg sm:text-2xl font-medium`, index === 0 ? 'text-[#00B471]' : 'text-white')}>{stat.value}</p>
           <p className="text-gray-400 text-xs">{stat.label}</p>
         </div>

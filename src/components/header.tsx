@@ -38,7 +38,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={cn("fixed lg:mt-5 px-4 z-30 rounded-2xl h-[72px] w-full", {
+      className={cn("fixed lg:mt-5 px-4 z-30  h-[72px] w-full", {
         "bg-[#13141A1A] backdrop-blur-xl": bgHeader,
       })}
     >

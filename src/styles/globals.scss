@@ -86,7 +86,12 @@ img {
     opacity: 0.2;
   }
   100% {
-    transform: scale(1.2, 1.3);
+    transform: scale(1.1, 1.2);
     opacity: 0;
   }
+}
+
+.slick-slider, .slick-track {
+  width: 100%;
+  display: flex !important;
 }

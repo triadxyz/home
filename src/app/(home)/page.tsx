@@ -9,6 +9,7 @@ import { cn } from "@/utils/cn";
 import { SectionEarnYield } from "@/Shared/YieldsSection";
 import { AtlantisSection } from "@/Shared/AtlantisSection";
 import News from "@/components/news";
+import HypeOrFlop from "@/Shared/HypeOrFlopSection";
 
 export const metadata: Metadata = {
   title: "Triad",
@@ -80,14 +81,15 @@ const TitleSection = () => (
 
 const Home: React.FC = () => {
   return (
-    <div className={`flex flex-col pt-14 overflow-hidden min-h-screen lg:pb-56`}>
-      {/* <RadialGradients primaryColor="#19244e" secondaryColor="#19244e" /> */}
+    <div
+      className={`flex flex-col pt-14 overflow-hidden relative min-h-screen lg:pb-56`}
+    >
       <div
         style={{
           background:
             "radial-gradient(32.27% 32.27% at 44.35% 54.57%, #19244e  10%, #13141A 100%)",
         }}
-        className="absolute rounded-full lg:-left-[400px] lg:-top-[200px] w-full h-[600px] lg:w-[1600px] lg:h-[1200px]"
+        className="absolute  rounded-full lg:-left-[400px] lg:-top-[200px] w-full h-[600px] lg:w-[1600px] lg:h-[1200px]"
       />
 
       <div
@@ -108,13 +110,13 @@ const Home: React.FC = () => {
             <MarketCarousel />
           </div>
         </div>
-       
       </div>
       <SectionEarnYield />
-
       <AtlantisSection />
-
-      <News/>
+      <div className="my-4 lg:my-28">
+        <HypeOrFlop />
+      </div>
+      <News />
     </div>
   );
 };

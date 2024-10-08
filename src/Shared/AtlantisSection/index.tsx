@@ -13,7 +13,7 @@ export const AtlantisSection: React.FC = () => {
           background:
             "radial-gradient(32.27% 32.27% at 44.35% 54.57%, #01395066  10%, #13141A 100%)",
         }}
-        className="absolute size-[600px] rounded-full w-[100vw] left-0 lg:-left-[600px]  top-0  bottom-[100px] lg:size-[1200px]"
+        className="absolute rounded-full w-[500px] lg:w-[100vw] -left-40 lg:-left-[600px]  top-0  bottom-[100px] lg:size-[1200px]"
       />
 
       <div
@@ -21,7 +21,7 @@ export const AtlantisSection: React.FC = () => {
           background:
             "radial-gradient(32.27% 32.27% at 44.35% 54.57%, #523B084d  10%, #13141A 100%)",
         }}
-        className="absolute size-[600px] rounded-full w-[100vw] right-0 lg:-right-[800px] top-0  bottom-[100px] lg:size-[600px]"
+        className="absolute w-[500px] rounded-full lg:w-[100vw] -right-40 lg:-right-[800px] top-0  bottom-[100px] lg:size-[600px]"
       />
       <div className="relative z-10 lg:z-0 max-w-[1330px] mx-auto ">
         <TitleComponent />
@@ -34,7 +34,7 @@ export const AtlantisSection: React.FC = () => {
 
         <MainImageComponent />
 
-        <div className="flex px-2 lg:px-0 items-center relative bottom-14 lg:bottom-0 overflow-x-auto w-full lg:grid grid-cols-4 place-items-center  xl:grid-cols-6 gap-3 md:gap-4">
+        <div className="flex px-2 lg:px-0 items-center relative bottom-14 overflow-x-auto w-full lg:grid grid-cols-4 place-items-center  xl:grid-cols-6 gap-3 md:gap-4">
           {multipliersCards.map((card, index) => (
             <MultiplierCardComponent key={index} {...card} />
           ))}

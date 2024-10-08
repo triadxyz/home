@@ -7,7 +7,7 @@ import StatsRow from "../StatsRow";
 export const CardsStake = () => {
   return (
     <div className="text-white w-full py-6 space-y-6">
-      <div className="flex items-center justify-center flex-col md:flex-row w-full gap-5">
+      <div className="flex items-center px-2 xl:px-0 justify-center flex-col md:flex-row w-full gap-5">
         {stakeCards.map((card) => (
           <StakeCard
             key={card.id}

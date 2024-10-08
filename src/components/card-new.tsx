@@ -20,7 +20,7 @@ const CardNew: React.FC<CardNewProps> = ({ data }) => {
           <img src="img/icon-arrow-link.svg" alt="" />
         </Link>
       </span>
-      <span className="text-[#A1A7BB] text-sm lg:text-base font-light lg:h-[66px] mb-5 lg:mb-8 block">
+      <span className="text-fire-gray-medium text-sm lg:text-base font-light lg:h-[66px] mb-5 lg:mb-8 block">
         {data.description}
       </span>
     </div>

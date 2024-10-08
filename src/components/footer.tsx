@@ -53,7 +53,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <div className="flex flex-col relative bottom-5 lg:bottom-0 lg:flex-row gap-x-4 text-sm text-white gap-y-5">
-              <span className="text-[#A1A7BB]">
+              <span className="text-fire-gray-medium">
                 <span className="text-xl text-white/20 mr-4">•</span>TRIAD © 2024. All Rights Reserved.
               </span>
               {footerLinks.map(({ text, className }, index) => (
@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          <p className="font-light border-t border-white/10 pt-5 text-[#A1A7BB] text-xs">
+          <p className="font-light border-t border-white/10 pt-5 text-fire-gray-medium text-xs">
           The prices are derived from cryptocurrencies and various factors that drive significant volatility in the investment market. These values fluctuate with market sentiment. At Triad Finance, we provide a sophisticated approach to investing in the Solana ecosystem. We encourage you to carefully evaluate these risks and stay fully informed.
           </p>
         </div>

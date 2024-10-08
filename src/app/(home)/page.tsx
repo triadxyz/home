@@ -4,12 +4,11 @@ import React from "react";
 import MarketCarousel from "@/components/MarketCarousel";
 import ButtonTradeNow from "@/components/buttonTradeNow";
 import { Metadata } from "next";
-import { inter, permanent_marker } from "@/utils/fonts";
-
+import { permanent_marker } from "@/utils/fonts";
 import { cn } from "@/utils/cn";
-import SectionEarnYield from "@/components/sectionEarnYield";
-import Image from "next/image";
 import AtlantisSeasonSection from "@/components/AtlantisSeasonSection";
+import { SectionEarnYield } from "@/Shared/YieldsSection";
+import { RadialGradients } from "@/components/blurs";
 
 export const metadata: Metadata = {
   title: "Triad",
@@ -82,11 +81,18 @@ const TitleSection = () => (
 const Home: React.FC = () => {
   return (
     <div className={`flex flex-col pt-14 min-h-screen lg:pb-56`}>
+      {/* <RadialGradients primaryColor="#19244e" secondaryColor="#19244e" /> */}
       <div className="absolute top-0  z-0 left-0 w-[100vw] h-full">
-      <img width={400} height={400} className="object-cover w-[100vw]" src={"/img/azure-blurs.webp"} alt="" />
-
+        <img
+          width={400}
+          height={400}
+          className="object-cover w-[100vw]"
+          src={"/img/azure-blurs.webp"}
+          alt=""
+        />
       </div>
-      <div className="flex flex-col relative z-10 h-full px-4 lg:px-0">
+
+      <div className="flex flex-col relative z-10 h-full px-4">
         <div className="h-full flex flex-col">
           <div className="relative flex items-center mt-16 flex-col z-10 px-0">
             <TitleSection />
@@ -94,10 +100,11 @@ const Home: React.FC = () => {
               <ButtonTradeNow />
             </div>
             <MarketCarousel />
-            <AtlantisSeasonSection />
           </div>
         </div>
         <SectionEarnYield />
+
+        <AtlantisSeasonSection />
       </div>
     </div>
   );

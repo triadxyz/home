@@ -38,7 +38,7 @@ const MarketCard: React.FC<MarketCardProps> = ({
           </div>
         </div>
         <p className="text-white text-[14px] flex-grow">{description}</p>
-        <div className="flex w-full space-x-1">
+        <div className="flex w-full space-x-1 mt-2">
         <button
             className={cn(
               "flex-1 h-[36px] py-1 rounded-lg text-xs font-medium bg-[#00B47133] text-[#00B471] backdrop-blur-[54px]",

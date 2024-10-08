@@ -6,6 +6,7 @@ import ButtonTradeNow from "@/components/buttonTradeNow";
 import { Metadata } from "next";
 import { permanent_marker } from "@/utils/fonts";
 import { cn } from "@/utils/cn";
+import SectionEarnYield from "@/components/sectionEarnYield";
 
 export const metadata: Metadata = {
   title: "Triad",
@@ -92,6 +93,7 @@ const Home: React.FC = () => {
             <MarketCarousel />
           </div>
         </div>
+        <SectionEarnYield />
       </div>
     </div>
   );

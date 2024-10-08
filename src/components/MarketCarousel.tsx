@@ -49,7 +49,7 @@ const MarketCard: React.FC<MarketCardProps> = ({
       >
         <div
           className={cn(
-            "bg-white/5 border border-white/10 backdrop-blur-2xl rounded-lg p-4 flex flex-col",
+            "bg-white/5 border border-white/10 backdrop-blur-2xl rounded-lg p-4 flex flex-col justify-between",
             "w-full lg:w-[430px] h-[170px]"
           )}
         >
@@ -66,7 +66,10 @@ const MarketCard: React.FC<MarketCardProps> = ({
               <h3 className="text-white font-[500]">{name}</h3>
             </div>
           </div>
-          <p className="text-white text-xs flex-grow">{description}</p>
+          <div className="flex items-center gap-x-1">
+            <img className="w-6 h-6" src="/svg/quiz.svg" alt="" />
+            <p className="text-white text-xs flex-grow">{description}</p>
+          </div>
           <div className="flex w-full space-x-1">
             <StatusButton
               text="HYPE"

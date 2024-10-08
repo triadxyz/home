@@ -4,7 +4,7 @@ import CardNew from "./card-new";
 const dataNews = [
   {
     img: "img/locked_value.webp",
-    title: "Total Value Locked (TVL): $1,200,000.00 USDC  💰",
+    title: "Total Value Locked (TVL): $164,000.00 USDC  💰",
     description:
       "Our Triad Staking Platform has reached a key milestone, underscoring our commitment to enhancing user rewards.",
     date: new Date(),

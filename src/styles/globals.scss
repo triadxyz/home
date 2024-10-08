@@ -13,6 +13,10 @@ body {
   margin: 0;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 button {
   cursor: pointer;
 }
@@ -25,7 +29,7 @@ input {
 
 html {
   height: 100vh;
-  background: radial-gradient(#1B1F2F 0%, #141519 100%);
+  background: radial-gradient(#1b1f2f 0%, #141519 100%);
 }
 
 @keyframes fly {
@@ -41,48 +45,7 @@ html {
   animation: fly linear infinite;
 }
 
-
-@keyframes slideLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}
-
-.animate-slide-left {
-  animation: slideLeft 1s ease;
-}
-
-
-
-@keyframes slideRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}
-
-.animate-right {
-  animation: slideRight 1s ease;
-}
-
-
-.gradient-text {
-  background: linear-gradient(90deg, #ffb639, #a26701);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.loader{
+.loader {
   pointer-events: none;
   width: 25px;
   height: 25px;
@@ -92,47 +55,16 @@ html {
   border-top-color: #fff;
 }
 @keyframes spinner {
-0%{
+  0% {
     transform: rotate(0turn);
-}
-100%{
+  }
+  100% {
     transform: rotate(1turn);
-}
+  }
 }
 
 img {
   pointer-events: none;
-}
-
-.inter{
-  font-family: "Inter", sans-serif;
-}
-
-.textMarket {
-  font-family: "Permanent Marker", cursive;
-}
-
-.spanMarket {
-  color: #A1A7BB;
-  font-weight: 400;
-}
-
-.mb-10.relative {
-  position: relative;
-  text-align: start; 
-}
-
-.hype-effect {
-  position: absolute; 
-  bottom: 0; 
-  left: 439px; 
-  transform: translateX(80%); 
-  z-index: -1; 
-  width: 30px; 
-}
-
-.sessionPrimeira{
-  display: none;
 }
 
 .pulse-animation::before {
@@ -140,48 +72,21 @@ img {
   position: absolute;
   inset: 0;
   border-radius: 4px;
-  background-color: #3961FB;
+  background-color: #3961fb;
   z-index: -1;
   animation: pulse 2s ease infinite;
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); opacity: 1; }
-  50% { opacity: 0.2; }
-  100% { transform: scale(1.2, 1.3); opacity: 0; }
-}
-
-@media (max-width: 768px) {
-  .sessionPrimeira{
-    margin-top: 50px;
+  0% {
+    transform: scale(1);
+    opacity: 1;
   }
-  .textMobile{
-    font-size: 38px;
-    line-height: 45px;
-
-    .hype-effect{
-      left: 276px;  
-    }
-    .spanText{
-      font-size: 17px;
-    }
+  50% {
+    opacity: 0.2;
   }
-  .adjusteImagens{
-    .poseidon{
-      height: 620px;
-    }
-    .session{
-      display: none;
-    }
-    .sessionPrimeira{
-      display: flex;
-      height: 480px;
-    }
-    .cardAtlanta{
-      height: 360px;
-    }
-    .cardHype{
-      height: 350px;
-    }
+  100% {
+    transform: scale(1.2, 1.3);
+    opacity: 0;
   }
 }

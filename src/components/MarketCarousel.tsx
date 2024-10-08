@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Slider from "react-slick";
@@ -8,7 +8,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 import { cn } from "@/utils/cn";
 import { permanent_marker } from "@/utils/fonts";
-import { Slidersettings } from "@/constants/slider";
 
 interface MarketCardProps {
   name: string;
@@ -24,7 +23,7 @@ const StatusButton: React.FC<{
 }> = ({ text, bgColor, textColor }) => (
   <button
     className={cn(
-      "flex-1 h-[36px] py-1 rounded-lg text-xs font-medium backdrop-blur-[54px]",
+      "flex-1 h-[36px] py-1 backdrop-blur-2xl rounded text-xs font-medium",
       permanent_marker.className,
       bgColor,
       textColor
@@ -71,12 +70,12 @@ const MarketCard: React.FC<MarketCardProps> = ({
           <div className="flex w-full space-x-1">
             <StatusButton
               text="HYPE"
-              bgColor="bg-[#00B47133]"
+              bgColor="bg-[#192c2a]"
               textColor="text-[#00B471]"
             />
             <StatusButton
               text="FLOP"
-              bgColor="bg-[#EE5F6733]"
+              bgColor="bg-[#31232a]"
               textColor="text-[#EE5F67]"
             />
           </div>
@@ -87,15 +86,64 @@ const MarketCard: React.FC<MarketCardProps> = ({
 };
 
 const MarketCarousel: React.FC = () => {
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  const settings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    centerMode: true,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 1920,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 1600,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          centerMode: false,
+
+          slidesToShow: 1,
+        },
+      },
+    ],
+    onInit: () => setIsInitialized(true),
+  };
+
   return (
     <div className="w-full mt-16">
       <div className="max-w-[100vw]">
-        <Slider {...Slidersettings}>
-          {markets.map((market, index) => (
-            <div key={index}>
-              <MarketCard {...market} />
-            </div>
-          ))}
+        <Slider {...settings}>
+          {!isInitialized
+            ? Array.from({ length: 5 }).map((_, key) => (
+                <div className="w-full lg:w-[430px] h-[170px]" key={key}></div>
+              ))
+            : markets.map((market, index) => (
+                <div key={index}>
+                  <MarketCard {...market} />
+                </div>
+              ))}
         </Slider>
       </div>
     </div>

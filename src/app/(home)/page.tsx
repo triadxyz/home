@@ -5,7 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import MarketCarousel from "@/components/MarketCarousel";
 import ButtonTradeNow from "@/components/buttonTradeNow";
 import { Metadata } from "next";
-import { inter } from "@/utils/fonts";
+import AtlantisSeasonSection from '@/components/AtlantisSeasonSection';
+
 
 export const metadata: Metadata = {
   title: "Triad",
@@ -69,7 +70,7 @@ const TitleSection = () => (
 
 const Home: React.FC = () => {
   return (
-    <div className={`${inter.className} flex flex-col min-h-screen lg:pb-56`}>
+    <div className={` flex flex-col min-h-screen lg:pb-56`}>
       <div className="flex flex-col relative z-10 h-full px-4">
         <div className="h-full  mx-auto flex flex-col">
           <div className="relative flex items-center mx-auto mt-16 flex-col z-10 px-0">
@@ -78,6 +79,8 @@ const Home: React.FC = () => {
               <ButtonTradeNow />
             </div>
             <MarketCarousel />
+            <AtlantisSeasonSection />
+
           </div>
         </div>
       </div>

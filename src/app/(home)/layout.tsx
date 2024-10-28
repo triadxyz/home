@@ -2,11 +2,11 @@ import { Footer } from "@/components/footer";
 import { Metadata } from "next";
 import NextTopLoader from "nextjs-toploader";
 import { inter } from "@/utils/fonts";
+import AppProvider from "@/context";
 
 export const metadata: Metadata = {
   title: "Triad",
-  description:
-    "",
+  description: "",
   icons: [
     {
       url: "/favicon/favicon.ico",
@@ -40,7 +40,6 @@ export const metadata: Metadata = {
   ],
 };
 
-
 export default function HomeLayout({
   children,
 }: {
@@ -48,19 +47,21 @@ export default function HomeLayout({
 }) {
   return (
     <div className={`${inter.className} h-full overflow-hidden w-full `}>
-      <NextTopLoader
-        color="#3961FB"
-        initialPosition={0.08}
-        crawlSpeed={200}
-        height={3}
-        crawl={true}
-        showSpinner={true}
-        easing="ease"
-        speed={200}
-        shadow="0 0 10px #3961FB,0 0 5px #3961FB"
-      />
-      {children}
-      <Footer />
+      <AppProvider>
+        <NextTopLoader
+          color="#3961FB"
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={3}
+          crawl={true}
+          showSpinner={true}
+          easing="ease"
+          speed={200}
+          shadow="0 0 10px #3961FB,0 0 5px #3961FB"
+        />
+        {children}
+        <Footer />
+      </AppProvider>
     </div>
   );
 }

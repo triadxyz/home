@@ -1,6 +1,6 @@
-import React from "react";
 import { cn } from "@/utils/cn";
 import { permanent_marker } from "@/utils/fonts";
+import React from "react";
 
 export const HypeOrFlop: React.FC = () => {
   const projects = [
@@ -70,10 +70,8 @@ export const HypeOrFlop: React.FC = () => {
               </span>
             </h1>
           </div>
-          <p className="text-gray-300 text-sm lg:text-base mt-2 max-w-md">
-            Make your predictions on any Projects, NFT collections, DAOs, or
-            Events on the web3 hype platform. Capture market sentiment and
-            decide between{" "}
+          <p className="text-gray-300 text-sm lg:text-lg mt-2 max-w-md">
+          Make your predictions on any event. Capture market sentiment and decide between {' '}
             <span className={titleSpanClass("text-green-500")}>HYPE</span> or{" "}
             <span className={titleSpanClass("text-red-400")}>FLOP</span>.
           </p>

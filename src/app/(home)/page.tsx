@@ -1,15 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 
+import { AtlantisSection } from "@/Shared/AtlantisSection";
+import HypeOrFlop from "@/Shared/HypeOrFlopSection";
+import { SectionEarnYield } from "@/Shared/YieldsSection";
 import MarketCarousel from "@/components/MarketCarousel";
 import ButtonTradeNow from "@/components/buttonTradeNow";
-import { Metadata } from "next";
-import { permanent_marker } from "@/utils/fonts";
-import { cn } from "@/utils/cn";
-import { SectionEarnYield } from "@/Shared/YieldsSection";
-import { AtlantisSection } from "@/Shared/AtlantisSection";
 import News from "@/components/news";
-import HypeOrFlop from "@/Shared/HypeOrFlopSection";
+import { cn } from "@/utils/cn";
+import { permanent_marker } from "@/utils/fonts";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Triad",
@@ -70,9 +70,9 @@ const TitleSection = () => (
         alt="Title Hapy"
       />
       <p className="text-sm lg:text-2xl relative bottom-4 text-white text-center font-normal">
-        Shape the future of the Solana ecosystem with your{" "}
+      Shape Your Future: Enter the World of {' '}
         <span className={cn("font-bold italic", permanent_marker.className)}>
-          PREDICTIONS
+        Prediction Markets
         </span>
       </p>
     </div>

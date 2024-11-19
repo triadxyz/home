@@ -1,9 +1,8 @@
-import { Analytics } from "@vercel/analytics/react";
-import "../styles/globals.scss";
-import { Inter } from "next/font/google";
-import { cn } from "@/utils/cn";
-import { Suspense } from "react";
 import Header from "@/components/header";
+import { cn } from "@/utils/cn";
+import { Inter } from "next/font/google";
+import { Suspense } from "react";
+import "../styles/globals.scss";
 
 export const metadata = {
   title: "Triad",
@@ -60,7 +59,6 @@ export default function RootLayout({
         <Suspense>
           {children}
         </Suspense>
-        <Analytics />
       </body>
     </html>
   );

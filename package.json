@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@solana/web3.js": "^1.91.8",
-    "@vercel/analytics": "^1.2.2",
     "autoprefixer": "10.4.15",
     "axios": "^1.6.8",
     "clsx": "^2.1.0",

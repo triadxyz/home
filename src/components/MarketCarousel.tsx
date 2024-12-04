@@ -1,16 +1,16 @@
 "use client";
-import React, { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import React, { useEffect, useMemo } from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
+import { useGlobal } from "@/context/global";
 import { cn } from "@/utils/cn";
 import { permanent_marker } from "@/utils/fonts";
 
 interface MarketCardProps {
-  name: string;
   logo: string;
   description: string;
   status: "HYPE" | "FLOP";
@@ -33,12 +33,7 @@ const StatusButton: React.FC<{
   </button>
 );
 
-const MarketCard: React.FC<MarketCardProps> = ({
-  name,
-  logo,
-  description,
-  status,
-}) => {
+const MarketCard: React.FC<MarketCardProps> = ({ logo, description }) => {
   return (
     <div className="pr-2 min-w-[350px]">
       <Link
@@ -53,22 +48,19 @@ const MarketCard: React.FC<MarketCardProps> = ({
             "w-full max-w-[350px] lg:max-w-[430px] lg:w-[430px] h-[170px]"
           )}
         >
-          <div className="flex items-center mb-2">
+          <div className="flex mb-2">
             <Image
               src={logo}
-              alt={name}
+              alt={description}
               width={44}
               height={44}
               className="mr-2"
             />
             <div className="flex flex-col items-start">
-              <span className="text-[#FFFFFF50] text-[12px]">Market</span>
-              <h3 className="text-white font-[500]">{name}</h3>
+            <p className="text-white text-xs lg:text-base">
+              {description}
+            </p>
             </div>
-          </div>
-          <div className="flex items-center gap-x-2">
-            <img className="w-6 h-6" src="/svg/quiz.svg" alt="" />
-            <p className="text-white text-[10px] lg:text-xs w-3/4">{description}</p>
           </div>
           <div className="flex w-full space-x-1">
             <StatusButton
@@ -89,7 +81,15 @@ const MarketCard: React.FC<MarketCardProps> = ({
 };
 
 const MarketCarousel: React.FC = () => {
-  const [isInitialized, setIsInitialized] = useState(false);
+  const { allMarkets, fetchMarkets, loadingMarkets } = useGlobal();
+
+  useEffect(() => {
+    void fetchMarkets();
+  }, [fetchMarkets]);
+
+  const filteredMarkets = useMemo(() => {
+    return allMarkets.filter((market) => market.isActive);
+  }, [allMarkets]);
 
   const settings = {
     dots: false,
@@ -131,63 +131,36 @@ const MarketCarousel: React.FC = () => {
         },
       },
     ],
-    onInit: () => setIsInitialized(true),
   };
 
   return (
     <div className="w-full mt-16">
-      <div className="max-w-[100vw]">
+    <div className="max-w-[100vw]">
+      {loadingMarkets? (
+        <div className="flex gap-2">
+          {Array.from({ length: 5 }).map((_, key) => (
+            <div
+              className="w-full lg:w-[430px] h-[170px] animate-loading rounded-md"
+              key={key}
+            ></div>
+          ))}
+        </div>
+      ) : (
         <Slider {...settings}>
-          {!isInitialized
-            ? Array.from({ length: 5 }).map((_, key) => (
-                <div className="w-full lg:w-[430px] h-[170px]" key={key}></div>
-              ))
-            : markets.map((market, index) => (
-                <div key={index}>
-                  <MarketCard {...market} />
-                </div>
-              ))}
+          {filteredMarkets.map((market, index) => (
+            <div key={index}>
+              <MarketCard
+                logo={market.image}
+                description={market.question}
+                status={"HYPE"}
+              />
+            </div>
+          ))}
         </Slider>
-      </div>
+      )}
     </div>
+  </div>
   );
 };
 
 export default MarketCarousel;
-
-// utils
-const markets: MarketCardProps[] = [
-  {
-    name: "Drift Protocol",
-    logo: "/img/drift-logo.svg",
-    description:
-      "Drift surpass $33M in volume on prediction markets by the end of October?",
-    status: "HYPE",
-  },
-  {
-    name: "Coleta",
-    logo: "/svg/coleta.svg",
-    description:
-      "COLETA PFP reach 500 SOL in total volume by the end of October (based on Tensor)?",
-    status: "FLOP",
-  },
-  {
-    name: "Symmetry",
-    logo: "/svg/symmetry.svg",
-    description: "Symmetry's TVL exceed $5.5M by the end of October?",
-    status: "FLOP",
-  },
-  {
-    name: "undead",
-    logo: "/svg/undead.svg",
-    description:
-      "Pikenians Undeads reach more than 1,600 holders by the end of October?",
-    status: "FLOP",
-  },
-  {
-    name: "Pyth Network",
-    logo: "/img/pyth-logo.svg",
-    description: "$PYTH's market cap exceed $1.5B by the end of October?",
-    status: "HYPE",
-  },
-];

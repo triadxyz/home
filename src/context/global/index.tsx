@@ -1,5 +1,8 @@
 "use client";
 
+import api from "@/constants/api";
+import { Market } from "@/types/market";
+import type { ReactNode } from "react";
 import {
   createContext,
   useCallback,
@@ -7,8 +10,6 @@ import {
   useMemo,
   useState,
 } from "react";
-import type { ReactNode } from "react";
-import api from "@/constants/api";
 
 type GlobalProviderProps = {
   children: ReactNode;
@@ -27,6 +28,9 @@ export type GlobalContextValue = {
   loadingValues: boolean;
   getGlobalStake: () => Promise<void>;
   globalStake: GlobalStake | undefined;
+  fetchMarkets: () => Promise<void>;
+  allMarkets: Market[];
+  loadingMarkets: boolean;
 };
 
 export const GlobalContext = createContext<GlobalContextValue | undefined>(
@@ -35,7 +39,11 @@ export const GlobalContext = createContext<GlobalContextValue | undefined>(
 
 export function GlobalProvider({ children }: GlobalProviderProps) {
   const [loadingValues, setLoadingValues] = useState(false);
-  const [globalStake, setGlobalStake] = useState<GlobalStake | undefined>(undefined);
+  const [globalStake, setGlobalStake] = useState<GlobalStake | undefined>(
+    undefined
+  );
+  const [allMarkets, setAllMarkets] = useState<Market[]>([]);
+  const [loadingMarkets, setLoadingMarkets] = useState(false);
 
   const getGlobalStake = useCallback(async () => {
     setLoadingValues(true);
@@ -50,15 +58,29 @@ export function GlobalProvider({ children }: GlobalProviderProps) {
     }
   }, []);
 
+  const fetchMarkets = useCallback(async () => {
+    setLoadingMarkets(true);
 
+    try {
+      const response = await api.get("/market");
+      setAllMarkets(response.data);
+    } catch {
+      /* empty */
+    } finally {
+      setLoadingMarkets(false);
+    }
+  }, []);
 
   const value = useMemo(
     () => ({
       loadingValues,
       getGlobalStake,
       globalStake,
+      fetchMarkets,
+      allMarkets,
+      loadingMarkets
     }),
-    [loadingValues, getGlobalStake, globalStake]
+    [loadingValues, getGlobalStake, globalStake, fetchMarkets, allMarkets, loadingMarkets]
   );
 
   return (

@@ -175,3 +175,15 @@ img {
   background-position: center;
   background-size: cover;
 }
+
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-loading {
+  background: #37404e;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

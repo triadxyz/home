@@ -1,6 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
-
 import { AtlantisSection } from "@/Shared/AtlantisSection";
 import HypeOrFlop from "@/Shared/HypeOrFlopSection";
 import { SectionEarnYield } from "@/Shared/YieldsSection";
@@ -10,6 +8,7 @@ import News from "@/components/news";
 import { cn } from "@/utils/cn";
 import { permanent_marker } from "@/utils/fonts";
 import { Metadata } from "next";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Triad",
@@ -70,9 +69,9 @@ const TitleSection = () => (
         alt="Title Hapy"
       />
       <p className="text-sm lg:text-2xl relative bottom-4 text-white text-center font-normal">
-      Shape Your Future: Enter the World of {' '}
+        Shape Your Future: Enter the World of{" "}
         <span className={cn("font-bold italic", permanent_marker.className)}>
-        Prediction Markets
+          Prediction Markets
         </span>
       </p>
     </div>
@@ -107,6 +106,7 @@ const Home: React.FC = () => {
             <div className="flex justify-center items-center mt-8">
               <ButtonTradeNow />
             </div>
+
             <MarketCarousel />
           </div>
         </div>

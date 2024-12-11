@@ -54,7 +54,7 @@ const MarketCard: React.FC<MarketCardProps> = ({ logo, description }) => {
               alt={description}
               width={44}
               height={44}
-              className="mr-2"
+              className="mr-2 size-[44px] h-full object-cover rounded max-h-11"
             />
             <div className="flex flex-col items-start">
             <p className="text-white text-xs lg:text-base">
@@ -88,7 +88,7 @@ const MarketCarousel: React.FC = () => {
   }, [fetchMarkets]);
 
   const filteredMarkets = useMemo(() => {
-    return allMarkets.filter((market) => market.isActive);
+    return allMarkets.filter((market) => market.isActive && market.winningDirection === 'None');
   }, [allMarkets]);
 
   const settings = {

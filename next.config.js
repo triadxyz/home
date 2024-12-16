@@ -7,7 +7,7 @@ const cspHeader = `
     style-src 'self' 'unsafe-inline';
     img-src 'self' blob: data:;
     font-src 'self';
-    connect-src 'self' https://api.triadfi.co/ https://quote-api.jup.ag/;
+    connect-src 'self' https://api.triadfi.co/ https://quote-api.jup.ag/ https://www.freepnglogos.com/uploads/bubbles/transparent-bubble-clip-art-creation-creatures-4.png;
     object-src 'none';
     base-uri 'self';
     form-action 'self';

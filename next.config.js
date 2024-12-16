@@ -15,8 +15,11 @@ const nextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self'",
+              `script-src 'self' 'nonce-${nonce}'`,
+              `style-src 'self' 'nonce-${nonce}'`,
+              "connect-src 'self' https://api.triadfi.co/",
               "base-uri 'self'",
+              "img-src 'self' data: https:",
             ].join("; "),
           },
         ],

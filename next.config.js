@@ -3,11 +3,11 @@ const path = require("path");
 
 const cspHeader = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline';
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live;
     style-src 'self' 'unsafe-inline';
-    img-src 'self' blob: data:;
+    img-src 'self' blob: data: https://www.freepnglogos.com;
     font-src 'self';
-    connect-src 'self' https://api.triadfi.co/ https://quote-api.jup.ag/ https://www.freepnglogos.com/uploads/bubbles/transparent-bubble-clip-art-creation-creatures-4.png;
+    connect-src 'self' https://api.triadfi.co/ https://quote-api.jup.ag/;
     object-src 'none';
     base-uri 'self';
     form-action 'self';

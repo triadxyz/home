@@ -1,6 +1,19 @@
 /** @type {import('next').NextConfig} */
 const path = require("path");
 
+const cspHeader = `
+    default-src 'self';
+    script-src 'self' 'unsafe-eval' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' blob: data:;
+    font-src 'self';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    upgrade-insecure-requests;
+`;
+
 const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
@@ -13,14 +26,7 @@ const nextConfig = {
           { key: "X-Frame-Options", value: "DENY" },
           {
             key: "Content-Security-Policy",
-            value: [
-              "default-src 'self'",
-              `script-src 'self' 'nonce-${nonce}'`,
-              `style-src 'self' 'nonce-${nonce}'`,
-              "connect-src 'self' https://api.triadfi.co/",
-              "base-uri 'self'",
-              "img-src 'self' data: https:",
-            ].join("; "),
+            value: cspHeader.replace(/\n/g, ""),
           },
         ],
       },

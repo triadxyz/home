@@ -5,6 +5,14 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
+  headers: async () => {
+    return [
+      {
+        source: "/(.*)",
+        headers: [{ key: "X-Frame-Options", value: "DENY" }],
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {

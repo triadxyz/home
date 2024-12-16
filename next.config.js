@@ -2,7 +2,7 @@
 const path = require("path");
 
 const cspHeader = `
-    default-src 'self';
+    default-src 'self' https://vercel.live;
     script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live;
     style-src 'self' 'unsafe-inline';
     img-src 'self' blob: data: https://www.freepnglogos.com;

@@ -16,7 +16,7 @@ const nextConfig = {
             value: [
               "default-src 'self'",
               "script-src 'self'",
-              "style-src 'self'",
+              "style-src 'self' 'sha256-zlqnbDt84zf1iSefLU/ImC54isoprH/MRiVZGskwexk='",
               "font-src 'self'",
               "base-uri 'self'",
               "connect-src 'self' https://api.triadfi.co/",

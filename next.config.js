@@ -19,6 +19,7 @@ const nextConfig = {
               "style-src 'self'",
               "font-src 'self'",
               "base-uri 'self'",
+              "connect-src 'self' https://api.triadfi.co/",
             ].join("; "),
           },
         ],

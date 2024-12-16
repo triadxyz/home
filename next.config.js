@@ -7,7 +7,7 @@ const cspHeader = `
     style-src 'self' 'unsafe-inline';
     img-src 'self' blob: data:;
     font-src 'self';
-    connect-src 'self' https://api.triadfi.co/;
+    connect-src 'self' https://api.triadfi.co/ https://quote-api.jup.ag/;
     object-src 'none';
     base-uri 'self';
     form-action 'self';

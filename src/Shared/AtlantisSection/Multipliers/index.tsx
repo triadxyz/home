@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { permanent_marker } from "@/utils/fonts";
 import { formatCurrency } from '@/utils/formatCurrency';
+import { cn } from '@/utils/cn';
 
 interface MultiplierCard {
   title: string;
@@ -30,24 +31,24 @@ const imageSizes: Record<string, ImageSize> = {
 
 const multipliersCards: MultiplierCard[] = [
   {
-    title: "Poseidon",
-    img: "/img/Poseidon.webp",
+    title: "Ticket",
+    img: "/img/ticket-card.webp",
     attack: 1000000,
     defense: 5000000,
-    multiplier: "30x",
+    multiplier: "60x",
   },
   {
-    title: "Moonad",
-    img: "/img/mooad.webp",
-    attack: 10000,
-    defense: 1500,
+    title: "Solana Id",
+    img: "/img/solana-id.webp",
+    attack: 1000000,
+    defense: 5000000,
     multiplier: "2x",
   },
   {
-    title: "Alligator",
-    img: "/img/alligator.webp",
-    attack: 15000,
-    defense: 1200,
+    title: "Triad",
+    img: "/img/triad-card.webp",
+    attack: 1000000,
+    defense: 5000000,
     multiplier: "2x",
   },
   {
@@ -96,13 +97,13 @@ const MultiplierCardComponent: React.FC<MultiplierCard> = ({
   return (
     <div className={`${permanent_marker.className} bg-[#D1C5AD] border border-black backdrop-blur-[87px] rounded-lg p-4 w-full min-w-[207px] text-center h-full min-h-[292px] max-h-[292px] lg:min-h-[276px]  flex flex-col text-[#3D3122]`}>
       <div className="flex-grow flex items-center justify-center mb-2">
-        <div className="relative" style={{ width: `${size.width}px`, height: `${size.height}px` }}>
+        <div className={cn("relative",  title === 'Ticket' && 'mb-12' )} style={{ width: `${size.width}px`, height: `${size.height}px` }}>
           <Image
             src={img}
             alt={title}
             width={size.width}
             height={size.height}
-            className="filter brightness-[0.90] contrast-[0.90] saturate-[0.25] sepia-[0.40] hue-rotate-[5deg]"
+            className={cn("filter brightness-[0.90] contrast-[0.90] saturate-[0.25] sepia-[0.40] hue-rotate-[5deg]")}
           />
         </div>
       </div>

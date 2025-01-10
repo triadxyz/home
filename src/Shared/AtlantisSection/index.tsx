@@ -34,7 +34,7 @@ export const AtlantisSection: React.FC = () => {
 
         <MainImageComponent />
 
-        <div className="flex px-2 lg:px-0 items-center relative bottom-14 overflow-x-auto w-full lg:grid grid-cols-4 place-items-center  xl:grid-cols-6 gap-3 md:gap-4">
+        <div className="flex px-2 lg:px-0 items-center relative bottom-14 overflow-x-auto w-full lg:grid grid-cols-4 place-items-center  xl:grid-cols-6 gap-3 md:gap-4 lg:-mt-40">
           {multipliersCards.map((card, index) => (
             <MultiplierCardComponent key={index} {...card} />
           ))}

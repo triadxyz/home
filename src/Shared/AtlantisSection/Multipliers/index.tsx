@@ -1,8 +1,8 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 import { permanent_marker } from "@/utils/fonts";
-import { formatCurrency } from '@/utils/formatCurrency';
-import { cn } from '@/utils/cn';
+import { formatCurrency } from "@/utils/formatCurrency";
+import { cn } from "@/utils/cn";
 
 interface MultiplierCard {
   title: string;
@@ -31,43 +31,43 @@ const imageSizes: Record<string, ImageSize> = {
 
 const multipliersCards: MultiplierCard[] = [
   {
-    title: "Ticket",
-    img: "/img/ticket-card.webp",
+    title: "Triad",
+    img: "/svg/triad-card.svg",
+    attack: 1000000,
+    defense: 5000000,
+    multiplier: "2x",
+  },
+  {
+    title: "Poseidon",
+    img: "/svg/poseidon-card.svg",
     attack: 1000000,
     defense: 5000000,
     multiplier: "60x",
   },
   {
     title: "Solana Id",
-    img: "/img/solana-id.webp",
+    img: "/svg/solana-card.svg",
     attack: 1000000,
     defense: 5000000,
     multiplier: "2x",
   },
   {
-    title: "Triad",
-    img: "/img/triad-card.webp",
-    attack: 1000000,
-    defense: 5000000,
-    multiplier: "2x",
-  },
-  {
-    title: "Queen",
-    img: "/img/queen.webp",
+    title: "Coleta",
+    img: "/svg/coleta-card.svg",
     attack: 500,
     defense: 20000,
     multiplier: "2x",
   },
   {
     title: "pickaxe",
-    img: "/img/PICARETA.webp",
+    img: "/svg/pickax-card.svg",
     damage: 800,
     durability: 15000,
     multiplier: "2.5x",
   },
   {
     title: "pyth",
-    img: "/img/pyth.webp",
+    img: "/svg/pyth-card.svg",
     financial: 100000,
     multiplier: "2x",
   },
@@ -83,42 +83,30 @@ const MultiplierCardComponent: React.FC<MultiplierCard> = ({
   financial,
   multiplier,
 }) => {
-  const size = imageSizes[title as keyof typeof imageSizes] || { width: 100, height: 100 };
+  const size = imageSizes[title as keyof typeof imageSizes] || {
+    width: 100,
+    height: 100,
+  };
 
   const stats = [
-    { label: 'Attack', value: attack },
-    { label: 'Defense', value: defense },
-    { label: 'Damage', value: damage },
-    { label: 'Durability', value: durability },
-    { label: 'Financial', value: financial },
-    { label: 'Multiplier', value: multiplier },
+    { label: "Attack", value: attack },
+    { label: "Defense", value: defense },
+    { label: "Damage", value: damage },
+    { label: "Durability", value: durability },
+    { label: "Financial", value: financial },
+    { label: "Multiplier", value: multiplier },
   ];
 
   return (
-    <div className={`${permanent_marker.className} bg-[#D1C5AD] border border-black backdrop-blur-[87px] rounded-lg p-4 w-full min-w-[207px] text-center h-full min-h-[292px] max-h-[292px] lg:min-h-[276px]  flex flex-col text-[#3D3122]`}>
-      <div className="flex-grow flex items-center justify-center mb-2">
-        <div className={cn("relative",  title === 'Ticket' && 'mb-12' )} style={{ width: `${size.width}px`, height: `${size.height}px` }}>
-          <Image
-            src={img}
-            alt={title}
-            width={size.width}
-            height={size.height}
-            className={cn("filter brightness-[0.90] contrast-[0.90] saturate-[0.25] sepia-[0.40] hue-rotate-[5deg]")}
-          />
-        </div>
-      </div>
-
-      <div className="text-sm">
-        {stats.map((stat, index) => (
-          stat.value !== undefined && (
-            <div key={index} className="flex items-center justify-between">
-              <span>{stat.label}</span>
-              <span>{typeof stat.value === 'number' ? formatCurrency(stat.value)?.replace('$', '') : stat.value}</span>
-            </div>
-          )
-        ))}
-      </div>
-    </div>
+    <Image
+      src={img}
+      alt={title}
+      width={size.width}
+      height={size.height}
+      className={cn(
+        "filter brightness-[0.90] contrast-[0.90] saturate-[0.25] sepia-[0.40] hue-rotate-[5deg] w-full min-h-[276px]"
+      )}
+    />
   );
 };
 

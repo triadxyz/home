@@ -1,8 +1,8 @@
 import { Footer } from "@/components/footer";
+import AppProvider from "@/context";
+import { inter } from "@/utils/fonts";
 import { Metadata } from "next";
 import NextTopLoader from "nextjs-toploader";
-import { inter } from "@/utils/fonts";
-import AppProvider from "@/context";
 
 export const metadata: Metadata = {
   title: "Triad",

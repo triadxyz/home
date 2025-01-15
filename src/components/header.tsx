@@ -45,7 +45,7 @@ const Header: React.FC = () => {
       <div className="max-w-[1330px] w-full h-full flex mx-auto justify-between items-center">
         <Link href={"/"}>
           <Image
-            className="z-20 relative"
+            className="z-20 relative w-20 lg:w-[100px]"
             src="/img/logo-triad.svg"
             width={100}
             height={37}

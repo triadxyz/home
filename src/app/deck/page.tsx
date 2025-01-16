@@ -5,7 +5,7 @@ const Deck: React.FC = () => {
     <div style={{ width: "100%", minHeight: "100vh" }}>
       <img
         style={{ minHeight: "100vh" }}
-        src="/img/triad.png"
+        src="/img/pitch.png"
         height="100%"
         width="100%"
         alt="Deck"

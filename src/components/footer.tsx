@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/utils/cn";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -33,6 +34,7 @@ const footerLinks = [
 
 export const Footer: React.FC = () => {
   const pathname = usePathname();
+  const {theme} = useTheme();
 
   return (
     <div
@@ -45,12 +47,20 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col gap-y-3 lg:gap-y-0 lg:items-center py-5">
             <div className="flex items-start w-full flex-col lg:flex-row lg:items-center mr-auto lg:pb-4">
               <Image
-                className="mr-6 mb-6 lg:mb-0 w-16 lg:w-[100px] lg:h-9"
-                src="img/logo-triad.svg"
+                className="mr-6 mb-6 lg:mb-0 w-16 lg:w-[100px] lg:h-9 object-contain dark:hidden"
+                src={'/img/light-logo.webp'}
                 width={100}
                 height={37}
                 alt="logo"
               />
+               <Image
+                className="mr-6 mb-6 lg:mb-0 w-16 lg:w-[100px] lg:h-9 object-contain hidden dark:block"
+                src={ "/img/logo-triad.svg"}
+                width={100}
+                height={37}
+                alt="logo"
+              />
+
               <div className="flex ml-auto relative bottom-14 lg:mt-0 items-center gap-x-6 lg:hidden">
                 {socialLinks.map(({ href, src, alt }) => (
                   <Link
@@ -70,8 +80,8 @@ export const Footer: React.FC = () => {
                 ))}
               </div>
 
-              <div className="flex flex-col relative bottom-5 lg:bottom-0 lg:flex-row gap-x-4 text-sm text-white gap-y-2 lg:gap-y-5">
-                <span className="text-fire-gray-medium">
+              <div className="flex flex-col relative bottom-5 lg:bottom-0 lg:flex-row gap-x-4 text-sm dark:text-white gap-y-2 lg:gap-y-5">
+                <span className="dark:text-fire-gray-medium">
                   <span className="text-xl text-white/20 mr-4">•</span>TRIAD ©
                   2025. All Rights Reserved.
                 </span>
@@ -88,7 +98,7 @@ export const Footer: React.FC = () => {
               </div>
             </div>
 
-            <p className="font-light border-t border-white/10 pt-5 text-fire-gray-medium text-xs">
+            <p className="font-light border-t border-white/10 pt-5 dark:text-fire-gray-medium text-xs">
               Participating in prediction markets involves risks and
               uncertainties that should be carefully considered. Triad does not
               have control over prediction outcomes or the assets traded, as

@@ -2,6 +2,7 @@ import { Footer } from "@/components/footer";
 import AppProvider from "@/context";
 import { inter } from "@/utils/fonts";
 import { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 import NextTopLoader from "nextjs-toploader";
 
 export const metadata: Metadata = {
@@ -46,7 +47,7 @@ export default function HomeLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className={`${inter.className} h-full overflow-hidden w-full `}>
+    <div className={`${inter.className} h-full overflow-hidden w-full`}>
       <AppProvider>
         <NextTopLoader
           color="#3961FB"

@@ -3,11 +3,11 @@ import { cn } from "@/utils/cn";
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
 import "../styles/globals.scss";
+import { ThemeProvider } from "next-themes";
 
 export const metadata = {
   title: "Triad",
-  description:
-    "Predict the Success or Failure of the Ecosystem.",
+  description: "Predict the Success or Failure of the Ecosystem.",
   icons: [
     {
       url: "/favicon/favicon.ico",
@@ -42,10 +42,10 @@ export const metadata = {
 };
 
 const inter = Inter({
-  weight: ['300', '400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-})
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -55,10 +55,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={false} className={cn(inter.className)}>
-        <Header />
-        <Suspense>
-          {children}
-        </Suspense>
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          <Header />
+          <Suspense>{children}</Suspense>
+        </ThemeProvider>
       </body>
     </html>
   );

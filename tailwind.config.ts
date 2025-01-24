@@ -14,6 +14,7 @@ const config: Config = {
         "fire-gray-light": "#B6B7B8",
         "fire-gray-medium": "#A1A7BB",
         "fire-gray-dark": "#4F5359",
+        "fire-gray": "#606E85",
         "fire-green": "#2AEB49",
         "fire-gray-custom": "#2E3038",
         "fire-blue-medium": "#3961FB",

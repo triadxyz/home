@@ -84,6 +84,7 @@ const Header: React.FC = () => {
         <div className="hidden lg:flex items-center space-x-4">
           {solicialLinks.map((link, index) => (
             <Link
+              className="bg-[#EAECF0] dark:bg-transparent rounded-md w-10 h-10 flex items-center justify-center"
               key={index}
               href={link.href}
               target="_blank"

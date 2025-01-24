@@ -8,7 +8,7 @@ const TermsPage = () => {
 
   return (
     <div className="flex flex-col px-4 lg:max-w-[1330px] text-justify mx-auto w-full pb-96 lg:pb-32 lg:px-20 pt-28">
-      <h3 className="text-lg lg:text-3xl font-bold text-white mb-3">Terms of Services</h3>
+      <h3 className="text-lg lg:text-3xl font-bold dark:text-white mb-3">Terms of Services</h3>
       <p className={commonClasses.subtitle}>Last Updated: January 10th, 2025</p>
 
       <p className={cn("my-5", commonClasses.subtitle)}>
@@ -19,7 +19,7 @@ const TermsPage = () => {
         Terms outlined herein.
       </p>
 
-      <ol className="lg:list-decimal text-white lg:ml-4">
+      <ol className="lg:list-decimal dark:text-white lg:ml-4">
         {data.map((item, index) => {
           if (item.isExtension) {
             return (
@@ -34,10 +34,10 @@ const TermsPage = () => {
                   </p>
                 ))}
                 {item.subSections && (
-                  <ol className="lg:list-upper-alpha text-white ml-6">
+                  <ol className="lg:list-upper-alpha dark:text-white ml-6">
                     {item.subSections.map((subItem, subIndex) => (
                       <li key={subIndex} className="text-[#7F849E] mb-4">
-                        <span className="text-white">
+                        <span className="dark:text-white">
                           {String.fromCharCode(65 + subIndex)}.{" "}
                         </span>
                         <div className="text-justify inline ml-2">
@@ -53,7 +53,7 @@ const TermsPage = () => {
 
           return (
             <li key={index} className="mb-5">
-              <h4 className="text-white my-2 text-sm lg:text-base font-semibold uppercase">{item.title}</h4>
+              <h4 className="dark:text-white my-2 text-sm lg:text-base font-semibold uppercase">{item.title}</h4>
               {item.paragraph.map((text, idx) => (
                 <p
                   key={idx}
@@ -64,10 +64,10 @@ const TermsPage = () => {
                 </p>
               ))}
               {item.subSections && (
-                <ol className="lg:list-upper-alpha text-white ml-6">
+                <ol className="lg:list-upper-alpha dark:text-white ml-6">
                   {item.subSections.map((subItem, subIndex) => (
                     <li key={subIndex} className="text-[#7F849E] mb-4">
-                      <span className="text-white">
+                      <span className="dark:text-white">
                         {String.fromCharCode(65 + subIndex)}.{" "}
                       </span>
                       <div className="text-justify inline ml-2">{subItem}</div>

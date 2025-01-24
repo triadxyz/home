@@ -361,15 +361,15 @@ const data = [
 
 const PrivacyPage = () => {
   return (
-    <div className="flex flex-col lg:max-w-[1330px] text-justify mx-auto w-full px-4 lg:px-20 pt-32 pb-96 lg:pb-40">
-      <h3 className="text-lg lg:text-3xl text-white font-bold mb-4">
+    <div className="flex flex-col lg:max-w-[1330px] text-justify mx-auto w-full px-4 lg:px-20 pt-32 pb-96 lg:pb-4">
+      <h3 className="text-lg lg:text-3xl dark:text-white font-bold mb-4">
         {" "}
         Privacy Policy - Triad Prediction Markets
       </h3>
 
-      <span className="text-[#7F849E] max-[768px]:text-sm">Last Updated: January 10th, 2025</span>
+      <span className="text-[#606E85] dark:text-[#7F849E] max-[768px]:text-sm">Last Updated: January 10th, 2025</span>
 
-      <ol className="lg:list-decimal lg:marker:text-xl text-white mt-5 lg:pl-6">
+      <ol className="lg:list-decimal lg:marker:text-xl dark:text-white mt-5 lg:pl-6">
         {data.map((section, index) => (
           <li key={index} className="mb-8">
             <h2 className="lg:text-xl font-bold mb-4">{section.title}</h2>
@@ -378,18 +378,18 @@ const PrivacyPage = () => {
             {section.allParagraphs.map((paragraph, pIndex) => (
               <div key={pIndex} className="mb-6">
                 <h3 className="lg:text-lg font-medium mb-3">{paragraph.title}</h3>
-                <p className="mb-3 text-sm lg:text-base text-[#7F849E]">{paragraph.description}</p>
+                <p className="mb-3 text-sm lg:text-base text-[#606E85] dark:text-[#7F849E]">{paragraph.description}</p>
 
                 {paragraph.items &&
                   paragraph.items.length > 0 &&
                   paragraph.items.some((item) => item !== "") && (
-                    <ul className="list-disc marker:text-white pl-2 lg:pl-6 space-y-2">
+                    <ul className="list-disc marker:dark:text-white pl-2 lg:pl-6 space-y-2">
                       {paragraph.items.map(
                         (item, iIndex) =>
                           item && (
                             <li
                               key={iIndex}
-                              className="mb-2 text-sm lg:text-base ml-4 lg:ml-6 text-[#7F849E]"
+                              className="mb-2 text-sm lg:text-base ml-4 lg:ml-6 text-[#606E85] dark:text-[#7F849E]"
                             >
                               {item}
                             </li>
@@ -399,7 +399,7 @@ const PrivacyPage = () => {
                   )}
 
                 {paragraph.additionalDescription && (
-                  <p className="mt-4 text-[#7F849E]">
+                  <p className="mt-4 text-[#606E85] dark:text-[#7F849E]">
                     {paragraph.additionalDescription}
                   </p>
                 )}

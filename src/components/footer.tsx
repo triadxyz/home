@@ -56,7 +56,7 @@ export const Footer: React.FC = () => {
       className={cn(
         "bg-white dark:bg-[#13141A1A] dark:backdrop-blur-xl left-0 h-[380px]",
         {
-          // "fixed bottom-0 right-0": pathname !== "/",
+           "fixed bottom-0 right-0": pathname !== "/",
         }
       )}
     >

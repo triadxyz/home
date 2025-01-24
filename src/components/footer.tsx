@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
   return (
     <div
       className={cn(
-        "bg-white dark:bg-[#13141A1A] dark:backdrop-blur-xl left-0 h-[380px]",
+        "bg-white dark:bg-[#13141A1A] dark:backdrop-blur-xl left-0 h-[260px]",
         {
           //  "fixed bottom-0 right-0": pathname !== "/",
         }
@@ -98,7 +98,7 @@ export const Footer: React.FC = () => {
                 ))}
               </div>
             </div>
-            <div className="flex items-center relative bottom-5 lg:bottom-0 flex-wrap flex-row gap-x-4 text-sm dark:text-white gap-y-3 lg:gap-y-5 lg:mr-auto mt-6 lg:mt-12">
+            <div className="flex items-center relative bottom-5 lg:bottom-0 flex-wrap flex-row gap-x-8 text-sm dark:text-white gap-y-3 lg:gap-y-5 lg:mr-auto mt-6 lg:mt-8">
               {footerLinks.map(({ text, className, href }, index) => (
                 <a href={href} key={index}>
                   <span
@@ -110,7 +110,7 @@ export const Footer: React.FC = () => {
               ))}
             </div>
 
-            <p className="font-light border-t border-white/10 mt-10 lg:mt-[77px] text-[#606E85] dark:text-fire-gray-medium text-xs">
+            <p className="font-light mt-10 lg:mt-12ß text-[#606E85] dark:text-fire-gray-medium text-xs">
               Participating in prediction markets involves risks and
               uncertainties that should be carefully considered. Triad does not
               have control over prediction outcomes or the assets traded, as

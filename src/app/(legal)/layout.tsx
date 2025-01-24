@@ -9,7 +9,7 @@ export default function LegalLayout({
 }) {
   return (
     <div className="bg-white dark:bg-[#13141A1A]">
-      <div className="w-full h-full pb-64">{children}</div>
+      <div className="w-full h-full pb-20">{children}</div>
       <Footer />
     </div>
   );

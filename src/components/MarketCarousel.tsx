@@ -91,75 +91,77 @@ const MarketCarousel: React.FC = () => {
     return allMarkets.filter((market) => market.isActive && market.winningDirection === 'None');
   }, [allMarkets]);
 
-  const settings = {
-    dots: false,
-    arrows: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
-    centerMode: true,
-    variableWidth: true,
-    responsive: [
-      {
-        breakpoint: 1920,
-        settings: {
-          slidesToShow: 3,
+  const settings = useMemo(() => {
+    const slidesToShow = Math.min(filteredMarkets.length, 4);
+    return {
+      dots: false,
+      arrows: false,
+      infinite: filteredMarkets.length > slidesToShow, 
+      speed: 500,
+      slidesToShow,
+      slidesToScroll: 1,
+      autoplay: filteredMarkets.length > 1, 
+      autoplaySpeed: 2000,
+      cssEase: "linear",
+      centerMode: filteredMarkets.length > 1,
+      variableWidth: filteredMarkets.length > 1,
+      responsive: [
+        {
+          breakpoint: 1920,
+          settings: {
+            slidesToShow: Math.min(filteredMarkets.length, 3),
+          },
         },
-      },
-      {
-        breakpoint: 1600,
-        settings: {
-          slidesToShow: 3,
+        {
+          breakpoint: 1600,
+          settings: {
+            slidesToShow: Math.min(filteredMarkets.length, 3),
+          },
         },
-      },
-      {
-        breakpoint: 1280,
-        settings: {
-          slidesToShow: 2,
+        {
+          breakpoint: 1280,
+          settings: {
+            slidesToShow: Math.min(filteredMarkets.length, 2),
+          },
         },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          centerMode: false,
-
-          slidesToShow: 1,
+        {
+          breakpoint: 768,
+          settings: {
+            centerMode: false,
+            slidesToShow: 1,
+          },
         },
-      },
-    ],
-  };
+      ],
+    };
+  }, [filteredMarkets]);
 
   return (
     <div className="w-full mt-16">
-    <div className="max-w-[100vw]">
-      {loadingMarkets? (
-        <div className="flex gap-2">
-          {Array.from({ length: 5 }).map((_, key) => (
-            <div
-              className="w-full lg:w-[430px] h-[170px] animate-loading rounded-md"
-              key={key}
-            ></div>
-          ))}
-        </div>
-      ) : (
-        <Slider {...settings}>
-          {filteredMarkets.map((market, index) => (
-            <div key={index}>
-              <MarketCard
-                logo={market.image}
-                description={market.question}
-                status={"HYPE"}
-              />
-            </div>
-          ))}
-        </Slider>
-      )}
+      <div className="max-w-[100vw]">
+        {loadingMarkets ? (
+          <div className="flex gap-2">
+            {Array.from({ length: 5 }).map((_, key) => (
+              <div
+                className="w-full lg:w-[430px] h-[170px] animate-loading rounded-md"
+                key={key}
+              ></div>
+            ))}
+          </div>
+        ) : (
+          <Slider {...settings}>
+            {filteredMarkets.map((market, index) => (
+              <div key={index}>
+                <MarketCard
+                  logo={market.image}
+                  description={market.question}
+                  status={"HYPE"}
+                />
+              </div>
+            ))}
+          </Slider>
+        )}
+      </div>
     </div>
-  </div>
   );
 };
 

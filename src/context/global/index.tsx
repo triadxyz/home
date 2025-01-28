@@ -1,7 +1,7 @@
 "use client";
 
 import api from "@/constants/api";
-import { Market } from "@/types/market";
+import { MarketResponse } from "@/types/market";
 import type { ReactNode } from "react";
 import {
   createContext,
@@ -29,7 +29,7 @@ export type GlobalContextValue = {
   getGlobalStake: () => Promise<void>;
   globalStake: GlobalStake | undefined;
   fetchMarkets: () => Promise<void>;
-  allMarkets: Market[];
+  allMarkets: MarketResponse[];
   loadingMarkets: boolean;
 };
 
@@ -42,7 +42,7 @@ export function GlobalProvider({ children }: GlobalProviderProps) {
   const [globalStake, setGlobalStake] = useState<GlobalStake | undefined>(
     undefined
   );
-  const [allMarkets, setAllMarkets] = useState<Market[]>([]);
+  const [allMarkets, setAllMarkets] = useState<MarketResponse[]>([]);
   const [loadingMarkets, setLoadingMarkets] = useState(false);
 
   const getGlobalStake = useCallback(async () => {

@@ -88,8 +88,13 @@ const MarketCarousel: React.FC = () => {
   }, [fetchMarkets]);
 
   const filteredMarkets = useMemo(() => {
-    return allMarkets.filter((market) => market.isActive && market.winningDirection === 'None');
+    return allMarkets
+      .flatMap((marketItem) => marketItem.markets)  
+      .filter((market) => 
+        market.winningDirection === 'None' && market.poolId === null
+      );
   }, [allMarkets]);
+  
 
   const settings = useMemo(() => {
     const slidesToShow = Math.min(filteredMarkets.length, 4);

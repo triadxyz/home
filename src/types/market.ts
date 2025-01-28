@@ -54,4 +54,17 @@ export type Market = {
   openBets: number;
   priceChange24h: null;
   image: string;
+  poolId: string
+};
+
+
+export type MarketResponse = {
+  question: string;
+  type: MarketType;
+  category?: MarketCategory;
+  image: string;
+  markets: Market[];
+  totalVolume: number;
+  totalLiquidity: number;
+  createdAt: string | any;
 };

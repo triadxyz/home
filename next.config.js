@@ -11,7 +11,7 @@ const cspHeader = `
     object-src 'none';
     base-uri 'self';
     form-action 'self';
-    frame-ancestors 'none';
+    frame-ancestors 'self';
     upgrade-insecure-requests;
 `;
 
@@ -24,7 +24,7 @@ const nextConfig = {
       {
         source: "/(.*)",
         headers: [
-          { key: "X-Frame-Options", value: "DENY" },
+          { key: "X-Frame-Options", value: "ALLOW-FROM https://vercel.live" },
           {
             key: "Content-Security-Policy",
             value: cspHeader.replace(/\n/g, ""),

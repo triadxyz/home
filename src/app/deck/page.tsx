@@ -4,7 +4,7 @@ const Deck: React.FC = () => {
   return (
     <div style={{ width: "100%", minHeight: "100vh" }}>
       <iframe
-        src="/path-to-your-pdf.pdf"
+        src="/triad.pdf"
         style={{
           width: "100%",
           height: "100vh",

@@ -24,7 +24,6 @@ const nextConfig = {
       {
         source: "/(.*)",
         headers: [
-          { key: "X-Frame-Options", value: "ALLOW-FROM https://vercel.live" },
           {
             key: "Content-Security-Policy",
             value: cspHeader.replace(/\n/g, ""),

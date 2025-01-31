@@ -11,7 +11,7 @@ const cspHeader = `
     object-src 'none';
     base-uri 'self';
     form-action 'self';
-    frame-ancestors 'self';
+    frame-ancestors 'self' https://vercel.live;
     upgrade-insecure-requests;
 `;
 

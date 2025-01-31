@@ -11,7 +11,7 @@ const cspHeader = `
     object-src 'none';
     base-uri 'self';
     form-action 'self';
-    frame-ancestors 'self' https://vercel.live;
+    frame-ancestors 'self' https://vercel.live https://www.triadfi.co/ https://triadfi.co/;
     upgrade-insecure-requests;
 `;
 

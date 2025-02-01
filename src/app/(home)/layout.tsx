@@ -2,12 +2,11 @@ import { Footer } from "@/components/footer";
 import AppProvider from "@/context";
 import { inter } from "@/utils/fonts";
 import { Metadata } from "next";
-import { ThemeProvider } from "next-themes";
 import NextTopLoader from "nextjs-toploader";
 
 export const metadata: Metadata = {
   title: "Triad",
-  description: "",
+  description: "Participate in prediction markets across diverse topics. Triad is a platform where you can analyze, predict and explore a new way to make predictions about sports, politics, global events, and technology trends.",
   icons: [
     {
       url: "/favicon/favicon.ico",

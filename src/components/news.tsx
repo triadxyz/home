@@ -14,7 +14,7 @@ const dataNews = [
     img: "img/banner-beta.webp",
     title: "Triad: Beta Launch and More",
     description:
-      "Speculate on the hype or flop of Web3 projects, NFTs, Events and DAOs, and discover a new way to engage with the Solana ecosystem.",
+      "Join a cutting-edge prediction market platform. Make predictions on sports, politics, crypto trends, and global events while putting your insights to the test.",
     date: new Date(),
     link: "https://app.triadfi.co/",
   },
